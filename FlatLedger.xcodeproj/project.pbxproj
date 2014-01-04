@@ -25,6 +25,40 @@
 		26F0362A1878544A00559DEB /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 26F036051878544A00559DEB /* CoreData.framework */; };
 		26F036321878544A00559DEB /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 26F036301878544A00559DEB /* InfoPlist.strings */; };
 		26F036341878544A00559DEB /* FlatLedgerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 26F036331878544A00559DEB /* FlatLedgerTests.m */; };
+		26F03667187881A600559DEB /* AbstractClientDataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 26F03641187881A600559DEB /* AbstractClientDataModel.m */; };
+		26F03668187881A600559DEB /* AbstractClientDataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 26F03641187881A600559DEB /* AbstractClientDataModel.m */; };
+		26F03669187881A600559DEB /* AOMAbstractClientDataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 26F03643187881A600559DEB /* AOMAbstractClientDataModel.m */; };
+		26F0366A187881A600559DEB /* AOMAbstractClientDataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 26F03643187881A600559DEB /* AOMAbstractClientDataModel.m */; };
+		26F0366B187881A600559DEB /* AOMDatastore.m in Sources */ = {isa = PBXBuildFile; fileRef = 26F03646187881A600559DEB /* AOMDatastore.m */; };
+		26F0366C187881A600559DEB /* AOMDatastore.m in Sources */ = {isa = PBXBuildFile; fileRef = 26F03646187881A600559DEB /* AOMDatastore.m */; };
+		26F0366D187881A600559DEB /* MemberModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 26F03649187881A600559DEB /* MemberModel.m */; };
+		26F0366E187881A600559DEB /* MemberModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 26F03649187881A600559DEB /* MemberModel.m */; };
+		26F0366F187881A600559DEB /* ModelStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 26F0364B187881A600559DEB /* ModelStore.m */; };
+		26F03670187881A600559DEB /* ModelStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 26F0364B187881A600559DEB /* ModelStore.m */; };
+		26F03671187881A600559DEB /* Role.m in Sources */ = {isa = PBXBuildFile; fileRef = 26F0364E187881A600559DEB /* Role.m */; };
+		26F03672187881A600559DEB /* Role.m in Sources */ = {isa = PBXBuildFile; fileRef = 26F0364E187881A600559DEB /* Role.m */; };
+		26F03673187881A600559DEB /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 26F03650187881A600559DEB /* User.m */; };
+		26F03674187881A600559DEB /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 26F03650187881A600559DEB /* User.m */; };
+		26F03675187881A600559DEB /* YAJLiOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 26F03651187881A600559DEB /* YAJLiOS.framework */; };
+		26F03676187881A600559DEB /* YAJLiOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 26F03651187881A600559DEB /* YAJLiOS.framework */; };
+		26F03677187881A700559DEB /* DataStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 26F03653187881A600559DEB /* DataStore.m */; };
+		26F03678187881A700559DEB /* DataStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 26F03653187881A600559DEB /* DataStore.m */; };
+		26F03679187881A700559DEB /* AOMModelHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 26F03656187881A600559DEB /* AOMModelHelper.m */; };
+		26F0367A187881A700559DEB /* AOMModelHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 26F03656187881A600559DEB /* AOMModelHelper.m */; };
+		26F0367B187881A700559DEB /* AOMModelStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 26F03658187881A600559DEB /* AOMModelStore.m */; };
+		26F0367C187881A700559DEB /* AOMModelStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 26F03658187881A600559DEB /* AOMModelStore.m */; };
+		26F0367D187881A700559DEB /* NSString+Base64.m in Sources */ = {isa = PBXBuildFile; fileRef = 26F0365B187881A600559DEB /* NSString+Base64.m */; };
+		26F0367E187881A700559DEB /* NSString+Base64.m in Sources */ = {isa = PBXBuildFile; fileRef = 26F0365B187881A600559DEB /* NSString+Base64.m */; };
+		26F0367F187881A700559DEB /* NSString+Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 26F0365D187881A600559DEB /* NSString+Extensions.m */; };
+		26F03680187881A700559DEB /* NSString+Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 26F0365D187881A600559DEB /* NSString+Extensions.m */; };
+		26F03681187881A700559DEB /* Expenses.m in Sources */ = {isa = PBXBuildFile; fileRef = 26F03660187881A600559DEB /* Expenses.m */; };
+		26F03682187881A700559DEB /* Expenses.m in Sources */ = {isa = PBXBuildFile; fileRef = 26F03660187881A600559DEB /* Expenses.m */; };
+		26F03683187881A700559DEB /* FLELedger.m in Sources */ = {isa = PBXBuildFile; fileRef = 26F03662187881A600559DEB /* FLELedger.m */; };
+		26F03684187881A700559DEB /* FLELedger.m in Sources */ = {isa = PBXBuildFile; fileRef = 26F03662187881A600559DEB /* FLELedger.m */; };
+		26F03685187881A700559DEB /* Periods.m in Sources */ = {isa = PBXBuildFile; fileRef = 26F03664187881A600559DEB /* Periods.m */; };
+		26F03686187881A700559DEB /* Periods.m in Sources */ = {isa = PBXBuildFile; fileRef = 26F03664187881A600559DEB /* Periods.m */; };
+		26F03687187881A700559DEB /* Status.m in Sources */ = {isa = PBXBuildFile; fileRef = 26F03666187881A600559DEB /* Status.m */; };
+		26F03688187881A700559DEB /* Status.m in Sources */ = {isa = PBXBuildFile; fileRef = 26F03666187881A600559DEB /* Status.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,6 +95,42 @@
 		26F0362F1878544A00559DEB /* FlatLedgerTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "FlatLedgerTests-Info.plist"; sourceTree = "<group>"; };
 		26F036311878544A00559DEB /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		26F036331878544A00559DEB /* FlatLedgerTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FlatLedgerTests.m; sourceTree = "<group>"; };
+		26F03640187881A600559DEB /* AbstractClientDataModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AbstractClientDataModel.h; sourceTree = "<group>"; };
+		26F03641187881A600559DEB /* AbstractClientDataModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AbstractClientDataModel.m; sourceTree = "<group>"; };
+		26F03642187881A600559DEB /* AOMAbstractClientDataModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AOMAbstractClientDataModel.h; sourceTree = "<group>"; };
+		26F03643187881A600559DEB /* AOMAbstractClientDataModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AOMAbstractClientDataModel.m; sourceTree = "<group>"; };
+		26F03644187881A600559DEB /* AOMConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AOMConstants.h; sourceTree = "<group>"; };
+		26F03645187881A600559DEB /* AOMDatastore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AOMDatastore.h; sourceTree = "<group>"; };
+		26F03646187881A600559DEB /* AOMDatastore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AOMDatastore.m; sourceTree = "<group>"; };
+		26F03648187881A600559DEB /* MemberModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MemberModel.h; sourceTree = "<group>"; };
+		26F03649187881A600559DEB /* MemberModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MemberModel.m; sourceTree = "<group>"; };
+		26F0364A187881A600559DEB /* ModelStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ModelStore.h; sourceTree = "<group>"; };
+		26F0364B187881A600559DEB /* ModelStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ModelStore.m; sourceTree = "<group>"; };
+		26F0364C187881A600559DEB /* ModelStoreProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ModelStoreProtocol.h; sourceTree = "<group>"; };
+		26F0364D187881A600559DEB /* Role.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Role.h; sourceTree = "<group>"; };
+		26F0364E187881A600559DEB /* Role.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Role.m; sourceTree = "<group>"; };
+		26F0364F187881A600559DEB /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
+		26F03650187881A600559DEB /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
+		26F03651187881A600559DEB /* YAJLiOS.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = YAJLiOS.framework; sourceTree = "<group>"; };
+		26F03652187881A600559DEB /* Datastore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Datastore.h; sourceTree = "<group>"; };
+		26F03653187881A600559DEB /* DataStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataStore.m; sourceTree = "<group>"; };
+		26F03655187881A600559DEB /* AOMModelHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AOMModelHelper.h; sourceTree = "<group>"; };
+		26F03656187881A600559DEB /* AOMModelHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AOMModelHelper.m; sourceTree = "<group>"; };
+		26F03657187881A600559DEB /* AOMModelStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AOMModelStore.h; sourceTree = "<group>"; };
+		26F03658187881A600559DEB /* AOMModelStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AOMModelStore.m; sourceTree = "<group>"; };
+		26F03659187881A600559DEB /* AOMModelStoreProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AOMModelStoreProtocol.h; sourceTree = "<group>"; };
+		26F0365A187881A600559DEB /* NSString+Base64.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Base64.h"; sourceTree = "<group>"; };
+		26F0365B187881A600559DEB /* NSString+Base64.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Base64.m"; sourceTree = "<group>"; };
+		26F0365C187881A600559DEB /* NSString+Extensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Extensions.h"; sourceTree = "<group>"; };
+		26F0365D187881A600559DEB /* NSString+Extensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Extensions.m"; sourceTree = "<group>"; };
+		26F0365F187881A600559DEB /* Expenses.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Expenses.h; sourceTree = "<group>"; };
+		26F03660187881A600559DEB /* Expenses.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Expenses.m; sourceTree = "<group>"; };
+		26F03661187881A600559DEB /* FLELedger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FLELedger.h; sourceTree = "<group>"; };
+		26F03662187881A600559DEB /* FLELedger.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FLELedger.m; sourceTree = "<group>"; };
+		26F03663187881A600559DEB /* Periods.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Periods.h; sourceTree = "<group>"; };
+		26F03664187881A600559DEB /* Periods.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Periods.m; sourceTree = "<group>"; };
+		26F03665187881A600559DEB /* Status.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Status.h; sourceTree = "<group>"; };
+		26F03666187881A600559DEB /* Status.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Status.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,6 +141,7 @@
 				26F036021878544A00559DEB /* CoreGraphics.framework in Frameworks */,
 				26F036061878544A00559DEB /* CoreData.framework in Frameworks */,
 				26F036041878544A00559DEB /* UIKit.framework in Frameworks */,
+				26F03675187881A600559DEB /* YAJLiOS.framework in Frameworks */,
 				26F036001878544A00559DEB /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -82,6 +153,7 @@
 				26F036271878544A00559DEB /* XCTest.framework in Frameworks */,
 				26F0362A1878544A00559DEB /* CoreData.framework in Frameworks */,
 				26F036291878544A00559DEB /* UIKit.framework in Frameworks */,
+				26F03676187881A600559DEB /* YAJLiOS.framework in Frameworks */,
 				26F036281878544A00559DEB /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -92,6 +164,7 @@
 		26F035F31878544A00559DEB = {
 			isa = PBXGroup;
 			children = (
+				26F0363D187881A600559DEB /* com */,
 				26F036071878544A00559DEB /* FlatLedger */,
 				26F0362D1878544A00559DEB /* FlatLedgerTests */,
 				26F035FE1878544A00559DEB /* Frameworks */,
@@ -164,6 +237,89 @@
 				26F036301878544A00559DEB /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		26F0363D187881A600559DEB /* com */ = {
+			isa = PBXGroup;
+			children = (
+				26F0363E187881A600559DEB /* apiomat */,
+			);
+			path = com;
+			sourceTree = "<group>";
+		};
+		26F0363E187881A600559DEB /* apiomat */ = {
+			isa = PBXGroup;
+			children = (
+				26F0363F187881A600559DEB /* frontend */,
+			);
+			path = apiomat;
+			sourceTree = "<group>";
+		};
+		26F0363F187881A600559DEB /* frontend */ = {
+			isa = PBXGroup;
+			children = (
+				26F03640187881A600559DEB /* AbstractClientDataModel.h */,
+				26F03641187881A600559DEB /* AbstractClientDataModel.m */,
+				26F03642187881A600559DEB /* AOMAbstractClientDataModel.h */,
+				26F03643187881A600559DEB /* AOMAbstractClientDataModel.m */,
+				26F03644187881A600559DEB /* AOMConstants.h */,
+				26F03645187881A600559DEB /* AOMDatastore.h */,
+				26F03646187881A600559DEB /* AOMDatastore.m */,
+				26F03647187881A600559DEB /* basics */,
+				26F03652187881A600559DEB /* Datastore.h */,
+				26F03653187881A600559DEB /* DataStore.m */,
+				26F03654187881A600559DEB /* helper */,
+				26F0365E187881A600559DEB /* payoffmain */,
+				26F03665187881A600559DEB /* Status.h */,
+				26F03666187881A600559DEB /* Status.m */,
+			);
+			path = frontend;
+			sourceTree = "<group>";
+		};
+		26F03647187881A600559DEB /* basics */ = {
+			isa = PBXGroup;
+			children = (
+				26F03648187881A600559DEB /* MemberModel.h */,
+				26F03649187881A600559DEB /* MemberModel.m */,
+				26F0364A187881A600559DEB /* ModelStore.h */,
+				26F0364B187881A600559DEB /* ModelStore.m */,
+				26F0364C187881A600559DEB /* ModelStoreProtocol.h */,
+				26F0364D187881A600559DEB /* Role.h */,
+				26F0364E187881A600559DEB /* Role.m */,
+				26F0364F187881A600559DEB /* User.h */,
+				26F03650187881A600559DEB /* User.m */,
+				26F03651187881A600559DEB /* YAJLiOS.framework */,
+			);
+			path = basics;
+			sourceTree = "<group>";
+		};
+		26F03654187881A600559DEB /* helper */ = {
+			isa = PBXGroup;
+			children = (
+				26F03655187881A600559DEB /* AOMModelHelper.h */,
+				26F03656187881A600559DEB /* AOMModelHelper.m */,
+				26F03657187881A600559DEB /* AOMModelStore.h */,
+				26F03658187881A600559DEB /* AOMModelStore.m */,
+				26F03659187881A600559DEB /* AOMModelStoreProtocol.h */,
+				26F0365A187881A600559DEB /* NSString+Base64.h */,
+				26F0365B187881A600559DEB /* NSString+Base64.m */,
+				26F0365C187881A600559DEB /* NSString+Extensions.h */,
+				26F0365D187881A600559DEB /* NSString+Extensions.m */,
+			);
+			path = helper;
+			sourceTree = "<group>";
+		};
+		26F0365E187881A600559DEB /* payoffmain */ = {
+			isa = PBXGroup;
+			children = (
+				26F0365F187881A600559DEB /* Expenses.h */,
+				26F03660187881A600559DEB /* Expenses.m */,
+				26F03661187881A600559DEB /* FLELedger.h */,
+				26F03662187881A600559DEB /* FLELedger.m */,
+				26F03663187881A600559DEB /* Periods.h */,
+				26F03664187881A600559DEB /* Periods.m */,
+			);
+			path = payoffmain;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -264,11 +420,27 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				26F03667187881A600559DEB /* AbstractClientDataModel.m in Sources */,
+				26F03671187881A600559DEB /* Role.m in Sources */,
 				26F036121878544A00559DEB /* FLEAppDelegate.m in Sources */,
 				26F0360E1878544A00559DEB /* main.m in Sources */,
+				26F0367D187881A700559DEB /* NSString+Base64.m in Sources */,
+				26F0366D187881A600559DEB /* MemberModel.m in Sources */,
+				26F03681187881A700559DEB /* Expenses.m in Sources */,
 				26F0361B1878544A00559DEB /* FLEMasterViewController.m in Sources */,
 				26F0361E1878544A00559DEB /* FLEDetailViewController.m in Sources */,
+				26F03677187881A700559DEB /* DataStore.m in Sources */,
+				26F03685187881A700559DEB /* Periods.m in Sources */,
+				26F0366B187881A600559DEB /* AOMDatastore.m in Sources */,
+				26F03673187881A600559DEB /* User.m in Sources */,
+				26F03687187881A700559DEB /* Status.m in Sources */,
 				26F036181878544A00559DEB /* FlatLedger.xcdatamodeld in Sources */,
+				26F03679187881A700559DEB /* AOMModelHelper.m in Sources */,
+				26F0367F187881A700559DEB /* NSString+Extensions.m in Sources */,
+				26F03683187881A700559DEB /* FLELedger.m in Sources */,
+				26F03669187881A600559DEB /* AOMAbstractClientDataModel.m in Sources */,
+				26F0366F187881A600559DEB /* ModelStore.m in Sources */,
+				26F0367B187881A700559DEB /* AOMModelStore.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -276,7 +448,23 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				26F0367E187881A700559DEB /* NSString+Base64.m in Sources */,
+				26F03674187881A600559DEB /* User.m in Sources */,
+				26F03680187881A700559DEB /* NSString+Extensions.m in Sources */,
+				26F0367A187881A700559DEB /* AOMModelHelper.m in Sources */,
+				26F03688187881A700559DEB /* Status.m in Sources */,
+				26F03668187881A600559DEB /* AbstractClientDataModel.m in Sources */,
+				26F03670187881A600559DEB /* ModelStore.m in Sources */,
+				26F0366C187881A600559DEB /* AOMDatastore.m in Sources */,
+				26F0367C187881A700559DEB /* AOMModelStore.m in Sources */,
+				26F03682187881A700559DEB /* Expenses.m in Sources */,
+				26F03684187881A700559DEB /* FLELedger.m in Sources */,
+				26F03686187881A700559DEB /* Periods.m in Sources */,
+				26F03672187881A600559DEB /* Role.m in Sources */,
 				26F036341878544A00559DEB /* FlatLedgerTests.m in Sources */,
+				26F0366E187881A600559DEB /* MemberModel.m in Sources */,
+				26F0366A187881A600559DEB /* AOMAbstractClientDataModel.m in Sources */,
+				26F03678187881A700559DEB /* DataStore.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -395,6 +583,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"/Volumes/Macintosh\\ HD/Users/julianruppel/Xcode\\ Projects/FlatLedger/com/apiomat/frontend/basics",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "FlatLedger/FlatLedger-Prefix.pch";
 				INFOPLIST_FILE = "FlatLedger/FlatLedger-Info.plist";
@@ -408,6 +600,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"/Volumes/Macintosh\\ HD/Users/julianruppel/Xcode\\ Projects/FlatLedger/com/apiomat/frontend/basics",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "FlatLedger/FlatLedger-Prefix.pch";
 				INFOPLIST_FILE = "FlatLedger/FlatLedger-Info.plist";
@@ -425,6 +621,7 @@
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
 					"$(DEVELOPER_FRAMEWORKS_DIR)",
+					"/Volumes/Macintosh\\ HD/Users/julianruppel/Xcode\\ Projects/FlatLedger/com/apiomat/frontend/basics",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "FlatLedger/FlatLedger-Prefix.pch";
@@ -448,6 +645,7 @@
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
 					"$(DEVELOPER_FRAMEWORKS_DIR)",
+					"/Volumes/Macintosh\\ HD/Users/julianruppel/Xcode\\ Projects/FlatLedger/com/apiomat/frontend/basics",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "FlatLedger/FlatLedger-Prefix.pch";
