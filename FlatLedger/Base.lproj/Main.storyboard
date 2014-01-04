@@ -8,7 +8,7 @@
         <scene sceneID="tVy-T9-CQ9">
             <objects>
                 <tableViewController id="XQt-L8-nnT" sceneMemberID="viewController">
-                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="clT-XD-qnd">
+                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="clT-XD-qnd" customClass="FLELedgerTableViewCOntroller">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -62,10 +62,10 @@
             </objects>
             <point key="canvasLocation" x="-5" y="64"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Ledger Navigation Controller-->
         <scene sceneID="Ieu-XW-mjf">
             <objects>
-                <navigationController definesPresentationContext="YES" id="CZy-os-CF3" sceneMemberID="viewController">
+                <navigationController definesPresentationContext="YES" id="CZy-os-CF3" customClass="FLELedgerNavigationController" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="FVa-t2-oFj">
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -81,7 +81,7 @@
         <scene sceneID="VgW-fR-Quf">
             <objects>
                 <tableViewController title="Master" id="pGg-6v-bdr" customClass="FLEMasterViewController" sceneMemberID="viewController">
-                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="mLL-gJ-YKr">
+                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="mLL-gJ-YKr" customClass="FLEPeriodTableViewController">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -148,10 +148,10 @@
             </objects>
             <point key="canvasLocation" x="459" y="64"/>
         </scene>
-        <!--Table View Controller - New Expense-->
+        <!--Create Expense Table View Controller - New Expense-->
         <scene sceneID="ga2-fa-cnW">
             <objects>
-                <tableViewController id="EjZ-Xx-v2q" sceneMemberID="viewController">
+                <tableViewController id="EjZ-Xx-v2q" customClass="DLECreateExpenseTableViewController" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="a7d-jx-bvc">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -160,7 +160,7 @@
                             <tableViewSection headerTitle="Timestamp: dd.MMyyyy hh:mm:ss" id="YOO-ug-OYg">
                                 <cells>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="Bt1-jT-1qw">
-                                        <rect key="frame" x="0.0" y="22" width="320" height="44"/>
+                                        <rect key="frame" x="0.0" y="86" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Bt1-jT-1qw" id="GBM-Jy-y85">
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
@@ -176,7 +176,7 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="jdr-EL-pIK">
-                                        <rect key="frame" x="0.0" y="66" width="320" height="44"/>
+                                        <rect key="frame" x="0.0" y="130" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="jdr-EL-pIK" id="Rof-mO-JiB">
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
@@ -192,7 +192,7 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="cmT-oL-j3i">
-                                        <rect key="frame" x="0.0" y="110" width="320" height="44"/>
+                                        <rect key="frame" x="0.0" y="174" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="cmT-oL-j3i" id="Hft-j1-Sz8">
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
@@ -222,12 +222,12 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iQW-Ok-JtA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="985" y="-333"/>
+            <point key="canvasLocation" x="985" y="-369"/>
         </scene>
-        <!--Table View Controller - Root View Controller-->
+        <!--Startup Table View Controller - Root View Controller-->
         <scene sceneID="YGE-AB-nO4">
             <objects>
-                <tableViewController id="PUu-jo-oQv" sceneMemberID="viewController">
+                <tableViewController id="PUu-jo-oQv" customClass="FLEStartupTableViewController" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="HCw-cM-rix">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -284,7 +284,7 @@
                                 <segue destination="hL1-OT-tc0" kind="modal" id="dDe-G7-YIE"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" style="plain" id="0gf-ug-ool">
+                        <barButtonItem key="rightBarButtonItem" id="0gf-ug-ool">
                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="RWN-nt-OMo">
                                 <rect key="frame" x="233" y="5" width="71" height="33"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -303,10 +303,10 @@
             </objects>
             <point key="canvasLocation" x="985" y="751"/>
         </scene>
-        <!--Table View Controller - PayOff-->
+        <!--Pay Off Table View Controller - PayOff-->
         <scene sceneID="iVB-wr-ufo">
             <objects>
-                <tableViewController id="nWf-8J-3CA" sceneMemberID="viewController">
+                <tableViewController id="nWf-8J-3CA" customClass="FLEPayOffTableViewController" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="kXa-u8-INq">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -353,10 +353,10 @@
             </objects>
             <point key="canvasLocation" x="998" y="1518"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Pay Off Navigation Controller-->
         <scene sceneID="yiZ-Ha-f8I">
             <objects>
-                <navigationController definesPresentationContext="YES" id="Pp2-K2-OCy" sceneMemberID="viewController">
+                <navigationController definesPresentationContext="YES" id="Pp2-K2-OCy" customClass="FLEPayOffNavigationController" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="0Cm-3G-2wL">
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -368,10 +368,10 @@
             </objects>
             <point key="canvasLocation" x="464" y="1518"/>
         </scene>
-        <!--View Controller-->
+        <!--Create Ledger View Controller-->
         <scene sceneID="i9f-mT-fFA">
             <objects>
-                <viewController id="hL1-OT-tc0" sceneMemberID="viewController">
+                <viewController id="hL1-OT-tc0" customClass="FLECreateLedgerViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="0d8-fN-quk"/>
                         <viewControllerLayoutGuide type="bottom" id="1Ck-dE-DcL"/>
@@ -414,10 +414,10 @@
             </objects>
             <point key="canvasLocation" x="1619" y="751"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Startup Navigiation View Controller-->
         <scene sceneID="afs-3u-zec">
             <objects>
-                <navigationController definesPresentationContext="YES" id="JAz-q7-ddf" sceneMemberID="viewController">
+                <navigationController definesPresentationContext="YES" id="JAz-q7-ddf" customClass="FLEStartupNavigiationViewController" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="2bu-Xg-DhJ">
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -429,10 +429,10 @@
             </objects>
             <point key="canvasLocation" x="451" y="751"/>
         </scene>
-        <!--Table View Controller - Show Expense-->
+        <!--Show Expense Table View Controller - Show Expense-->
         <scene sceneID="8MI-rj-Bh4">
             <objects>
-                <tableViewController id="G2j-pI-mLj" sceneMemberID="viewController">
+                <tableViewController id="G2j-pI-mLj" customClass="FLEShowExpenseTableViewController" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="9HW-hu-gsb">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -487,6 +487,6 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="tAL-BI-fs7"/>
+        <segue reference="gXw-Qi-dnO"/>
     </inferredMetricsTieBreakers>
 </document>
