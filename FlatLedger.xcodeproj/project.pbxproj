@@ -1,0 +1,505 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		26F036001878544A00559DEB /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 26F035FF1878544A00559DEB /* Foundation.framework */; };
+		26F036021878544A00559DEB /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 26F036011878544A00559DEB /* CoreGraphics.framework */; };
+		26F036041878544A00559DEB /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 26F036031878544A00559DEB /* UIKit.framework */; };
+		26F036061878544A00559DEB /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 26F036051878544A00559DEB /* CoreData.framework */; };
+		26F0360C1878544A00559DEB /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 26F0360A1878544A00559DEB /* InfoPlist.strings */; };
+		26F0360E1878544A00559DEB /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 26F0360D1878544A00559DEB /* main.m */; };
+		26F036121878544A00559DEB /* FLEAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 26F036111878544A00559DEB /* FLEAppDelegate.m */; };
+		26F036151878544A00559DEB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 26F036131878544A00559DEB /* Main.storyboard */; };
+		26F036181878544A00559DEB /* FlatLedger.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 26F036161878544A00559DEB /* FlatLedger.xcdatamodeld */; };
+		26F0361B1878544A00559DEB /* FLEMasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 26F0361A1878544A00559DEB /* FLEMasterViewController.m */; };
+		26F0361E1878544A00559DEB /* FLEDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 26F0361D1878544A00559DEB /* FLEDetailViewController.m */; };
+		26F036201878544A00559DEB /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 26F0361F1878544A00559DEB /* Images.xcassets */; };
+		26F036271878544A00559DEB /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 26F036261878544A00559DEB /* XCTest.framework */; };
+		26F036281878544A00559DEB /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 26F035FF1878544A00559DEB /* Foundation.framework */; };
+		26F036291878544A00559DEB /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 26F036031878544A00559DEB /* UIKit.framework */; };
+		26F0362A1878544A00559DEB /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 26F036051878544A00559DEB /* CoreData.framework */; };
+		26F036321878544A00559DEB /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 26F036301878544A00559DEB /* InfoPlist.strings */; };
+		26F036341878544A00559DEB /* FlatLedgerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 26F036331878544A00559DEB /* FlatLedgerTests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		26F0362B1878544A00559DEB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 26F035F41878544A00559DEB /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 26F035FB1878544A00559DEB;
+			remoteInfo = FlatLedger;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		26F035FC1878544A00559DEB /* FlatLedger.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FlatLedger.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		26F035FF1878544A00559DEB /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		26F036011878544A00559DEB /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		26F036031878544A00559DEB /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		26F036051878544A00559DEB /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		26F036091878544A00559DEB /* FlatLedger-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "FlatLedger-Info.plist"; sourceTree = "<group>"; };
+		26F0360B1878544A00559DEB /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		26F0360D1878544A00559DEB /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		26F0360F1878544A00559DEB /* FlatLedger-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "FlatLedger-Prefix.pch"; sourceTree = "<group>"; };
+		26F036101878544A00559DEB /* FLEAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FLEAppDelegate.h; sourceTree = "<group>"; };
+		26F036111878544A00559DEB /* FLEAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FLEAppDelegate.m; sourceTree = "<group>"; };
+		26F036141878544A00559DEB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		26F036171878544A00559DEB /* FlatLedger.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = FlatLedger.xcdatamodel; sourceTree = "<group>"; };
+		26F036191878544A00559DEB /* FLEMasterViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FLEMasterViewController.h; sourceTree = "<group>"; };
+		26F0361A1878544A00559DEB /* FLEMasterViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FLEMasterViewController.m; sourceTree = "<group>"; };
+		26F0361C1878544A00559DEB /* FLEDetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FLEDetailViewController.h; sourceTree = "<group>"; };
+		26F0361D1878544A00559DEB /* FLEDetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FLEDetailViewController.m; sourceTree = "<group>"; };
+		26F0361F1878544A00559DEB /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		26F036251878544A00559DEB /* FlatLedgerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FlatLedgerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		26F036261878544A00559DEB /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		26F0362F1878544A00559DEB /* FlatLedgerTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "FlatLedgerTests-Info.plist"; sourceTree = "<group>"; };
+		26F036311878544A00559DEB /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		26F036331878544A00559DEB /* FlatLedgerTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FlatLedgerTests.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		26F035F91878544A00559DEB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				26F036021878544A00559DEB /* CoreGraphics.framework in Frameworks */,
+				26F036061878544A00559DEB /* CoreData.framework in Frameworks */,
+				26F036041878544A00559DEB /* UIKit.framework in Frameworks */,
+				26F036001878544A00559DEB /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		26F036221878544A00559DEB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				26F036271878544A00559DEB /* XCTest.framework in Frameworks */,
+				26F0362A1878544A00559DEB /* CoreData.framework in Frameworks */,
+				26F036291878544A00559DEB /* UIKit.framework in Frameworks */,
+				26F036281878544A00559DEB /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		26F035F31878544A00559DEB = {
+			isa = PBXGroup;
+			children = (
+				26F036071878544A00559DEB /* FlatLedger */,
+				26F0362D1878544A00559DEB /* FlatLedgerTests */,
+				26F035FE1878544A00559DEB /* Frameworks */,
+				26F035FD1878544A00559DEB /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		26F035FD1878544A00559DEB /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				26F035FC1878544A00559DEB /* FlatLedger.app */,
+				26F036251878544A00559DEB /* FlatLedgerTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		26F035FE1878544A00559DEB /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				26F035FF1878544A00559DEB /* Foundation.framework */,
+				26F036011878544A00559DEB /* CoreGraphics.framework */,
+				26F036031878544A00559DEB /* UIKit.framework */,
+				26F036051878544A00559DEB /* CoreData.framework */,
+				26F036261878544A00559DEB /* XCTest.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		26F036071878544A00559DEB /* FlatLedger */ = {
+			isa = PBXGroup;
+			children = (
+				26F036101878544A00559DEB /* FLEAppDelegate.h */,
+				26F036111878544A00559DEB /* FLEAppDelegate.m */,
+				26F036131878544A00559DEB /* Main.storyboard */,
+				26F036191878544A00559DEB /* FLEMasterViewController.h */,
+				26F0361A1878544A00559DEB /* FLEMasterViewController.m */,
+				26F0361C1878544A00559DEB /* FLEDetailViewController.h */,
+				26F0361D1878544A00559DEB /* FLEDetailViewController.m */,
+				26F0361F1878544A00559DEB /* Images.xcassets */,
+				26F036161878544A00559DEB /* FlatLedger.xcdatamodeld */,
+				26F036081878544A00559DEB /* Supporting Files */,
+			);
+			path = FlatLedger;
+			sourceTree = "<group>";
+		};
+		26F036081878544A00559DEB /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				26F036091878544A00559DEB /* FlatLedger-Info.plist */,
+				26F0360A1878544A00559DEB /* InfoPlist.strings */,
+				26F0360D1878544A00559DEB /* main.m */,
+				26F0360F1878544A00559DEB /* FlatLedger-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		26F0362D1878544A00559DEB /* FlatLedgerTests */ = {
+			isa = PBXGroup;
+			children = (
+				26F036331878544A00559DEB /* FlatLedgerTests.m */,
+				26F0362E1878544A00559DEB /* Supporting Files */,
+			);
+			path = FlatLedgerTests;
+			sourceTree = "<group>";
+		};
+		26F0362E1878544A00559DEB /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				26F0362F1878544A00559DEB /* FlatLedgerTests-Info.plist */,
+				26F036301878544A00559DEB /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		26F035FB1878544A00559DEB /* FlatLedger */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 26F036371878544A00559DEB /* Build configuration list for PBXNativeTarget "FlatLedger" */;
+			buildPhases = (
+				26F035F81878544A00559DEB /* Sources */,
+				26F035F91878544A00559DEB /* Frameworks */,
+				26F035FA1878544A00559DEB /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = FlatLedger;
+			productName = FlatLedger;
+			productReference = 26F035FC1878544A00559DEB /* FlatLedger.app */;
+			productType = "com.apple.product-type.application";
+		};
+		26F036241878544A00559DEB /* FlatLedgerTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 26F0363A1878544A00559DEB /* Build configuration list for PBXNativeTarget "FlatLedgerTests" */;
+			buildPhases = (
+				26F036211878544A00559DEB /* Sources */,
+				26F036221878544A00559DEB /* Frameworks */,
+				26F036231878544A00559DEB /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				26F0362C1878544A00559DEB /* PBXTargetDependency */,
+			);
+			name = FlatLedgerTests;
+			productName = FlatLedgerTests;
+			productReference = 26F036251878544A00559DEB /* FlatLedgerTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		26F035F41878544A00559DEB /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = FLE;
+				LastUpgradeCheck = 0500;
+				ORGANIZATIONNAME = "Julian Ruppel";
+				TargetAttributes = {
+					26F036241878544A00559DEB = {
+						TestTargetID = 26F035FB1878544A00559DEB;
+					};
+				};
+			};
+			buildConfigurationList = 26F035F71878544A00559DEB /* Build configuration list for PBXProject "FlatLedger" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 26F035F31878544A00559DEB;
+			productRefGroup = 26F035FD1878544A00559DEB /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				26F035FB1878544A00559DEB /* FlatLedger */,
+				26F036241878544A00559DEB /* FlatLedgerTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		26F035FA1878544A00559DEB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				26F036201878544A00559DEB /* Images.xcassets in Resources */,
+				26F0360C1878544A00559DEB /* InfoPlist.strings in Resources */,
+				26F036151878544A00559DEB /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		26F036231878544A00559DEB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				26F036321878544A00559DEB /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		26F035F81878544A00559DEB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				26F036121878544A00559DEB /* FLEAppDelegate.m in Sources */,
+				26F0360E1878544A00559DEB /* main.m in Sources */,
+				26F0361B1878544A00559DEB /* FLEMasterViewController.m in Sources */,
+				26F0361E1878544A00559DEB /* FLEDetailViewController.m in Sources */,
+				26F036181878544A00559DEB /* FlatLedger.xcdatamodeld in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		26F036211878544A00559DEB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				26F036341878544A00559DEB /* FlatLedgerTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		26F0362C1878544A00559DEB /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 26F035FB1878544A00559DEB /* FlatLedger */;
+			targetProxy = 26F0362B1878544A00559DEB /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		26F0360A1878544A00559DEB /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				26F0360B1878544A00559DEB /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		26F036131878544A00559DEB /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				26F036141878544A00559DEB /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		26F036301878544A00559DEB /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				26F036311878544A00559DEB /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		26F036351878544A00559DEB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		26F036361878544A00559DEB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		26F036381878544A00559DEB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "FlatLedger/FlatLedger-Prefix.pch";
+				INFOPLIST_FILE = "FlatLedger/FlatLedger-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		26F036391878544A00559DEB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "FlatLedger/FlatLedger-Prefix.pch";
+				INFOPLIST_FILE = "FlatLedger/FlatLedger-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		26F0363B1878544A00559DEB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/FlatLedger.app/FlatLedger";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "FlatLedger/FlatLedger-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "FlatLedgerTests/FlatLedgerTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		26F0363C1878544A00559DEB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/FlatLedger.app/FlatLedger";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "FlatLedger/FlatLedger-Prefix.pch";
+				INFOPLIST_FILE = "FlatLedgerTests/FlatLedgerTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		26F035F71878544A00559DEB /* Build configuration list for PBXProject "FlatLedger" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				26F036351878544A00559DEB /* Debug */,
+				26F036361878544A00559DEB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		26F036371878544A00559DEB /* Build configuration list for PBXNativeTarget "FlatLedger" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				26F036381878544A00559DEB /* Debug */,
+				26F036391878544A00559DEB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		26F0363A1878544A00559DEB /* Build configuration list for PBXNativeTarget "FlatLedgerTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				26F0363B1878544A00559DEB /* Debug */,
+				26F0363C1878544A00559DEB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		26F036161878544A00559DEB /* FlatLedger.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				26F036171878544A00559DEB /* FlatLedger.xcdatamodel */,
+			);
+			currentVersion = 26F036171878544A00559DEB /* FlatLedger.xcdatamodel */;
+			path = FlatLedger.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 26F035F41878544A00559DEB /* Project object */;
+}
