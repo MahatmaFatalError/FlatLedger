@@ -276,6 +276,7 @@
                         </sections>
                     </tableView>
                     <navigationItem key="navigationItem" title="PayOff!" id="r1o-74-M7g">
+                        <barButtonItem key="backBarButtonItem" title="back" id="wzJ-5p-Kdn"/>
                         <barButtonItem key="leftBarButtonItem" title="Signup" id="nLr-FA-Ohh">
                             <connections>
                                 <segue destination="hL1-OT-tc0" kind="push" identifier="ModalSignupToCreateLedger" id="M7A-oV-FQj"/>

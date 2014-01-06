@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		267AF002187B3F64009AC164 /* YAJLiOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 267AF001187B3F64009AC164 /* YAJLiOS.framework */; };
 		26F036001878544A00559DEB /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 26F035FF1878544A00559DEB /* Foundation.framework */; };
 		26F036021878544A00559DEB /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 26F036011878544A00559DEB /* CoreGraphics.framework */; };
 		26F036041878544A00559DEB /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 26F036031878544A00559DEB /* UIKit.framework */; };
@@ -57,7 +58,6 @@
 		26F03687187881A700559DEB /* Status.m in Sources */ = {isa = PBXBuildFile; fileRef = 26F03666187881A600559DEB /* Status.m */; };
 		26F03688187881A700559DEB /* Status.m in Sources */ = {isa = PBXBuildFile; fileRef = 26F03666187881A600559DEB /* Status.m */; };
 		26F0368B187AD1D300559DEB /* FLEStartupTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 26F0368A187AD1D300559DEB /* FLEStartupTableViewController.m */; };
-		B9919EC8187AE8D000AAE37E /* YAJLiOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B9919EC7187AE8D000AAE37E /* YAJLiOS.framework */; };
 		B9919ECB187AE92B00AAE37E /* FLEStartupNavigiationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B9919ECA187AE92B00AAE37E /* FLEStartupNavigiationViewController.m */; };
 		B9919ECE187AF22E00AAE37E /* FLELedgerTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B9919ECD187AF22E00AAE37E /* FLELedgerTableViewController.m */; };
 		B9919ED1187AF47200AAE37E /* FLELedgerNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = B9919ED0187AF47200AAE37E /* FLELedgerNavigationController.m */; };
@@ -75,6 +75,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		267AF001187B3F64009AC164 /* YAJLiOS.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = YAJLiOS.framework; sourceTree = "<group>"; };
 		26F035FC1878544A00559DEB /* FlatLedger.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FlatLedger.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		26F035FF1878544A00559DEB /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		26F036011878544A00559DEB /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -133,7 +134,6 @@
 		26F03666187881A600559DEB /* Status.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Status.m; sourceTree = "<group>"; };
 		26F03689187AD1D300559DEB /* FLEStartupTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FLEStartupTableViewController.h; sourceTree = "<group>"; };
 		26F0368A187AD1D300559DEB /* FLEStartupTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FLEStartupTableViewController.m; sourceTree = "<group>"; };
-		B9919EC7187AE8D000AAE37E /* YAJLiOS.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = YAJLiOS.framework; sourceTree = "<group>"; };
 		B9919EC9187AE92B00AAE37E /* FLEStartupNavigiationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FLEStartupNavigiationViewController.h; sourceTree = "<group>"; };
 		B9919ECA187AE92B00AAE37E /* FLEStartupNavigiationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FLEStartupNavigiationViewController.m; sourceTree = "<group>"; };
 		B9919ECC187AF22E00AAE37E /* FLELedgerTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FLELedgerTableViewController.h; sourceTree = "<group>"; };
@@ -152,7 +152,7 @@
 				26F036021878544A00559DEB /* CoreGraphics.framework in Frameworks */,
 				26F036061878544A00559DEB /* CoreData.framework in Frameworks */,
 				26F036041878544A00559DEB /* UIKit.framework in Frameworks */,
-				B9919EC8187AE8D000AAE37E /* YAJLiOS.framework in Frameworks */,
+				267AF002187B3F64009AC164 /* YAJLiOS.framework in Frameworks */,
 				26F036001878544A00559DEB /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -297,7 +297,7 @@
 		26F03647187881A600559DEB /* basics */ = {
 			isa = PBXGroup;
 			children = (
-				B9919EC7187AE8D000AAE37E /* YAJLiOS.framework */,
+				267AF001187B3F64009AC164 /* YAJLiOS.framework */,
 				26F03648187881A600559DEB /* MemberModel.h */,
 				26F03649187881A600559DEB /* MemberModel.m */,
 				26F0364A187881A600559DEB /* ModelStore.h */,
@@ -612,6 +612,7 @@
 					"$(inherited)",
 					FlatLedger/com/apiomat/frontend/basics,
 					"/Users/julian/Xcode\\ Projects/FlatLedger/com/apiomat/frontend/basics",
+					"/Volumes/Macintosh\\ HD/Users/julianruppel/Xcode\\ Projects/FlatLedger/com/apiomat/frontend/basics",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "FlatLedger/FlatLedger-Prefix.pch";
@@ -630,6 +631,7 @@
 					"$(inherited)",
 					FlatLedger/com/apiomat/frontend/basics,
 					"/Users/julian/Xcode\\ Projects/FlatLedger/com/apiomat/frontend/basics",
+					"/Volumes/Macintosh\\ HD/Users/julianruppel/Xcode\\ Projects/FlatLedger/com/apiomat/frontend/basics",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "FlatLedger/FlatLedger-Prefix.pch";
