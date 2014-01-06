@@ -59,6 +59,7 @@
 		26F03686187881A700559DEB /* Periods.m in Sources */ = {isa = PBXBuildFile; fileRef = 26F03664187881A600559DEB /* Periods.m */; };
 		26F03687187881A700559DEB /* Status.m in Sources */ = {isa = PBXBuildFile; fileRef = 26F03666187881A600559DEB /* Status.m */; };
 		26F03688187881A700559DEB /* Status.m in Sources */ = {isa = PBXBuildFile; fileRef = 26F03666187881A600559DEB /* Status.m */; };
+		26F0368B187AD1D300559DEB /* FLEStartupTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 26F0368A187AD1D300559DEB /* FLEStartupTableViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -131,6 +132,8 @@
 		26F03664187881A600559DEB /* Periods.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Periods.m; sourceTree = "<group>"; };
 		26F03665187881A600559DEB /* Status.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Status.h; sourceTree = "<group>"; };
 		26F03666187881A600559DEB /* Status.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Status.m; sourceTree = "<group>"; };
+		26F03689187AD1D300559DEB /* FLEStartupTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FLEStartupTableViewController.h; sourceTree = "<group>"; };
+		26F0368A187AD1D300559DEB /* FLEStartupTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FLEStartupTableViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -206,6 +209,8 @@
 				26F0361F1878544A00559DEB /* Images.xcassets */,
 				26F036161878544A00559DEB /* FlatLedger.xcdatamodeld */,
 				26F036081878544A00559DEB /* Supporting Files */,
+				26F03689187AD1D300559DEB /* FLEStartupTableViewController.h */,
+				26F0368A187AD1D300559DEB /* FLEStartupTableViewController.m */,
 			);
 			path = FlatLedger;
 			sourceTree = "<group>";
@@ -421,6 +426,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				26F03667187881A600559DEB /* AbstractClientDataModel.m in Sources */,
+				26F0368B187AD1D300559DEB /* FLEStartupTableViewController.m in Sources */,
 				26F03671187881A600559DEB /* Role.m in Sources */,
 				26F036121878544A00559DEB /* FLEAppDelegate.m in Sources */,
 				26F0360E1878544A00559DEB /* main.m in Sources */,
