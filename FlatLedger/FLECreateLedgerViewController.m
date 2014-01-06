@@ -47,7 +47,16 @@
     
     /* configure AOMDatastore with user credentials */
     [AOMDatastore configureWithUrl:baseUrl andApiKey:apiKey andUsername:[user userName] andPassword:[user password]];
-    [user save];
+    [user saveAsyncWithBlock:^(NSError *error) {
+        FLELedger* ledger = [FLELedger new];
+        [ledger setName:ledgerField.text];
+        [ledger saveAsyncWithBlock:^(NSError *error) {
+            [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"isLoggedin"];
+            [self dismissViewControllerAnimated:YES completion:nil];
+        }];
+    }];
+    
+    
     
 }
 

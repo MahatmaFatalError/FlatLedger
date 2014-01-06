@@ -8,7 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
-@interface FLECreateLedgerViewController : UIViewController
+@interface FLECreateLedgerViewController : UIViewController{
+    IBOutlet UITextField* ledgerField;
+}
 
 @property NSString* email;
 @property NSString* password;

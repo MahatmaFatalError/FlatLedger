@@ -227,7 +227,7 @@
             </objects>
             <point key="canvasLocation" x="985" y="-369"/>
         </scene>
-        <!--Startup Table View Controller - Root View Controller-->
+        <!--Startup Table View Controller - PayOff!-->
         <scene sceneID="YGE-AB-nO4">
             <objects>
                 <tableViewController id="PUu-jo-oQv" customClass="FLEStartupTableViewController" sceneMemberID="viewController">
@@ -274,10 +274,10 @@
                             </tableViewSection>
                         </sections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Root View Controller" id="r1o-74-M7g">
+                    <navigationItem key="navigationItem" title="PayOff!" id="r1o-74-M7g">
                         <barButtonItem key="leftBarButtonItem" title="Signup" id="nLr-FA-Ohh">
                             <connections>
-                                <segue destination="hL1-OT-tc0" kind="modal" identifier="ModalSignupToCreateLedger" id="M7A-oV-FQj"/>
+                                <segue destination="hL1-OT-tc0" kind="push" identifier="ModalSignupToCreateLedger" id="M7A-oV-FQj"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Login" id="Isg-Rb-vtO">
@@ -405,6 +405,9 @@
                         <barButtonItem title="Skip, I'm waiting for an Invitation" id="VNH-lo-5uO"/>
                     </toolbarItems>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="ledgerField" destination="Uor-oj-XIi" id="zg3-Oe-FH1"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RkC-oc-dmQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
