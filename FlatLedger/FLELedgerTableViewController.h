@@ -1,5 +1,5 @@
 //
-//  FLELedgerNavigationController.h
+//  FLELedgerTableViewController.h
 //  FlatLedger
 //
 //  Created by Julian Ruppel on 06.01.14.
@@ -8,6 +8,5 @@
 
 #import <UIKit/UIKit.h>
 
-@interface FLELedgerNavigationController : UINavigationController
-
+@interface FLELedgerTableViewController : UITableViewController
 @end

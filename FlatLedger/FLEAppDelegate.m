@@ -20,8 +20,11 @@
 {
     // Override point for customization after application launch.
 	UINavigationController *navigationController = (UINavigationController *)self.window.rootViewController;
-	FLELedgerNavigationController *controller = (FLELedgerNavigationController *)navigationController.topViewController;
-	controller.managedObjectContext = self.managedObjectContext;
+	//FLELedgerNavigationController *controller = (FLELedgerNavigationController *)navigationController.topViewController;
+	//controller.managedObjectContext = self.managedObjectContext;
+    
+    //TODO weiche ob eingelogt oder nicht, dementsprechend auf New Expense oder Login Screen
+    
     return YES;
 }
 							

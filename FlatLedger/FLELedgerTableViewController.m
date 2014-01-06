@@ -1,19 +1,18 @@
 //
-//  FLEStartupTableViewController.m
+//  FLELedgerTableViewController.m
 //  FlatLedger
 //
 //  Created by Julian Ruppel on 06.01.14.
 //  Copyright (c) 2014 Julian Ruppel. All rights reserved.
 //
 
-#import "FLEStartupTableViewController.h"
-#import "FLECreateLedgerViewController.h"
+#import "FLELedgerTableViewController.h"
 
-@interface FLEStartupTableViewController ()
+@interface FLELedgerTableViewController ()
 
 @end
 
-@implementation FLEStartupTableViewController
+@implementation FLELedgerTableViewController
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
@@ -40,45 +39,32 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-- (IBAction)loginPressed:(id)sender {
-    
-    [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"isLoggedin"];
-    
-    [self dismissViewControllerAnimated:YES completion:nil];
-}
-
-- (void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
-    if ([segue.identifier isEqualToString:@"ModalSignupToCreateLedger"] ) {
-        [((FLECreateLedgerViewController*)segue.destinationViewController) setEmail:emailField.text];
-        [((FLECreateLedgerViewController*)segue.destinationViewController) setPassword:passwordField.text];
-    }
-}
 
 #pragma mark - Table view data source
-//
-//- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
-//{
-//#warning Potentially incomplete method implementation.
-//    // Return the number of sections.
-//    return 1;
-//}
-//
-//- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
-//{
-//#warning Incomplete method implementation.
-//    // Return the number of rows in the section.
-//    return 2;
-//}
-//
-//- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
-//{
-//    static NSString *CellIdentifier = @"EmailCell";
-//    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
-//    
-//    // Configure the cell...
-//    
-//    return cell;
-//}
+
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
+{
+#warning Potentially incomplete method implementation.
+    // Return the number of sections.
+    return 0;
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+#warning Incomplete method implementation.
+    // Return the number of rows in the section.
+    return 0;
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    static NSString *CellIdentifier = @"Cell";
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
+    
+    // Configure the cell...
+    
+    return cell;
+}
 
 /*
 // Override to support conditional editing of the table view.

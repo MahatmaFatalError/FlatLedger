@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="4514" systemVersion="13B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="PUu-jo-oQv">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="4514" systemVersion="13B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="CZy-os-CF3">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3747"/>
     </dependencies>
     <scenes>
-        <!--Table View Controller - Ledger-->
+        <!--Ledger Table View Controller - Ledger-->
         <scene sceneID="tVy-T9-CQ9">
             <objects>
-                <tableViewController id="XQt-L8-nnT" sceneMemberID="viewController">
-                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="clT-XD-qnd" customClass="FLELedgerTableViewCOntroller">
+                <tableViewController id="XQt-L8-nnT" customClass="FLELedgerTableViewController" sceneMemberID="viewController">
+                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="clT-XD-qnd">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -57,7 +57,6 @@
                                 <segue destination="PUu-jo-oQv" kind="modal" identifier="ModalLogoutToStart" id="amh-l5-fVC"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="ZED-id-EWX"/>
                     </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                 </tableViewController>
@@ -74,6 +73,7 @@
                     </navigationBar>
                     <connections>
                         <segue destination="XQt-L8-nnT" kind="relationship" relationship="rootViewController" id="B5O-KW-EJC"/>
+                        <segue destination="JAz-q7-ddf" kind="modal" identifier="ModalToLogin" id="guE-Oa-yh4"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Swu-Lc-bjm" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -163,7 +163,7 @@
                             <tableViewSection headerTitle="Timestamp: dd.MMyyyy hh:mm:ss" id="YOO-ug-OYg">
                                 <cells>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="ItemCel" id="Bt1-jT-1qw">
-                                        <rect key="frame" x="0.0" y="22" width="320" height="44"/>
+                                        <rect key="frame" x="0.0" y="86" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Bt1-jT-1qw" id="GBM-Jy-y85">
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
@@ -179,7 +179,7 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="PricePerUnitCell" id="jdr-EL-pIK">
-                                        <rect key="frame" x="0.0" y="66" width="320" height="44"/>
+                                        <rect key="frame" x="0.0" y="130" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="jdr-EL-pIK" id="Rof-mO-JiB">
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
@@ -195,7 +195,7 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="QuantityCell" id="cmT-oL-j3i">
-                                        <rect key="frame" x="0.0" y="110" width="320" height="44"/>
+                                        <rect key="frame" x="0.0" y="174" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="cmT-oL-j3i" id="Hft-j1-Sz8">
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
@@ -239,7 +239,7 @@
                             <tableViewSection footerTitle="Once you're signed in properly, you can switch on automatical login within the App Settings" id="ju4-l0-4vM">
                                 <cells>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="EmailCell" id="Eya-zR-yaj">
-                                        <rect key="frame" x="0.0" y="35" width="320" height="44"/>
+                                        <rect key="frame" x="0.0" y="99" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Eya-zR-yaj" id="vmG-Cj-8c7">
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
@@ -255,7 +255,7 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="PasswordCell" id="knm-I9-MHt">
-                                        <rect key="frame" x="0.0" y="79" width="320" height="44"/>
+                                        <rect key="frame" x="0.0" y="143" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="knm-I9-MHt" id="Su9-kC-mcr">
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
@@ -275,32 +275,21 @@
                         </sections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Root View Controller" id="r1o-74-M7g">
-                        <barButtonItem key="leftBarButtonItem" style="plain" id="9sp-A4-nHG">
-                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="UQb-EW-cTr">
-                                <rect key="frame" x="16" y="5" width="71" height="33"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Signup">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                            </button>
+                        <barButtonItem key="leftBarButtonItem" title="Signup" id="nLr-FA-Ohh">
                             <connections>
-                                <segue destination="hL1-OT-tc0" kind="modal" identifier="ModalSignupToCreateLedger" id="dDe-G7-YIE"/>
+                                <segue destination="hL1-OT-tc0" kind="modal" identifier="ModalSignupToCreateLedger" id="M7A-oV-FQj"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" id="0gf-ug-ool">
-                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="RWN-nt-OMo">
-                                <rect key="frame" x="233" y="5" width="71" height="33"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                <state key="normal" title="Login">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                            </button>
+                        <barButtonItem key="rightBarButtonItem" title="Login" id="Isg-Rb-vtO">
                             <connections>
-                                <segue destination="EjZ-Xx-v2q" kind="modal" identifier="ModalStartupToNewExpense" id="tAL-BI-fs7"/>
+                                <action selector="loginPressed:" destination="PUu-jo-oQv" id="TBU-cd-m8N"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="emailField" destination="6IH-w1-oPf" id="Fkj-q2-QE7"/>
+                        <outlet property="passwordField" destination="eJq-aL-HkN" id="t2P-sw-MaV"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dGH-F0-cti" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -390,6 +379,9 @@
                                 <state key="normal" title="Create ledger">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="createLedgerPressed:" destination="hL1-OT-tc0" eventType="touchUpInside" id="DCK-f3-bHK"/>
+                                </connections>
                             </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Give your ledger a name" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Uor-oj-XIi">
                                 <rect key="frame" x="20" y="142" width="280" height="30"/>
@@ -425,10 +417,13 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="2bu-Xg-DhJ">
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
+                    <connections>
+                        <segue destination="PUu-jo-oQv" kind="relationship" relationship="rootViewController" id="x56-MK-2xT"/>
+                    </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gCP-84-PeN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-83" y="938"/>
+            <point key="canvasLocation" x="115" y="800"/>
         </scene>
         <!--Show Expense Table View Controller - Show Expense-->
         <scene sceneID="8MI-rj-Bh4">
@@ -489,6 +484,6 @@
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
         <segue reference="B5O-KW-EJC"/>
-        <segue reference="tAL-BI-fs7"/>
+        <segue reference="x56-MK-2xT"/>
     </inferredMetricsTieBreakers>
 </document>

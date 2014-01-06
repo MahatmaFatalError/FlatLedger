@@ -1,5 +1,5 @@
 //
-//  FLELedgerNavigationController.h
+//  FLECreateLedgerViewController.h
 //  FlatLedger
 //
 //  Created by Julian Ruppel on 06.01.14.
@@ -8,6 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
-@interface FLELedgerNavigationController : UINavigationController
+@interface FLECreateLedgerViewController : UIViewController
+
+@property NSString* email;
+@property NSString* password;
 
 @end

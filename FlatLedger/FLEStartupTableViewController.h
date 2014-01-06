@@ -8,6 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
-@interface FLEStartupTableViewController : UITableViewController
+@interface FLEStartupTableViewController : UITableViewController {
+    IBOutlet UITextField* emailField;
+    IBOutlet UITextField* passwordField;
+}
+
 
 @end
