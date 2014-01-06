@@ -70,6 +70,7 @@
                 <navigationController title="LedgerViewController" definesPresentationContext="YES" id="CZy-os-CF3" customClass="FLELedgerNavigationController" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="FVa-t2-oFj">
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" red="0.43620505501453388" green="0.52438154514205615" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     </navigationBar>
                     <connections>
                         <segue destination="XQt-L8-nnT" kind="relationship" relationship="rootViewController" id="B5O-KW-EJC"/>
