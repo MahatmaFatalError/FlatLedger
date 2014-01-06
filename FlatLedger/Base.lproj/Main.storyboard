@@ -239,7 +239,7 @@
                             <tableViewSection footerTitle="Once you're signed in properly, you can switch on automatical login within the App Settings" id="ju4-l0-4vM">
                                 <cells>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="EmailCell" id="Eya-zR-yaj">
-                                        <rect key="frame" x="0.0" y="99" width="320" height="44"/>
+                                        <rect key="frame" x="0.0" y="35" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Eya-zR-yaj" id="vmG-Cj-8c7">
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
@@ -255,7 +255,7 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="PasswordCell" id="knm-I9-MHt">
-                                        <rect key="frame" x="0.0" y="143" width="320" height="44"/>
+                                        <rect key="frame" x="0.0" y="79" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="knm-I9-MHt" id="Su9-kC-mcr">
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
@@ -487,6 +487,6 @@
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
         <segue reference="B5O-KW-EJC"/>
-        <segue reference="x56-MK-2xT"/>
+        <segue reference="amh-l5-fVC"/>
     </inferredMetricsTieBreakers>
 </document>

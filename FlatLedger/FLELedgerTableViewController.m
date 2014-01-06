@@ -32,6 +32,13 @@
  
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    
+    
+    // initiale aktive periode anlegen mit jetzigem Timestamp als Startdatum und Enddatum ist offen
+    //parallel zu ledger anlegen
+    
+    
+    [self.tableView reloadData];
 }
 
 - (void)didReceiveMemoryWarning
