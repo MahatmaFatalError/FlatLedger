@@ -8,7 +8,7 @@
 
 #import "FLEAppDelegate.h"
 
-#import "FLEMasterViewController.h"
+#import "FLELedgerNavigationController.h"
 
 @implementation FLEAppDelegate
 
@@ -20,7 +20,7 @@
 {
     // Override point for customization after application launch.
 	UINavigationController *navigationController = (UINavigationController *)self.window.rootViewController;
-	FLEMasterViewController *controller = (FLEMasterViewController *)navigationController.topViewController;
+	FLELedgerNavigationController *controller = (FLELedgerNavigationController *)navigationController.topViewController;
 	controller.managedObjectContext = self.managedObjectContext;
     return YES;
 }

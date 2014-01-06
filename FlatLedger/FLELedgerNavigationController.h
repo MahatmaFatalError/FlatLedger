@@ -10,7 +10,7 @@
 
 #import <CoreData/CoreData.h>
 
-@interface FLEMasterViewController : UITableViewController <NSFetchedResultsControllerDelegate>
+@interface FLELedgerNavigationController : UITableViewController <NSFetchedResultsControllerDelegate>
 
 @property (strong, nonatomic) NSFetchedResultsController *fetchedResultsController;
 @property (strong, nonatomic) NSManagedObjectContext *managedObjectContext;

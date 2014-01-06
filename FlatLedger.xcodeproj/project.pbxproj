@@ -16,7 +16,7 @@
 		26F036121878544A00559DEB /* FLEAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 26F036111878544A00559DEB /* FLEAppDelegate.m */; };
 		26F036151878544A00559DEB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 26F036131878544A00559DEB /* Main.storyboard */; };
 		26F036181878544A00559DEB /* FlatLedger.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 26F036161878544A00559DEB /* FlatLedger.xcdatamodeld */; };
-		26F0361B1878544A00559DEB /* FLEMasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 26F0361A1878544A00559DEB /* FLEMasterViewController.m */; };
+		26F0361B1878544A00559DEB /* FLELedgerNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 26F0361A1878544A00559DEB /* FLELedgerNavigationController.m */; };
 		26F0361E1878544A00559DEB /* FLEDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 26F0361D1878544A00559DEB /* FLEDetailViewController.m */; };
 		26F036201878544A00559DEB /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 26F0361F1878544A00559DEB /* Images.xcassets */; };
 		26F036271878544A00559DEB /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 26F036261878544A00559DEB /* XCTest.framework */; };
@@ -85,8 +85,8 @@
 		26F036111878544A00559DEB /* FLEAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FLEAppDelegate.m; sourceTree = "<group>"; };
 		26F036141878544A00559DEB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		26F036171878544A00559DEB /* FlatLedger.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = FlatLedger.xcdatamodel; sourceTree = "<group>"; };
-		26F036191878544A00559DEB /* FLEMasterViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FLEMasterViewController.h; sourceTree = "<group>"; };
-		26F0361A1878544A00559DEB /* FLEMasterViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FLEMasterViewController.m; sourceTree = "<group>"; };
+		26F036191878544A00559DEB /* FLELedgerNavigationController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FLELedgerNavigationController.h; sourceTree = "<group>"; };
+		26F0361A1878544A00559DEB /* FLELedgerNavigationController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FLELedgerNavigationController.m; sourceTree = "<group>"; };
 		26F0361C1878544A00559DEB /* FLEDetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FLEDetailViewController.h; sourceTree = "<group>"; };
 		26F0361D1878544A00559DEB /* FLEDetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FLEDetailViewController.m; sourceTree = "<group>"; };
 		26F0361F1878544A00559DEB /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
@@ -199,8 +199,8 @@
 				26F036101878544A00559DEB /* FLEAppDelegate.h */,
 				26F036111878544A00559DEB /* FLEAppDelegate.m */,
 				26F036131878544A00559DEB /* Main.storyboard */,
-				26F036191878544A00559DEB /* FLEMasterViewController.h */,
-				26F0361A1878544A00559DEB /* FLEMasterViewController.m */,
+				26F036191878544A00559DEB /* FLELedgerNavigationController.h */,
+				26F0361A1878544A00559DEB /* FLELedgerNavigationController.m */,
 				26F0361C1878544A00559DEB /* FLEDetailViewController.h */,
 				26F0361D1878544A00559DEB /* FLEDetailViewController.m */,
 				26F0361F1878544A00559DEB /* Images.xcassets */,
@@ -427,7 +427,7 @@
 				26F0367D187881A700559DEB /* NSString+Base64.m in Sources */,
 				26F0366D187881A600559DEB /* MemberModel.m in Sources */,
 				26F03681187881A700559DEB /* Expenses.m in Sources */,
-				26F0361B1878544A00559DEB /* FLEMasterViewController.m in Sources */,
+				26F0361B1878544A00559DEB /* FLELedgerNavigationController.m in Sources */,
 				26F0361E1878544A00559DEB /* FLEDetailViewController.m in Sources */,
 				26F03677187881A700559DEB /* DataStore.m in Sources */,
 				26F03685187881A700559DEB /* Periods.m in Sources */,
@@ -675,6 +675,7 @@
 				26F036391878544A00559DEB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		26F0363A1878544A00559DEB /* Build configuration list for PBXNativeTarget "FlatLedgerTests" */ = {
 			isa = XCConfigurationList;
@@ -683,6 +684,7 @@
 				26F0363C1878544A00559DEB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 

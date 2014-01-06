@@ -6,15 +6,15 @@
 //  Copyright (c) 2014 Julian Ruppel. All rights reserved.
 //
 
-#import "FLEMasterViewController.h"
+#import "FLELedgerNavigationController.h"
 
 #import "FLEDetailViewController.h"
 
-@interface FLEMasterViewController ()
+@interface FLELedgerNavigationController ()
 - (void)configureCell:(UITableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath;
 @end
 
-@implementation FLEMasterViewController
+@implementation FLELedgerNavigationController
 
 - (void)awakeFromNib
 {
