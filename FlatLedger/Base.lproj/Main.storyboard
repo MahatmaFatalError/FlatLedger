@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="4514" systemVersion="13B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="CZy-os-CF3">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="4514" systemVersion="13B3116" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="CZy-os-CF3">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3747"/>
     </dependencies>
@@ -52,9 +52,12 @@
                                 <state key="normal" title="Logout">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="performLogout:" destination="XQt-L8-nnT" eventType="touchUpInside" id="0sq-NN-9r9"/>
+                                </connections>
                             </button>
                             <connections>
-                                <segue destination="PUu-jo-oQv" kind="modal" identifier="ModalLogoutToStart" id="amh-l5-fVC"/>
+                                <segue destination="PUu-jo-oQv" kind="push" identifier="ModalLogout" id="5Z8-Pu-Paq"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -240,7 +243,7 @@
                             <tableViewSection footerTitle="Once you're signed in properly, you can switch on automatical login within the App Settings" id="ju4-l0-4vM">
                                 <cells>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="EmailCell" id="Eya-zR-yaj">
-                                        <rect key="frame" x="0.0" y="35" width="320" height="44"/>
+                                        <rect key="frame" x="0.0" y="99" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Eya-zR-yaj" id="vmG-Cj-8c7">
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
@@ -256,7 +259,7 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="PasswordCell" id="knm-I9-MHt">
-                                        <rect key="frame" x="0.0" y="79" width="320" height="44"/>
+                                        <rect key="frame" x="0.0" y="143" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="knm-I9-MHt" id="Su9-kC-mcr">
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
@@ -284,6 +287,7 @@
                         <barButtonItem key="rightBarButtonItem" title="Login" id="Isg-Rb-vtO">
                             <connections>
                                 <action selector="loginPressed:" destination="PUu-jo-oQv" id="TBU-cd-m8N"/>
+                                <segue destination="CZy-os-CF3" kind="modal" identifier="ModalToLedger" id="zEe-ja-yI3"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -405,6 +409,7 @@
                     <toolbarItems>
                         <barButtonItem title="Skip, I'm waiting for an Invitation" id="VNH-lo-5uO"/>
                     </toolbarItems>
+                    <navigationItem key="navigationItem" id="smC-93-QOa"/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="ledgerField" destination="Uor-oj-XIi" id="zg3-Oe-FH1"/>
@@ -487,7 +492,7 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
+        <segue reference="5Z8-Pu-Paq"/>
         <segue reference="B5O-KW-EJC"/>
-        <segue reference="amh-l5-fVC"/>
     </inferredMetricsTieBreakers>
 </document>

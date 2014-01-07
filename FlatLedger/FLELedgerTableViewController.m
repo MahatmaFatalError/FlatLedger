@@ -40,6 +40,13 @@
     
     [self.tableView reloadData];
 }
+- (IBAction)performLogout:(id)sender {
+    [[NSUserDefaults standardUserDefaults] setBool:NO forKey:@"isLoggedin"];
+    //[self dismissViewControllerAnimated:YES completion:nil];
+    [self performSegueWithIdentifier:@"ModalLogout" sender:self];
+    
+    
+}
 
 - (void)didReceiveMemoryWarning
 {
@@ -65,7 +72,7 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    static NSString *CellIdentifier = @"Cell";
+    static NSString *CellIdentifier = @"PeriodCell";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
     
     // Configure the cell...

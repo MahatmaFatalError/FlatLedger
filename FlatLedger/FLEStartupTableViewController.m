@@ -44,7 +44,8 @@
     
     [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"isLoggedin"];
     
-    [self dismissViewControllerAnimated:YES completion:nil];
+    //[self dismissViewControllerAnimated:YES completion:nil];
+    
 }
 
 - (void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
@@ -52,8 +53,12 @@
         [((FLECreateLedgerViewController*)segue.destinationViewController) setEmail:emailField.text];
         [((FLECreateLedgerViewController*)segue.destinationViewController) setPassword:passwordField.text];
     }
+    else if ([segue.identifier isEqualToString:@"ModalToLedger"]) {
+        [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"isLoggedin"];
+    }
+    
 }
-
+    
 #pragma mark - Table view data source
 //
 //- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView

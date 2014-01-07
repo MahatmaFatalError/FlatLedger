@@ -26,7 +26,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    [[NSUserDefaults standardUserDefaults] setBool:NO forKey:@"isLoggedin"];
+    //[[NSUserDefaults standardUserDefaults] setBool:NO forKey:@"isLoggedin"];
 	// Do any additional setup after loading the view.
     
 }
