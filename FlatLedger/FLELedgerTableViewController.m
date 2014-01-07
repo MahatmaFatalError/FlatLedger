@@ -7,6 +7,7 @@
 //
 
 #import "FLELedgerTableViewController.h"
+#import "User.h"
 
 @interface FLELedgerTableViewController ()
 
@@ -42,6 +43,8 @@
 }
 - (IBAction)performLogout:(id)sender {
     [[NSUserDefaults standardUserDefaults] setBool:NO forKey:@"isLoggedin"];
+	
+	
     //[self dismissViewControllerAnimated:YES completion:nil];
     [self performSegueWithIdentifier:@"ModalLogout" sender:self];
     

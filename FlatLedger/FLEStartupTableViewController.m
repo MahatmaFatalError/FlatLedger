@@ -8,6 +8,8 @@
 
 #import "FLEStartupTableViewController.h"
 #import "FLECreateLedgerViewController.h"
+#import "User.h"
+#import "Datastore.h"
 
 @interface FLEStartupTableViewController ()
 
@@ -41,9 +43,12 @@
     // Dispose of any resources that can be recreated.
 }
 - (IBAction)loginPressed:(id)sender {
-    
+    //WIRD NICHT GEZOGEN WEGEN SEGUE
+	
+	
     [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"isLoggedin"];
-    
+	
+	   
     //[self dismissViewControllerAnimated:YES completion:nil];
     
 }
@@ -53,10 +58,45 @@
         [((FLECreateLedgerViewController*)segue.destinationViewController) setEmail:emailField.text];
         [((FLECreateLedgerViewController*)segue.destinationViewController) setPassword:passwordField.text];
     }
-    else if ([segue.identifier isEqualToString:@"ModalToLedger"]) {
-        [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"isLoggedin"];
-    }
     
+    
+}
+
+- (BOOL)shouldPerformSegueWithIdentifier:(NSString *)identifier sender:(id)sender{
+	__block BOOL returnValue;
+	
+	if ([identifier isEqualToString:@"ModalLoginToLedger"]) {
+        User* user = [[User alloc] init];
+		[user setUserName:emailField.text];
+		[user setPassword:passwordField.text];
+		
+		//TODO: leere text felder abfangen, die gehen komsicherweise bei APIOmat als authorized durch
+		
+		
+		[DataStore configureWithUser:user];
+		
+		
+		[user saveAsyncWithBlock:^(NSError *error) {
+			if([error code] == AOMUNAUTHORIZED | [[user userName] length] == 0 | [[user password] length] == 0 ) {
+				/* request was not successful */
+				NSLog(@"User failed to log in");
+				returnValue = NO;
+			}
+			else {
+				/* sign up was successful */
+				[[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"isLoggedin"];
+				returnValue = YES;
+				
+				//TODO: sicherstellen, dass asnychroner block antowrtet bevor die segue ausgelöst wird.
+			}
+		}];
+		
+		
+    } else {
+		returnValue = YES;
+	}
+	return returnValue;
+	
 }
     
 #pragma mark - Table view data source
