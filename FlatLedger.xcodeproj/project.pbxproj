@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		267AF002187B3F64009AC164 /* YAJLiOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 267AF001187B3F64009AC164 /* YAJLiOS.framework */; };
+		26A2CFCF187DCA1D0070FF69 /* FLESingletonModells.m in Sources */ = {isa = PBXBuildFile; fileRef = 26A2CFCE187DCA1D0070FF69 /* FLESingletonModells.m */; };
+		26A2CFD2187DD28E0070FF69 /* FLEUserSession.m in Sources */ = {isa = PBXBuildFile; fileRef = 26A2CFD1187DD28E0070FF69 /* FLEUserSession.m */; };
 		26F036001878544A00559DEB /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 26F035FF1878544A00559DEB /* Foundation.framework */; };
 		26F036021878544A00559DEB /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 26F036011878544A00559DEB /* CoreGraphics.framework */; };
 		26F036041878544A00559DEB /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 26F036031878544A00559DEB /* UIKit.framework */; };
@@ -76,6 +78,10 @@
 
 /* Begin PBXFileReference section */
 		267AF001187B3F64009AC164 /* YAJLiOS.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = YAJLiOS.framework; sourceTree = "<group>"; };
+		26A2CFCD187DCA1D0070FF69 /* FLESingletonModells.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FLESingletonModells.h; sourceTree = "<group>"; };
+		26A2CFCE187DCA1D0070FF69 /* FLESingletonModells.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FLESingletonModells.m; sourceTree = "<group>"; };
+		26A2CFD0187DD28E0070FF69 /* FLEUserSession.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FLEUserSession.h; sourceTree = "<group>"; };
+		26A2CFD1187DD28E0070FF69 /* FLEUserSession.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FLEUserSession.m; sourceTree = "<group>"; };
 		26F035FC1878544A00559DEB /* FlatLedger.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FlatLedger.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		26F035FF1878544A00559DEB /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		26F036011878544A00559DEB /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -224,6 +230,10 @@
 				B9919ED0187AF47200AAE37E /* FLELedgerNavigationController.m */,
 				B9D40630187B007D00A93E51 /* FLECreateLedgerViewController.h */,
 				B9D40631187B007D00A93E51 /* FLECreateLedgerViewController.m */,
+				26A2CFCD187DCA1D0070FF69 /* FLESingletonModells.h */,
+				26A2CFCE187DCA1D0070FF69 /* FLESingletonModells.m */,
+				26A2CFD0187DD28E0070FF69 /* FLEUserSession.h */,
+				26A2CFD1187DD28E0070FF69 /* FLEUserSession.m */,
 			);
 			path = FlatLedger;
 			sourceTree = "<group>";
@@ -438,6 +448,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				26A2CFCF187DCA1D0070FF69 /* FLESingletonModells.m in Sources */,
 				26F03667187881A600559DEB /* AbstractClientDataModel.m in Sources */,
 				26F0368B187AD1D300559DEB /* FLEStartupTableViewController.m in Sources */,
 				B9919ECE187AF22E00AAE37E /* FLELedgerTableViewController.m in Sources */,
@@ -456,6 +467,7 @@
 				26F0366B187881A600559DEB /* AOMDatastore.m in Sources */,
 				26F03673187881A600559DEB /* User.m in Sources */,
 				26F03687187881A700559DEB /* Status.m in Sources */,
+				26A2CFD2187DD28E0070FF69 /* FLEUserSession.m in Sources */,
 				26F036181878544A00559DEB /* FlatLedger.xcdatamodeld in Sources */,
 				26F03679187881A700559DEB /* AOMModelHelper.m in Sources */,
 				26F0367F187881A700559DEB /* NSString+Extensions.m in Sources */,
