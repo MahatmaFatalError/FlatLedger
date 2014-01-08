@@ -57,7 +57,8 @@
     // Dispose of any resources that can be recreated.
 }
 
-#pragma mark - Table view data source
+#pragma mark - Table view data source											
+//TODOH prüfen ob ledger participant contains session.user
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {

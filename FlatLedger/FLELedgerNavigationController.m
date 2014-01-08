@@ -9,6 +9,8 @@
 #import "FLELedgerNavigationController.h"
 #import "User.h"
 #import "Datastore.h"
+#import "FLESingletonModells.h"
+#import "FLEUserSession.h"
 
 @interface FLELedgerNavigationController ()
 
@@ -28,34 +30,22 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	
-	User* user = [User new];
-	
-	[user loadMeAsyncWithFinishingBlock:^(NSError *error) {
-		if([error code] == AOMUNAUTHORIZED | [user userName] == nil | [user password] == nil )
-		{
-			[[NSUserDefaults standardUserDefaults] setBool:NO forKey:@"isLoggedin"];
-		} else{
-			[[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"isLoggedin"];
-		}
-	}];
+
+    User* user = [FLESingletonModells getUser];
+	FLEUserSession *session = [FLESingletonModells getSession];
 	
 	
-    //[[NSUserDefaults standardUserDefaults] setBool:NO forKey:@"isLoggedin"];
-	// Do any additional setup after loading the view.
-    
+	//TODO: Keychain auslesen um autologin zu machen
+	if ([session.user isEqual:user] &  [[NSUserDefaults standardUserDefaults] boolForKey:@"isLoggedin"] ) {
+		//[self performSegueWithIdentifier:@"PushDirectOnLogonToNewExpense" sender:self]; Sague kann man so nicht nehmen
+	} else{
+		[self performSegueWithIdentifier:@"ModalToLogin" sender:self];
+	}
 }
+
 - (void)viewDidAppear:(BOOL)animated{
-    
-    //TODO: weiche einbauen: Keychain abfrage, wenn eintrag gefunden, dann direkt new expense, sonst login
-    if ([[NSUserDefaults standardUserDefaults] boolForKey:@"isLoggedin"]) {
-		
-				
-        //[self performSegueWithIdentifier:@"PushLedgerToPeriod" sender:self];
-    } else{
-        [self performSegueWithIdentifier:@"ModalToLogin" sender:self];
-    }
-    
+	
+	
     
 }
 

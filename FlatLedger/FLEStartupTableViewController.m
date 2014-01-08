@@ -10,6 +10,8 @@
 #import "FLECreateLedgerViewController.h"
 #import "User.h"
 #import "Datastore.h"
+#import "FLEUserSession.h"
+#import "FLESingletonModells.h"
 
 @interface FLEStartupTableViewController ()
 
@@ -63,10 +65,10 @@
 }
 
 - (BOOL)shouldPerformSegueWithIdentifier:(NSString *)identifier sender:(id)sender{
-	__block BOOL returnValue;
+	__block BOOL returnValue = YES;
 	
 	if ([identifier isEqualToString:@"ModalLoginToLedger"]) {
-        User* user = [[User alloc] init];
+        User* user = [FLESingletonModells getUser];
 		[user setUserName:emailField.text];
 		[user setPassword:passwordField.text];
 		
@@ -76,21 +78,35 @@
 		[DataStore configureWithUser:user];
 		
 		
-		[user saveAsyncWithBlock:^(NSError *error) {
-			if([error code] == AOMUNAUTHORIZED | [[user userName] length] == 0 | [[user password] length] == 0 ) {
-				/* request was not successful */
-				NSLog(@"User failed to log in");
-				returnValue = NO;
-			}
-			else {
-				/* sign up was successful */
-				[[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"isLoggedin"];
-				returnValue = YES;
-				
-				//TODO: sicherstellen, dass asnychroner block antowrtet bevor die segue ausgelöst wird.
-			}
-		}];
+//		[user saveAsyncWithBlock:^(NSError *error) {
+//			if([error code] == AOMUNAUTHORIZED | [[user userName] length] == 0 | [[user password] length] == 0 ) {
+//				/* request was not successful */
+//				NSLog(@"User failed to log in");
+//				returnValue = NO;
+//			}
+//			else {
+//				/* sign up was successful */
+//				[[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"isLoggedin"];
+//				returnValue = YES;
+//				
+//				//TODO: sicherstellen, dass asnychroner block antowrtet bevor die segue ausgelöst wird.
+//			}
+//		}];
 		
+		[UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
+		@try {
+			[user loadMe];
+			[[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"isLoggedin"];
+			FLEUserSession *session = [FLESingletonModells getSession];
+			session.user = user;
+			//session.isLoggedIn = YES;
+		}
+		@catch (NSException *exception) {
+			NSLog(@"User failed to log in");
+			returnValue = NO;
+			[[NSUserDefaults standardUserDefaults] setBool:NO forKey:@"isLoggedin"];
+		}
+		[UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
 		
     } else {
 		returnValue = YES;

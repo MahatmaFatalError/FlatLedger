@@ -10,6 +10,7 @@
 #import "FLELedger.h"
 #import "User.h"
 #import "AOMDatastore.h"
+#import "FLESingletonModells.h"
 
 
 @interface FLECreateLedgerViewController ()
@@ -41,7 +42,7 @@
 
 - (IBAction)createLedgerPressed:(id)sender {
     /* Create a new user of your app */
-    User* user = [[User alloc] init];
+    User* user = [FLESingletonModells getUser];
     [user setUserName:self.email];
     [user setPassword:self.password];
     
@@ -51,11 +52,20 @@
         if (error) {
 			//TODO: Error handling
 		} else{
-			FLELedger* ledger = [FLELedger new];
+			FLELedger* ledger = [FLESingletonModells getSeLedger];
 			[ledger setName:ledgerField.text];
-			[ledger saveAsyncWithBlock:^(NSError *error) {
-				[[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"isLoggedin"];
-				[self dismissViewControllerAnimated:YES completion:nil];
+			[ledger.participants addObject:user];
+			[ledger saveAsyncWithBlock:^(NSError *errorL) {
+				if (errorL) {
+					NSLog(@"Error while saving Ledger");
+				} else{
+					[[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"isLoggedin"];
+					//[self dismissViewControllerAnimated:YES completion:nil];
+					[self performSegueWithIdentifier:@"ModalCreateLedgerToLedger" sender:self];
+				}
+				
+				
+				
 			}];
 		}
 		

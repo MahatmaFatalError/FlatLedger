@@ -387,6 +387,7 @@
                                 </state>
                                 <connections>
                                     <action selector="createLedgerPressed:" destination="hL1-OT-tc0" eventType="touchUpInside" id="DCK-f3-bHK"/>
+                                    <segue destination="CZy-os-CF3" kind="modal" identifier="ModalCreateLedgerToLedger" id="gQp-tD-UVZ"/>
                                 </connections>
                             </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Give your ledger a name" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Uor-oj-XIi">
@@ -493,6 +494,7 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
+        <segue reference="gQp-tD-UVZ"/>
         <segue reference="5Z8-Pu-Paq"/>
         <segue reference="B5O-KW-EJC"/>
     </inferredMetricsTieBreakers>
