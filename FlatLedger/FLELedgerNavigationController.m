@@ -31,6 +31,9 @@
 {
     [super viewDidLoad];
 
+   }
+
+- (void)viewDidAppear:(BOOL)animated{
     User* user = [FLESingletonModells getUser];
 	FLEUserSession *session = [FLESingletonModells getSession];
 	
@@ -41,10 +44,7 @@
 	} else{
 		[self performSegueWithIdentifier:@"ModalToLogin" sender:self];
 	}
-}
 
-- (void)viewDidAppear:(BOOL)animated{
-	
 	
     
 }

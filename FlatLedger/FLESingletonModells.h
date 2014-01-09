@@ -15,6 +15,9 @@
 
 + (User*)getUser;
 + (FLEUserSession*)getSession;
-+ (FLELedger*)getSeLedger;
++ (FLELedger*)getLedger;
++ (void)releaseUser;
++ (void)releaseSession;
++ (void)releaseLedger;
 
 @end

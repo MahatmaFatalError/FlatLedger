@@ -8,6 +8,8 @@
 
 #import "FLELedgerTableViewController.h"
 #import "User.h"
+#import "FLESingletonModells.h"
+#import "FLEUserSession.h"
 
 @interface FLELedgerTableViewController ()
 
@@ -43,6 +45,12 @@
 }
 - (IBAction)performLogout:(id)sender {
     [[NSUserDefaults standardUserDefaults] setBool:NO forKey:@"isLoggedin"];
+    FLEUserSession *session = [FLESingletonModells getSession];
+    
+    session.user = nil;
+    
+    User *user = [FLESingletonModells getUser];
+    [FLESingletonModells releaseUser];
 	
 	
     //[self dismissViewControllerAnimated:YES completion:nil];

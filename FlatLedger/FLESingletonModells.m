@@ -31,6 +31,10 @@ static FLELedger *ledger;
 	return user;
 }
 
++ (void)releaseUser {
+    user = nil;
+}
+
 
 + (FLEUserSession*)getSession;
 {
@@ -44,7 +48,11 @@ static FLELedger *ledger;
 	return session;
 }
 
-+ (FLELedger*)getSeLedger;
++ (void)releaseSession {
+    session = nil;
+}
+
++ (FLELedger*)getLedger;
 {
     
     if(!ledger)
@@ -54,6 +62,10 @@ static FLELedger *ledger;
     }
 	
 	return ledger;
+}
+
++ (void)releaseLedger {
+    ledger = nil;
 }
 
 

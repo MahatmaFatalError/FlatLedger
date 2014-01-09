@@ -11,6 +11,7 @@
 #import "User.h"
 #import "AOMDatastore.h"
 #import "FLESingletonModells.h"
+#import "FLEUserSession.h"
 
 
 @interface FLECreateLedgerViewController ()
@@ -46,30 +47,60 @@
     [user setUserName:self.email];
     [user setPassword:self.password];
     
+    FLEUserSession* session = [FLESingletonModells getSession];
+    
     /* configure AOMDatastore with user credentials */
     [AOMDatastore configureWithUrl:baseUrl andApiKey:apiKey andUsername:[user userName] andPassword:[user password]];
-    [user saveAsyncWithBlock:^(NSError *error) {
-        if (error) {
-			//TODO: Error handling
-		} else{
-			FLELedger* ledger = [FLESingletonModells getSeLedger];
-			[ledger setName:ledgerField.text];
-			[ledger.participants addObject:user];
-			[ledger saveAsyncWithBlock:^(NSError *errorL) {
-				if (errorL) {
-					NSLog(@"Error while saving Ledger");
-				} else{
-					[[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"isLoggedin"];
-					//[self dismissViewControllerAnimated:YES completion:nil];
-					[self performSegueWithIdentifier:@"ModalCreateLedgerToLedger" sender:self];
-				}
-				
-				
-				
-			}];
-		}
-		
-    }];
+//    [user saveAsyncWithBlock:^(NSError *error) {
+//        if (error) {
+//			//TODO: Error handling
+//		} else{
+//			FLELedger* ledger = [FLESingletonModells getSeLedger];
+//			[ledger setName:ledgerField.text];
+//			[ledger.participants addObject:user];
+//			[ledger saveAsyncWithBlock:^(NSError *errorL) {
+//				if (errorL) {
+//					NSLog(@"Error while saving Ledger");
+//				} else{
+//					[[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"isLoggedin"];
+//                    session.user = user;
+//					//[self dismissViewControllerAnimated:YES completion:nil];
+//					[self performSegueWithIdentifier:@"ModalCreateLedgerToLedger" sender:self];
+//				}
+//
+//				
+//			}];
+//		}
+//		
+//    }];
+    
+    
+    @try {
+        [user save];
+        
+        FLELedger* ledger = [FLESingletonModells getLedger];
+        [ledger setName:ledgerField.text];
+        [ledger.participants addObject:user];
+        
+        @try {
+            [ledger save];
+            [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"isLoggedin"];
+            session.user = user;
+            //[self dismissViewControllerAnimated:YES completion:nil];
+            [self performSegueWithIdentifier:@"ModalCreateLedgerToLedger" sender:self];
+        }
+        @catch (NSException *exception) {
+            NSLog(@"Error while saving Ledger");
+        }
+      
+    }
+    @catch (NSException *exception) {
+        NSLog(@"createLedgerPressed: ERROR while saving User");
+    }
+ 
+    
+    
+    
     
     
     
