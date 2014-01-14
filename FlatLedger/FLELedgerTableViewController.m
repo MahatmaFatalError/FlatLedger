@@ -112,7 +112,7 @@
 - (void)alertView:(UIAlertView *)alert clickedButtonAtIndex:(NSInteger)buttonIndex
 {
     NSString *title = [alert buttonTitleAtIndex:buttonIndex];
-    if([title isEqualToString:@"Create Period"])
+    if([title isEqualToString:@"OK"])
     {
         FLELedger *ledger = [FLESingletonModells getLedger];
 		Periods *period = [FLESingletonModells getActivePeriod];
@@ -121,6 +121,7 @@
 		period.ledger = ledger;
 		
 		period.name = [alert textFieldAtIndex:0].text;
+		NSLog(@"Periodname = %@", period.name);
 		[ledger.periods addObject:period];
 		
 		[ledger saveAsyncWithBlock:^(NSError *errorL) {
