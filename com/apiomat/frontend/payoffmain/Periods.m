@@ -73,6 +73,16 @@
 }
 
         
+     - ( NSString* )name {
+
+
+ return [[self data] objectForKey:@"name"];
+}
+
+            - (void)setName:( NSString* )_name {
+                            [[self data] setObject:_name?:[NSNull null] forKey:@"name"];
+                        }
+        
         - (FLELedger*)loadLedger{
         NSString* refUrl = [[self data] objectForKey:@"ledgerHref"];   
             ledger = [[FLELedger alloc] init];

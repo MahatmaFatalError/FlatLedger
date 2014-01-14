@@ -27,6 +27,7 @@
 
 #import "AOMAbstractClientDataModel.h"
 @class AOMUser;
+@class Periods;
 
 /*!
  Generated class for your FLELedger data model 
@@ -38,6 +39,8 @@
 
 
     @property (readonly, strong, nonatomic) NSMutableArray* participants;
+
+    @property (readonly, strong, nonatomic) NSMutableArray* periods;
 
                 - ( NSString* )name;
         
@@ -62,6 +65,14 @@
 
     - (void)removeParticipants:(AOMUser*) _refData ;
     - (void)removeParticipantsAsync:(AOMUser*) _refData andWithBlock:(AOMEmptyBlock) _block;
+
+                    - (NSMutableArray*)loadPeriods:(NSString*) _query;
+        - (void)loadPeriodsAsync:(NSString*) _query andWithBlock:(AOMEmptyBlock) _block;
+        - (NSString*)postPeriods:(Periods*) _refData ;
+    - (void)postPeriodsAsync:(Periods*) _refData andWithBlock:(AOMEmptyBlock) _block;
+
+    - (void)removePeriods:(Periods*) _refData ;
+    - (void)removePeriodsAsync:(Periods*) _refData andWithBlock:(AOMEmptyBlock) _block;
 
 
 @end

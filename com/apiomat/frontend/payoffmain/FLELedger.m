@@ -30,15 +30,18 @@
 #import "AOMModelHelper.h"
 #import "NSString+Extensions.h"
 #import "User.h"
+#import "Periods.h"
 
 /*
 * Generated class for your FLELedger data model 
 */
 @implementation FLELedger
     @synthesize participants;
+    @synthesize periods;
 - (void) initAttributes {
     [super initAttributes];
     participants = [[NSMutableArray alloc] init];
+    periods = [[NSMutableArray alloc] init];
 }
 - (id) init {
     self = [super init];
@@ -229,6 +232,118 @@
             }
         }
         return participants;
+    }
+        
+        - (NSMutableArray*)loadPeriods:(NSString*) _query {
+        NSString* refUrl = [[self data] objectForKey:@"periodsHref"];
+        if(refUrl==Nil) {
+            NSMutableArray* emptyList = [[NSMutableArray alloc] init];
+            return emptyList;
+        }
+        periods = [[AOMDatastore sharedInstance] loadFromServerWithHref:refUrl andClass:[Periods class] andQuery:_query];
+        return periods;
+    }
+    
+    - (void)loadPeriodsAsync:(NSString*) _query andWithBlock:(AOMEmptyBlock) _block {
+        NSString* refUrl = [[self data] objectForKey:@"periodsHref"];
+        if(refUrl==Nil) {
+            if (_block) {
+                NSError* error = [AOMDatastore createApiomatErrorWithStatus:AOMHREF_NOT_FOUND];
+                _block(error);
+                return;
+            }
+        }
+        AOMBlockWithResults internBlock = ^(NSMutableArray *models, NSError *error) {
+            if(error == FALSE) {
+                 periods = models;
+            }
+            if (_block) {
+                _block(error);
+            }
+        };
+        [[AOMDatastore sharedInstance] loadFromServerAsyncWithHref:refUrl andClass:[Periods class] andQuery:_query andFinishingBlock:internBlock];
+    }
+    - (NSString*)postPeriods:(Periods*) _refData  {
+            NSString* href = [_refData getHref];
+            if([NSString isEmptyString:href])
+            {
+                [AOMDatastore raiseApiomatExceptionWithStatus:AOMSAVE_REFERENECE_BEFORE_REFERENCING];
+                return Nil;
+            }
+            NSString* linkedHref = [[AOMDatastore sharedInstance] postOnServer:_refData withHref:[[self data] objectForKey:@"periodsHref"]];
+            //if object was saved than add to local collection or set local variable
+                        if(linkedHref && [AOMModelHelper containsList:periods thisHref:linkedHref] == false) 
+            {
+                [periods addObject:_refData];
+                            [self addRefModelHrefWithName:@"periods" andHref:href];
+            }
+            return href;
+    }
+    
+    - (void)postPeriodsAsync:(Periods*) _refData andWithBlock:(AOMEmptyBlock) _block {
+        NSString* href = [_refData getHref];
+        if([NSString isEmptyString:href])
+        {
+            [AOMDatastore createApiomatErrorWithStatus:AOMSAVE_REFERENECE_BEFORE_REFERENCING];
+            return;
+        }
+        [[AOMDatastore sharedInstance] postOnServerAsync:_refData withHref:[[self data] objectForKey:@"periodsHref"] andFinishingBlock:^(NSString *linkedHref, NSError *error) {
+            if(error == FALSE) {
+                //if object was saved than add to local collection or set local variable
+                if(linkedHref && [AOMModelHelper containsList:periods thisHref:linkedHref] == false) {
+                    [periods addObject:_refData];
+                    [self addRefModelHrefWithName:@"periods" andHref:href];
+                }
+            }
+            if(_block) {
+                _block(error);
+            }
+        }];
+    }
+    
+    - (void)removePeriods:(Periods*) _refData  {
+        NSString* refUrl = [[self data] objectForKey:@"periodsHref"];
+        NSString* refHref = [_refData getHref];
+        NSRange range = [refHref rangeOfString:@"/" options:NSBackwardsSearch];
+        NSString* refID = [refHref substringFromIndex:NSMaxRange(range)];
+        BOOL wasDeleted = [[AOMDatastore sharedInstance] deleteOnServerWithUrl:[[refUrl stringByAppendingString:@"/"] stringByAppendingString:refID]];
+        if(wasDeleted) {
+            [periods removeObject:_refData];
+            [self removeFromRefModelHrefsWithName:@"periods" andHref:refHref];
+        }
+    }
+    
+    - (void)removePeriodsAsync:(Periods*) _refData andWithBlock:(AOMEmptyBlock) _block {
+        NSString* refUrl = [[self data] objectForKey:@"periodsHref"];
+        NSString* refHref = [_refData getHref];
+        NSRange range = [refHref rangeOfString:@"/" options:NSBackwardsSearch];
+        NSString* refID = [refHref substringFromIndex:NSMaxRange(range)];
+        [[AOMDatastore sharedInstance] deleteOnServerAsyncWithUrl:[[refUrl stringByAppendingString:@"/"] stringByAppendingString:refID] withFinishingBlock:^(NSError *error) {
+            if(error == FALSE) {
+                [periods removeObject:_refData];
+                [self removeFromRefModelHrefsWithName:@"periods" andHref:refHref];
+            }
+            
+            if(_block) {
+                _block(error);
+            }
+        }];
+    }
+        - (NSMutableArray*)periods{
+        if([periods count]==0 && [[AOMDatastore sharedInstance] modelStore]) {
+            NSMutableArray* hrefsOfObj = [self getRefModelHrefsForName:@"periods"];
+            for (NSString* objHref in hrefsOfObj) {
+                id elem = [[[AOMDatastore sharedInstance] modelStore] modelWithHref:objHref andClass:[Periods class]];
+                if(elem) {
+                    [periods addObject:elem];
+                } else if([[[AOMDatastore sharedInstance] modelStore] useIncompleteReferences]==false){
+                    //min one element is not in AOMDatastore so we say dataset is not complete return empty list
+                    [periods removeAllObjects];
+                    return periods;
+                }
+            }
+        }
+        return periods;
     }
 
 @end

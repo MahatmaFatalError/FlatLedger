@@ -10,6 +10,7 @@
 #import "User.h"
 #import "FLEUserSession.h"
 #import "FLELedger.h"
+#import "Periods.h"
 
 @interface FLESingletonModells : NSObject
 
@@ -19,5 +20,8 @@
 + (void)releaseUser;
 + (void)releaseSession;
 + (void)releaseLedger;
+
++ (Periods*)getActivePeriod;
++ (void)releaseActivePeriod;
 
 @end

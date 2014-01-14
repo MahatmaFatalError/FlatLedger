@@ -12,6 +12,7 @@
 #import "AOMDatastore.h"
 #import "FLESingletonModells.h"
 #import "FLEUserSession.h"
+#import "Periods.h";
 
 
 @interface FLECreateLedgerViewController ()
@@ -81,13 +82,17 @@
         FLELedger* ledger = [FLESingletonModells getLedger];
         [ledger setName:ledgerField.text];
         [ledger.participants addObject:user];
+		ledger.starttimestamp = [NSDate date];
+		
+		
         
         @try {
             [ledger save];
             [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"isLoggedin"];
             session.user = user;
             //[self dismissViewControllerAnimated:YES completion:nil];
-            [self performSegueWithIdentifier:@"ModalCreateLedgerToLedger" sender:self];
+			[self performSegueWithIdentifier:@"ModalCreateLedgerToLedger" sender:self];
+			            
         }
         @catch (NSException *exception) {
             NSLog(@"Error while saving Ledger");

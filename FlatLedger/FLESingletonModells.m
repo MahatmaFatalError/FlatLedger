@@ -18,6 +18,7 @@
 static User *user;
 static FLEUserSession *session;
 static FLELedger *ledger;
+static Periods *period;
 
 + (User*)getUser
 {
@@ -68,5 +69,23 @@ static FLELedger *ledger;
     ledger = nil;
 }
 
+
+
++ (Periods*)getActivePeriod;
+{
+    
+    if(!period)
+    {
+        period= [[Periods alloc] init];
+		period.status = @"active";
+		
+    }
+	
+	return period;
+}
+
++ (void)releaseActivePeriod {
+    period = nil;
+}
 
 @end

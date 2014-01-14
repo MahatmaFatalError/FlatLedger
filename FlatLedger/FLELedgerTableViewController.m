@@ -10,6 +10,7 @@
 #import "User.h"
 #import "FLESingletonModells.h"
 #import "FLEUserSession.h"
+#import "Periods.h"
 
 @interface FLELedgerTableViewController ()
 
@@ -91,6 +92,55 @@
     
     return cell;
 }
+
+- (IBAction)AddPeriodPressed:(id)sender {
+	NSLog(@"AddPeriodPressed:");
+	
+	UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Create Period"
+													message:@"Name the Period"
+												   delegate:self
+                                          cancelButtonTitle:@"OK"
+                                          otherButtonTitles:nil];
+	
+	alert.alertViewStyle = UIAlertViewStylePlainTextInput;
+	
+	[alert show];
+	
+	
+}
+
+- (void)alertView:(UIAlertView *)alert clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+    NSString *title = [alert buttonTitleAtIndex:buttonIndex];
+    if([title isEqualToString:@"Create Period"])
+    {
+        FLELedger *ledger = [FLESingletonModells getLedger];
+		Periods *period = [FLESingletonModells getActivePeriod];
+		
+		period.starttimestamp = [NSDate date];
+		period.ledger = ledger;
+		
+		period.name = [alert textFieldAtIndex:0].text;
+		[ledger.periods addObject:period];
+		
+		[ledger saveAsyncWithBlock:^(NSError *errorL) {
+			if (errorL) {
+				NSLog(@"Error while saving Ledger");
+			} else{
+				[period saveAsyncWithBlock:^(NSError *error) {
+					if (errorL) {
+						NSLog(@"Error while saving Period");
+					} else{
+						NSLog(@"Period and Ledger Saved");
+					}
+				}];
+				
+			}
+			
+		}];
+    }
+}
+
 
 /*
 // Override to support conditional editing of the table view.

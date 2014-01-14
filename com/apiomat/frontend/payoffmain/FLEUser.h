@@ -26,25 +26,56 @@
  */
 
 #import "AOMAbstractClientDataModel.h"
+#import "User.h"
 @class FLELedger;
-@class Expenses;
 
 /*!
- Generated class for your Periods data model 
+ Generated default class representing a user in your app 
 */
-@interface Periods : AOMAbstractClientDataModel
+@interface FLEUser : AOMUser
 
 
-    @property FLELedger* ledger;
+    @property (readonly, strong, nonatomic) FLELedger* ledger;
+    /* contains apiKey for your app */
+    extern NSString * const apiKey;
+    /* base server URL for requests */
+    extern NSString * const baseUrl;
+    /* NSString which provides information which system is used (LIVE,TEST,STAGING) */    
+    extern NSString * const AMSystem;
+    /* provides information about currently used SDK version */    
+    extern NSString * const sdkVersion;
+    
+/*!
+ Updates this class from server 
+*/
+- (void)loadMe;
+/*!
+ Load data for member from server on a Non-UI-Thread
+ 
+ @param _block block which will be called after request was finished
+*/
+- (void)loadMeAsyncWithFinishingBlock:(AOMEmptyBlock) _block;
+/*!
+ Requests a new password; user will receive an email to confirm
+*/
+- (void)requestNewPassword;
+/*!
+Reset password
 
+@param _newPassword the new password
+*/
+- (void)resetPassword:(NSString*) _newPassword;
+/*!
+Reset password. This method will be executed on a Non-UI-Thread
 
+@param _newPassword the new password
+@param _block code which will be called after request was finished
+*/
+- (void)resetPasswordAsync:(NSString*) _newPassword andWithFinishingBlock: (AOMEmptyBlock) _block;
 
-
-    @property NSMutableArray* expenses;
-
-                - ( NSString* )name;
+                - ( NSString* )isLoggedIn;
         
-                        - (void)setName:( NSString* )_name;
+                        - (void)setIsLoggedIn:( NSString* )_isLoggedIn;
             
                     - (FLELedger*)loadLedger;
         - (void)loadLedgerAsync:(AOMEmptyBlock)_block;
@@ -53,26 +84,6 @@
 
     - (void)removeLedger:(FLELedger*) _refData ;
     - (void)removeLedgerAsync:(FLELedger*) _refData andWithBlock:(AOMEmptyBlock) _block;
-
-                - ( NSString* )status;
-        
-                        - (void)setStatus:( NSString* )_status;
-            
-                - ( NSDate* )endtimestamp;
-        
-                        - (void)setEndtimestamp:( NSDate* )_endtimestamp;
-            
-                - ( NSDate* )starttimestamp;
-        
-                        - (void)setStarttimestamp:( NSDate* )_starttimestamp;
-            
-                    - (NSMutableArray*)loadExpenses:(NSString*) _query;
-        - (void)loadExpensesAsync:(NSString*) _query andWithBlock:(AOMEmptyBlock) _block;
-        - (NSString*)postExpenses:(Expenses*) _refData ;
-    - (void)postExpensesAsync:(Expenses*) _refData andWithBlock:(AOMEmptyBlock) _block;
-
-    - (void)removeExpenses:(Expenses*) _refData ;
-    - (void)removeExpensesAsync:(Expenses*) _refData andWithBlock:(AOMEmptyBlock) _block;
 
 
 @end
