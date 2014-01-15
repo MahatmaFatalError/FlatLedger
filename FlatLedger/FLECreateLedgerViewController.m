@@ -106,13 +106,7 @@
     
 }
 
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
-	if ([segue.identifier isEqualToString:@"ModalLoginToLedger"]) {
-		//TODO: nach login bevor ich auf neuen View wechsel perioden des Ledgers laden
-		
-		//[segue.destinationViewController setDetailItem:period];
-	}
-}
+
 
 
 @end
