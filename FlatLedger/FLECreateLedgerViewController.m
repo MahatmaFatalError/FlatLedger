@@ -8,11 +8,11 @@
 
 #import "FLECreateLedgerViewController.h"
 #import "FLELedger.h"
-#import "User.h"
+#import "FLEUser.h"
 #import "AOMDatastore.h"
 #import "FLESingletonModells.h"
 #import "FLEUserSession.h"
-#import "Periods.h";
+#import "FLEPeriod.h";
 
 
 @interface FLECreateLedgerViewController ()
@@ -44,7 +44,7 @@
 
 - (IBAction)createLedgerPressed:(id)sender {
     /* Create a new user of your app */
-    User* user = [FLESingletonModells getUser];
+    FLEUser* user = [FLESingletonModells getUser];
     [user setUserName:self.email];
     [user setPassword:self.password];
     
@@ -104,11 +104,14 @@
     }
  
     
-    
-    
-    
-    
-    
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
+	if ([segue.identifier isEqualToString:@"ModalLoginToLedger"]) {
+		//TODO: nach login bevor ich auf neuen View wechsel perioden des Ledgers laden
+		
+		//[segue.destinationViewController setDetailItem:period];
+	}
 }
 
 

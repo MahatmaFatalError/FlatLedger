@@ -7,12 +7,14 @@
 //
 
 #import "FLELedgerTableViewController.h"
-#import "User.h"
+#import "FLEUser.h"
 #import "FLESingletonModells.h"
 #import "FLEUserSession.h"
-#import "Periods.h"
+#import "FLEPeriod.h"
 
 @interface FLELedgerTableViewController ()
+@property FLELedger *ledger;
+@property FLEPeriod *activePeriod;
 
 @end
 
@@ -23,6 +25,7 @@
     self = [super initWithStyle:style];
     if (self) {
         // Custom initialization
+		self.ledger = [FLESingletonModells getLedger];
     }
     return self;
 }
@@ -30,7 +33,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-
+	[[self tableView] reloadData];
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
  
@@ -50,7 +53,7 @@
     
     session.user = nil;
     
-    User *user = [FLESingletonModells getUser];
+    FLEUser *user = [FLESingletonModells getUser];
     [FLESingletonModells releaseUser];
 	
 	
@@ -71,16 +74,14 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-#warning Potentially incomplete method implementation.
     // Return the number of sections.
-    return 0;
+    return 1; //previously 0
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-#warning Incomplete method implementation.
     // Return the number of rows in the section.
-    return 0;
+    return self.ledger.periods.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -89,9 +90,16 @@
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
     
     // Configure the cell...
+	self.activePeriod = self.ledger.periods[indexPath.row];
+	cell.textLabel.text = self.activePeriod.name;
     
     return cell;
 }
+
+
+//- (void)insertObject:(FLEPeriod *)period inLedgerAtIndex:(<#NSUInteger#>)index{
+	
+//}
 
 - (IBAction)AddPeriodPressed:(id)sender {
 	NSLog(@"AddPeriodPressed:");
@@ -114,25 +122,26 @@
     NSString *title = [alert buttonTitleAtIndex:buttonIndex];
     if([title isEqualToString:@"OK"])
     {
-        FLELedger *ledger = [FLESingletonModells getLedger];
-		Periods *period = [FLESingletonModells getActivePeriod];
+        self.ledger = [FLESingletonModells getLedger];
+		self.activePeriod = [FLESingletonModells getActivePeriod];
 		
-		period.starttimestamp = [NSDate date];
-		period.ledger = ledger;
+		self.activePeriod.starttimestamp = [NSDate date];
+		self.activePeriod.ledger = self.ledger;
 		
-		period.name = [alert textFieldAtIndex:0].text;
-		NSLog(@"Periodname = %@", period.name);
-		[ledger.periods addObject:period];
+		self.activePeriod.name = [alert textFieldAtIndex:0].text;
+		NSLog(@"Periodname = %@", self.activePeriod.name);
+		[self.ledger.periods addObject:self.activePeriod];
 		
-		[ledger saveAsyncWithBlock:^(NSError *errorL) {
+		[self.ledger saveAsyncWithBlock:^(NSError *errorL) {
 			if (errorL) {
 				NSLog(@"Error while saving Ledger");
 			} else{
-				[period saveAsyncWithBlock:^(NSError *error) {
+				[self.activePeriod saveAsyncWithBlock:^(NSError *error) {
 					if (errorL) {
 						NSLog(@"Error while saving Period");
 					} else{
 						NSLog(@"Period and Ledger Saved");
+						[[self tableView] reloadData];
 					}
 				}];
 				
@@ -143,14 +152,14 @@
 }
 
 
-/*
+
 // Override to support conditional editing of the table view.
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
 {
     // Return NO if you do not want the specified item to be editable.
-    return YES;
+    return NO;
 }
-*/
+
 
 /*
 // Override to support editing the table view.

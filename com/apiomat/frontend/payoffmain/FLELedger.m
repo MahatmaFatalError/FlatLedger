@@ -30,7 +30,7 @@
 #import "AOMModelHelper.h"
 #import "NSString+Extensions.h"
 #import "User.h"
-#import "Periods.h"
+#import "FLEPeriod.h"
 
 /*
 * Generated class for your FLELedger data model 
@@ -240,7 +240,7 @@
             NSMutableArray* emptyList = [[NSMutableArray alloc] init];
             return emptyList;
         }
-        periods = [[AOMDatastore sharedInstance] loadFromServerWithHref:refUrl andClass:[Periods class] andQuery:_query];
+        periods = [[AOMDatastore sharedInstance] loadFromServerWithHref:refUrl andClass:[FLEPeriod class] andQuery:_query];
         return periods;
     }
     
@@ -261,9 +261,9 @@
                 _block(error);
             }
         };
-        [[AOMDatastore sharedInstance] loadFromServerAsyncWithHref:refUrl andClass:[Periods class] andQuery:_query andFinishingBlock:internBlock];
+        [[AOMDatastore sharedInstance] loadFromServerAsyncWithHref:refUrl andClass:[FLEPeriod class] andQuery:_query andFinishingBlock:internBlock];
     }
-    - (NSString*)postPeriods:(Periods*) _refData  {
+    - (NSString*)postPeriods:(FLEPeriod*) _refData  {
             NSString* href = [_refData getHref];
             if([NSString isEmptyString:href])
             {
@@ -280,7 +280,7 @@
             return href;
     }
     
-    - (void)postPeriodsAsync:(Periods*) _refData andWithBlock:(AOMEmptyBlock) _block {
+    - (void)postPeriodsAsync:(FLEPeriod*) _refData andWithBlock:(AOMEmptyBlock) _block {
         NSString* href = [_refData getHref];
         if([NSString isEmptyString:href])
         {
@@ -301,7 +301,7 @@
         }];
     }
     
-    - (void)removePeriods:(Periods*) _refData  {
+    - (void)removePeriods:(FLEPeriod*) _refData  {
         NSString* refUrl = [[self data] objectForKey:@"periodsHref"];
         NSString* refHref = [_refData getHref];
         NSRange range = [refHref rangeOfString:@"/" options:NSBackwardsSearch];
@@ -313,7 +313,7 @@
         }
     }
     
-    - (void)removePeriodsAsync:(Periods*) _refData andWithBlock:(AOMEmptyBlock) _block {
+    - (void)removePeriodsAsync:(FLEPeriod*) _refData andWithBlock:(AOMEmptyBlock) _block {
         NSString* refUrl = [[self data] objectForKey:@"periodsHref"];
         NSString* refHref = [_refData getHref];
         NSRange range = [refHref rangeOfString:@"/" options:NSBackwardsSearch];
@@ -333,7 +333,7 @@
         if([periods count]==0 && [[AOMDatastore sharedInstance] modelStore]) {
             NSMutableArray* hrefsOfObj = [self getRefModelHrefsForName:@"periods"];
             for (NSString* objHref in hrefsOfObj) {
-                id elem = [[[AOMDatastore sharedInstance] modelStore] modelWithHref:objHref andClass:[Periods class]];
+                id elem = [[[AOMDatastore sharedInstance] modelStore] modelWithHref:objHref andClass:[FLEPeriod class]];
                 if(elem) {
                     [periods addObject:elem];
                 } else if([[[AOMDatastore sharedInstance] modelStore] useIncompleteReferences]==false){

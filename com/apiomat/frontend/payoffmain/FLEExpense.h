@@ -26,54 +26,43 @@
  */
 
 #import "AOMAbstractClientDataModel.h"
-@class FLELedger;
-@class Expenses;
+@class FLEUser;
 
 /*!
- Generated class for your Periods data model 
+ Generated class for your FLEExpense data model 
 */
-@interface Periods : AOMAbstractClientDataModel
+@interface FLEExpense : AOMAbstractClientDataModel
+
+    @property (readonly, strong, nonatomic) FLEUser* user;
 
 
-    @property FLELedger* ledger;
 
 
 
+                    - (FLEUser*)loadUser;
+        - (void)loadUserAsync:(AOMEmptyBlock)_block;
+        - (NSString*)postUser:(FLEUser*) _refData ;
+    - (void)postUserAsync:(FLEUser*) _refData andWithBlock:(AOMEmptyBlock) _block;
 
-    @property NSMutableArray* expenses;
+    - (void)removeUser:(FLEUser*) _refData ;
+    - (void)removeUserAsync:(FLEUser*) _refData andWithBlock:(AOMEmptyBlock) _block;
 
-                - ( NSString* )name;
+                - ( NSString* )item;
         
-                        - (void)setName:( NSString* )_name;
+                        - (void)setItem:( NSString* )_item;
             
-                    - (FLELedger*)loadLedger;
-        - (void)loadLedgerAsync:(AOMEmptyBlock)_block;
-        - (NSString*)postLedger:(FLELedger*) _refData ;
-    - (void)postLedgerAsync:(FLELedger*) _refData andWithBlock:(AOMEmptyBlock) _block;
-
-    - (void)removeLedger:(FLELedger*) _refData ;
-    - (void)removeLedgerAsync:(FLELedger*) _refData andWithBlock:(AOMEmptyBlock) _block;
-
-                - ( NSString* )status;
+                - ( double )price;
         
-                        - (void)setStatus:( NSString* )_status;
+                        - (void)setPrice:( double )_price;
             
-                - ( NSDate* )endtimestamp;
+                - ( NSDate* )timestamp;
         
-                        - (void)setEndtimestamp:( NSDate* )_endtimestamp;
+                        - (void)setTimestamp:( NSDate* )_timestamp;
             
-                - ( NSDate* )starttimestamp;
+                - ( long )quantity;
         
-                        - (void)setStarttimestamp:( NSDate* )_starttimestamp;
+                        - (void)setQuantity:( long )_quantity;
             
-                    - (NSMutableArray*)loadExpenses:(NSString*) _query;
-        - (void)loadExpensesAsync:(NSString*) _query andWithBlock:(AOMEmptyBlock) _block;
-        - (NSString*)postExpenses:(Expenses*) _refData ;
-    - (void)postExpensesAsync:(Expenses*) _refData andWithBlock:(AOMEmptyBlock) _block;
-
-    - (void)removeExpenses:(Expenses*) _refData ;
-    - (void)removeExpensesAsync:(Expenses*) _refData andWithBlock:(AOMEmptyBlock) _block;
-
 
 @end
 

@@ -7,7 +7,6 @@
 //
 
 #import "FLELedgerNavigationController.h"
-#import "User.h"
 #import "Datastore.h"
 #import "FLESingletonModells.h"
 #import "FLEUserSession.h"
@@ -34,7 +33,7 @@
    }
 
 - (void)viewDidAppear:(BOOL)animated{
-    User* user = [FLESingletonModells getUser];
+    FLEUser* user = [FLESingletonModells getUser];
 	FLEUserSession *session = [FLESingletonModells getSession];
 	
 	

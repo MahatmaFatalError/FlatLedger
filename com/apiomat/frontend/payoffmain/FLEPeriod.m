@@ -24,23 +24,23 @@
  * 
  * THIS FILE IS GENERATED AUTOMATICALLY. DON'T MODIFY IT.
  */
-#import "Periods.h"
+#import "FLEPeriod.h"
 #import "AOMDatastore.h"
 #import "AOMModelStore.h"
 #import "AOMModelHelper.h"
 #import "NSString+Extensions.h"
 #import "FLELedger.h"
-#import "Expenses.h"
+#import "FLEExpense.h"
 
 /*
-* Generated class for your Periods data model 
+* Generated class for your FLEPeriod data model 
 */
-@implementation Periods
+@implementation FLEPeriod
     @synthesize ledger;
-    @synthesize expenses;
+    @synthesize expense;
 - (void) initAttributes {
     [super initAttributes];
-    expenses = [[NSMutableArray alloc] init];
+    expense = [[NSMutableArray alloc] init];
 }
 - (id) init {
     self = [super init];
@@ -59,17 +59,17 @@
 }
 
      + (NSString*)getSimpleName    {
-        return @"Periods";
+        return @"FLEPeriod";
     }
     + (NSString*)getModuleName    {
         return @"PayOffMain";
     }
 
 + (NSMutableArray*)getWithQuery:(NSString*) _query{
-    return [[AOMDatastore sharedInstance] loadListFromServerWithClass:[Periods class] andQuery:_query];
+    return [[AOMDatastore sharedInstance] loadListFromServerWithClass:[FLEPeriod class] andQuery:_query];
 }
 + (void)getAsyncWithQuery:(NSString*) _query withBlock:(AOMBlockWithResults) _block{
-    [[AOMDatastore sharedInstance] loadListFromServerAsyncWithClass:[Periods class] andQuery:_query andFinishingBlock:_block];
+    [[AOMDatastore sharedInstance] loadListFromServerAsyncWithClass:[FLEPeriod class] andQuery:_query andFinishingBlock:_block];
 }
 
         
@@ -208,6 +208,118 @@
         [[self data] setValue:[NSNumber numberWithDouble: timeInS] forKey:@"endtimestamp"] ;
     }
         
+        - (NSMutableArray*)loadExpense:(NSString*) _query {
+        NSString* refUrl = [[self data] objectForKey:@"expenseHref"];
+        if(refUrl==Nil) {
+            NSMutableArray* emptyList = [[NSMutableArray alloc] init];
+            return emptyList;
+        }
+        expense = [[AOMDatastore sharedInstance] loadFromServerWithHref:refUrl andClass:[FLEExpense class] andQuery:_query];
+        return expense;
+    }
+    
+    - (void)loadExpenseAsync:(NSString*) _query andWithBlock:(AOMEmptyBlock) _block {
+        NSString* refUrl = [[self data] objectForKey:@"expenseHref"];
+        if(refUrl==Nil) {
+            if (_block) {
+                NSError* error = [AOMDatastore createApiomatErrorWithStatus:AOMHREF_NOT_FOUND];
+                _block(error);
+                return;
+            }
+        }
+        AOMBlockWithResults internBlock = ^(NSMutableArray *models, NSError *error) {
+            if(error == FALSE) {
+                 expense = models;
+            }
+            if (_block) {
+                _block(error);
+            }
+        };
+        [[AOMDatastore sharedInstance] loadFromServerAsyncWithHref:refUrl andClass:[FLEExpense class] andQuery:_query andFinishingBlock:internBlock];
+    }
+    - (NSString*)postExpense:(FLEExpense*) _refData  {
+            NSString* href = [_refData getHref];
+            if([NSString isEmptyString:href])
+            {
+                [AOMDatastore raiseApiomatExceptionWithStatus:AOMSAVE_REFERENECE_BEFORE_REFERENCING];
+                return Nil;
+            }
+            NSString* linkedHref = [[AOMDatastore sharedInstance] postOnServer:_refData withHref:[[self data] objectForKey:@"expenseHref"]];
+            //if object was saved than add to local collection or set local variable
+                        if(linkedHref && [AOMModelHelper containsList:expense thisHref:linkedHref] == false) 
+            {
+                [expense addObject:_refData];
+                            [self addRefModelHrefWithName:@"expense" andHref:href];
+            }
+            return href;
+    }
+    
+    - (void)postExpenseAsync:(FLEExpense*) _refData andWithBlock:(AOMEmptyBlock) _block {
+        NSString* href = [_refData getHref];
+        if([NSString isEmptyString:href])
+        {
+            [AOMDatastore createApiomatErrorWithStatus:AOMSAVE_REFERENECE_BEFORE_REFERENCING];
+            return;
+        }
+        [[AOMDatastore sharedInstance] postOnServerAsync:_refData withHref:[[self data] objectForKey:@"expenseHref"] andFinishingBlock:^(NSString *linkedHref, NSError *error) {
+            if(error == FALSE) {
+                //if object was saved than add to local collection or set local variable
+                if(linkedHref && [AOMModelHelper containsList:expense thisHref:linkedHref] == false) {
+                    [expense addObject:_refData];
+                    [self addRefModelHrefWithName:@"expense" andHref:href];
+                }
+            }
+            if(_block) {
+                _block(error);
+            }
+        }];
+    }
+    
+    - (void)removeExpense:(FLEExpense*) _refData  {
+        NSString* refUrl = [[self data] objectForKey:@"expenseHref"];
+        NSString* refHref = [_refData getHref];
+        NSRange range = [refHref rangeOfString:@"/" options:NSBackwardsSearch];
+        NSString* refID = [refHref substringFromIndex:NSMaxRange(range)];
+        BOOL wasDeleted = [[AOMDatastore sharedInstance] deleteOnServerWithUrl:[[refUrl stringByAppendingString:@"/"] stringByAppendingString:refID]];
+        if(wasDeleted) {
+            [expense removeObject:_refData];
+            [self removeFromRefModelHrefsWithName:@"expense" andHref:refHref];
+        }
+    }
+    
+    - (void)removeExpenseAsync:(FLEExpense*) _refData andWithBlock:(AOMEmptyBlock) _block {
+        NSString* refUrl = [[self data] objectForKey:@"expenseHref"];
+        NSString* refHref = [_refData getHref];
+        NSRange range = [refHref rangeOfString:@"/" options:NSBackwardsSearch];
+        NSString* refID = [refHref substringFromIndex:NSMaxRange(range)];
+        [[AOMDatastore sharedInstance] deleteOnServerAsyncWithUrl:[[refUrl stringByAppendingString:@"/"] stringByAppendingString:refID] withFinishingBlock:^(NSError *error) {
+            if(error == FALSE) {
+                [expense removeObject:_refData];
+                [self removeFromRefModelHrefsWithName:@"expense" andHref:refHref];
+            }
+            
+            if(_block) {
+                _block(error);
+            }
+        }];
+    }
+        - (NSMutableArray*)expense{
+        if([expense count]==0 && [[AOMDatastore sharedInstance] modelStore]) {
+            NSMutableArray* hrefsOfObj = [self getRefModelHrefsForName:@"expense"];
+            for (NSString* objHref in hrefsOfObj) {
+                id elem = [[[AOMDatastore sharedInstance] modelStore] modelWithHref:objHref andClass:[FLEExpense class]];
+                if(elem) {
+                    [expense addObject:elem];
+                } else if([[[AOMDatastore sharedInstance] modelStore] useIncompleteReferences]==false){
+                    //min one element is not in AOMDatastore so we say dataset is not complete return empty list
+                    [expense removeAllObjects];
+                    return expense;
+                }
+            }
+        }
+        return expense;
+    }
+        
         - (NSDate*)starttimestamp {
         double timeInMs = [[[self data] objectForKey:@"starttimestamp"] doubleValue];
         if(timeInMs)
@@ -220,118 +332,6 @@
     - (void)setStarttimestamp:(NSDate*) _starttimestamp {
         double timeInS = [_starttimestamp timeIntervalSince1970] * 1000;
         [[self data] setValue:[NSNumber numberWithDouble: timeInS] forKey:@"starttimestamp"] ;
-    }
-        
-        - (NSMutableArray*)loadExpenses:(NSString*) _query {
-        NSString* refUrl = [[self data] objectForKey:@"expensesHref"];
-        if(refUrl==Nil) {
-            NSMutableArray* emptyList = [[NSMutableArray alloc] init];
-            return emptyList;
-        }
-        expenses = [[AOMDatastore sharedInstance] loadFromServerWithHref:refUrl andClass:[Expenses class] andQuery:_query];
-        return expenses;
-    }
-    
-    - (void)loadExpensesAsync:(NSString*) _query andWithBlock:(AOMEmptyBlock) _block {
-        NSString* refUrl = [[self data] objectForKey:@"expensesHref"];
-        if(refUrl==Nil) {
-            if (_block) {
-                NSError* error = [AOMDatastore createApiomatErrorWithStatus:AOMHREF_NOT_FOUND];
-                _block(error);
-                return;
-            }
-        }
-        AOMBlockWithResults internBlock = ^(NSMutableArray *models, NSError *error) {
-            if(error == FALSE) {
-                 expenses = models;
-            }
-            if (_block) {
-                _block(error);
-            }
-        };
-        [[AOMDatastore sharedInstance] loadFromServerAsyncWithHref:refUrl andClass:[Expenses class] andQuery:_query andFinishingBlock:internBlock];
-    }
-    - (NSString*)postExpenses:(Expenses*) _refData  {
-            NSString* href = [_refData getHref];
-            if([NSString isEmptyString:href])
-            {
-                [AOMDatastore raiseApiomatExceptionWithStatus:AOMSAVE_REFERENECE_BEFORE_REFERENCING];
-                return Nil;
-            }
-            NSString* linkedHref = [[AOMDatastore sharedInstance] postOnServer:_refData withHref:[[self data] objectForKey:@"expensesHref"]];
-            //if object was saved than add to local collection or set local variable
-                        if(linkedHref && [AOMModelHelper containsList:expenses thisHref:linkedHref] == false) 
-            {
-                [expenses addObject:_refData];
-                            [self addRefModelHrefWithName:@"expenses" andHref:href];
-            }
-            return href;
-    }
-    
-    - (void)postExpensesAsync:(Expenses*) _refData andWithBlock:(AOMEmptyBlock) _block {
-        NSString* href = [_refData getHref];
-        if([NSString isEmptyString:href])
-        {
-            [AOMDatastore createApiomatErrorWithStatus:AOMSAVE_REFERENECE_BEFORE_REFERENCING];
-            return;
-        }
-        [[AOMDatastore sharedInstance] postOnServerAsync:_refData withHref:[[self data] objectForKey:@"expensesHref"] andFinishingBlock:^(NSString *linkedHref, NSError *error) {
-            if(error == FALSE) {
-                //if object was saved than add to local collection or set local variable
-                if(linkedHref && [AOMModelHelper containsList:expenses thisHref:linkedHref] == false) {
-                    [expenses addObject:_refData];
-                    [self addRefModelHrefWithName:@"expenses" andHref:href];
-                }
-            }
-            if(_block) {
-                _block(error);
-            }
-        }];
-    }
-    
-    - (void)removeExpenses:(Expenses*) _refData  {
-        NSString* refUrl = [[self data] objectForKey:@"expensesHref"];
-        NSString* refHref = [_refData getHref];
-        NSRange range = [refHref rangeOfString:@"/" options:NSBackwardsSearch];
-        NSString* refID = [refHref substringFromIndex:NSMaxRange(range)];
-        BOOL wasDeleted = [[AOMDatastore sharedInstance] deleteOnServerWithUrl:[[refUrl stringByAppendingString:@"/"] stringByAppendingString:refID]];
-        if(wasDeleted) {
-            [expenses removeObject:_refData];
-            [self removeFromRefModelHrefsWithName:@"expenses" andHref:refHref];
-        }
-    }
-    
-    - (void)removeExpensesAsync:(Expenses*) _refData andWithBlock:(AOMEmptyBlock) _block {
-        NSString* refUrl = [[self data] objectForKey:@"expensesHref"];
-        NSString* refHref = [_refData getHref];
-        NSRange range = [refHref rangeOfString:@"/" options:NSBackwardsSearch];
-        NSString* refID = [refHref substringFromIndex:NSMaxRange(range)];
-        [[AOMDatastore sharedInstance] deleteOnServerAsyncWithUrl:[[refUrl stringByAppendingString:@"/"] stringByAppendingString:refID] withFinishingBlock:^(NSError *error) {
-            if(error == FALSE) {
-                [expenses removeObject:_refData];
-                [self removeFromRefModelHrefsWithName:@"expenses" andHref:refHref];
-            }
-            
-            if(_block) {
-                _block(error);
-            }
-        }];
-    }
-        - (NSMutableArray*)expenses{
-        if([expenses count]==0 && [[AOMDatastore sharedInstance] modelStore]) {
-            NSMutableArray* hrefsOfObj = [self getRefModelHrefsForName:@"expenses"];
-            for (NSString* objHref in hrefsOfObj) {
-                id elem = [[[AOMDatastore sharedInstance] modelStore] modelWithHref:objHref andClass:[Expenses class]];
-                if(elem) {
-                    [expenses addObject:elem];
-                } else if([[[AOMDatastore sharedInstance] modelStore] useIncompleteReferences]==false){
-                    //min one element is not in AOMDatastore so we say dataset is not complete return empty list
-                    [expenses removeAllObjects];
-                    return expenses;
-                }
-            }
-        }
-        return expenses;
     }
 
 @end

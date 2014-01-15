@@ -7,7 +7,7 @@
 //
 
 #import "FLESingletonModells.h"
-#import "User.h"
+#import "FLEUser.h"
 #import "FLEUserSession.h"
 #import "FLELedger.h"
 
@@ -15,17 +15,17 @@
 @implementation FLESingletonModells
 
 
-static User *user;
+static FLEUser *user;
 static FLEUserSession *session;
 static FLELedger *ledger;
-static Periods *period;
+static FLEPeriod *period;
 
-+ (User*)getUser
++ (FLEUser*)getUser
 {
     
     if(!user)
     {
-        user = [[User alloc] init];
+        user = [[FLEUser alloc] init];
 		
     }
 	
@@ -71,12 +71,12 @@ static Periods *period;
 
 
 
-+ (Periods*)getActivePeriod;
++ (FLEPeriod*)getActivePeriod;
 {
     
     if(!period)
     {
-        period= [[Periods alloc] init];
+        period= [[FLEPeriod alloc] init];
 		period.status = @"active";
 		
     }

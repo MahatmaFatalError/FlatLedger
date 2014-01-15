@@ -8,7 +8,7 @@
 
 #import "FLEStartupTableViewController.h"
 #import "FLECreateLedgerViewController.h"
-#import "User.h"
+#import "FLEUser.h"
 #import "Datastore.h"
 #import "FLEUserSession.h"
 #import "FLESingletonModells.h"
@@ -68,7 +68,7 @@
 	__block BOOL returnValue = YES;
 	
 	if ([identifier isEqualToString:@"ModalLoginToLedger"]) {
-        User* user = [FLESingletonModells getUser];
+        FLEUser* user = [FLESingletonModells getUser];
 		[user setUserName:emailField.text];
 		[user setPassword:passwordField.text];
 		
