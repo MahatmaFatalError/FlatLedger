@@ -7,10 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "FLEUser.h"
+#import "User.h"
 
 
 @interface FLELedgerNavigationController : UINavigationController
-@property FLEUser* user;
+@property User* user;
 
 @end

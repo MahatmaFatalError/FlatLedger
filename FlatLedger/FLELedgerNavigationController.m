@@ -33,7 +33,7 @@
    }
 
 - (void)viewDidAppear:(BOOL)animated{
-    FLEUser* user = [FLESingletonModells getUser];
+    User* user = [FLESingletonModells getUser];
 	FLEUserSession *session = [FLESingletonModells getSession];
 	
 	

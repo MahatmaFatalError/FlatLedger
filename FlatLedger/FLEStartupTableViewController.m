@@ -8,7 +8,7 @@
 
 #import "FLEStartupTableViewController.h"
 #import "FLECreateLedgerViewController.h"
-#import "FLEUser.h"
+#import "User.h"
 #import "Datastore.h"
 #import "FLEUserSession.h"
 #import "FLESingletonModells.h"
@@ -18,7 +18,7 @@
 @end
 
 @implementation FLEStartupTableViewController
-
+@synthesize userAOM;
 - (id)initWithStyle:(UITableViewStyle)style
 {
     self = [super initWithStyle:style];
@@ -61,34 +61,14 @@
 	__block BOOL returnValue = YES;
 	
 	if ([identifier isEqualToString:@"ModalLoginToLedger"]) {
-        FLEUser* user = [FLESingletonModells getUser];
+        User* user = [FLESingletonModells getUser];
+        
 		[user setUserName:emailField.text];
 		[user setPassword:passwordField.text];
 		
-		//TODO: leere text felder abfangen, die gehen komsicherweise bei APIOmat als authorized durch
-		
-		
-		[DataStore configureWithUser:user];
-		
-		
-//		[user saveAsyncWithBlock:^(NSError *error) {
-//			if([error code] == AOMUNAUTHORIZED | [[user userName] length] == 0 | [[user password] length] == 0 ) {
-//				/* request was not successful */
-//				NSLog(@"User failed to log in");
-//				returnValue = NO;
-//			}
-//			else {
-//				/* sign up was successful */
-//				[[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"isLoggedin"];
-//				returnValue = YES;
-//				
-//				//TODO: sicherstellen, dass asnychroner block antowrtet bevor die segue ausgelöst wird.
-//			}
-//		}];
-		
 		[UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
 		@try {
-			[user loadMe];
+            [user loadMe];
 			[[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"isLoggedin"];
 			FLEUserSession *session = [FLESingletonModells getSession];
 			session.user = user;
@@ -107,6 +87,33 @@
 	return returnValue;
 	
 }
+
+
+# pragma mark - Navigation
+
+// In a story board-based application, you will often want to do a little preparation before navigation
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    // Get the new view controller using [segue destinationViewController].
+    // Pass the selected object to the new view controller.
+	
+	if ([segue.identifier isEqualToString:@"ModalSignupToCreateLedger"] ) {
+        [((FLECreateLedgerViewController*)segue.destinationViewController) setEmail:emailField.text];
+        [((FLECreateLedgerViewController*)segue.destinationViewController) setPassword:passwordField.text];
+    }
+    
+	if ([segue.identifier isEqualToString:@"ModalLoginToLedger"]) {
+		//TODO: nach login bevor ich auf neuen View wechsel perioden des Ledgers laden und in ViewDidLoad Methode vom LedgerTableViewController behandeln
+        
+        User* user = [FLESingletonModells getUser];
+        FLELedger* ledger = [FLESingletonModells getLedger];
+        
+        ledger = [FLESingletonModells getLedgerFromUser];
+		
+		//[segue.destinationViewController setDetailItem:period];
+	}
+}
+
     
 #pragma mark - Table view data source
 //
@@ -175,25 +182,7 @@
 
 
 
-# pragma mark - Navigation
 
-// In a story board-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-	
-	if ([segue.identifier isEqualToString:@"ModalSignupToCreateLedger"] ) {
-        [((FLECreateLedgerViewController*)segue.destinationViewController) setEmail:emailField.text];
-        [((FLECreateLedgerViewController*)segue.destinationViewController) setPassword:passwordField.text];
-    }
-
-	if ([segue.identifier isEqualToString:@"ModalLoginToLedger"]) {
-		//TODO: nach login bevor ich auf neuen View wechsel perioden des Ledgers laden und in ViewDidLoad Methode vom LedgerTableViewController behandeln
-		
-		//[segue.destinationViewController setDetailItem:period];
-	}
-}
 
 
 @end

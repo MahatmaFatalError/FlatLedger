@@ -7,14 +7,15 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "FLEUser.h"
+#import "User.h"
 #import "FLEUserSession.h"
 #import "FLELedger.h"
 #import "FLEPeriod.h"
+#import "Datastore.h"
 
 @interface FLESingletonModells : NSObject
 
-+ (FLEUser*)getUser;
++ (User*)getUser;
 + (FLEUserSession*)getSession;
 + (FLELedger*)getLedger;
 + (void)releaseUser;
@@ -23,5 +24,9 @@
 
 + (FLEPeriod*)getActivePeriod;
 + (void)releaseActivePeriod;
+
+
++ (void) setLedger:(FLELedger *)ledgerForUser;
++ (FLELedger*)getLedgerFromUser;
 
 @end

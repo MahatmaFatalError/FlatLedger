@@ -7,13 +7,13 @@
 //
 
 #import "FLELedgerTableViewController.h"
-#import "FLEUser.h"
+#import "User.h"
 #import "FLESingletonModells.h"
 #import "FLEUserSession.h"
 #import "FLEPeriod.h"
 
 @interface FLELedgerTableViewController ()
-@property FLELedger *ledger;
+//@property FLELedger *ledger; //ggf keine property und nur FLELedger* ledger = [FLESingletonModells getLedger];
 @property FLEPeriod *activePeriod;
 
 @end
@@ -25,7 +25,7 @@
     self = [super initWithStyle:style];
     if (self) {
         // Custom initialization
-		self.ledger = [FLESingletonModells getLedger];
+		//self.ledger = [FLESingletonModells getLedger];
     }
     return self;
 }
@@ -33,7 +33,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	[[self tableView] reloadData];
+	//[[self tableView] reloadData];
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
  
@@ -53,7 +53,7 @@
     
     session.user = nil;
     
-    FLEUser *user = [FLESingletonModells getUser];
+    User *user = [FLESingletonModells getUser];
     [FLESingletonModells releaseUser];
 	
 	
@@ -81,18 +81,25 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     // Return the number of rows in the section.
-    return self.ledger.periods.count;
+    FLELedger* ledger = [FLESingletonModells getLedger];
+    //hier ggf ledger loadPeriods
+    return ledger.periods.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     static NSString *CellIdentifier = @"PeriodCell";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
+    FLELedger* ledger = [FLESingletonModells getLedger];
     
     // Configure the cell...
-	self.activePeriod = self.ledger.periods[indexPath.row];
-	cell.textLabel.text = self.activePeriod.name;
-    
+//    [self.ledger loadPeriodsAsync:@"" andWithBlock:^(NSError *error) {
+//        self.activePeriod = self.ledger.periods[indexPath.row];
+//        cell.textLabel.text = self.activePeriod.name;
+//    }];
+    NSMutableArray *perdiods = [ledger loadPeriods:@""];
+	self.activePeriod = perdiods[indexPath.row];
+    cell.textLabel.text = self.activePeriod.name;
     return cell;
 }
 
@@ -122,32 +129,26 @@
     NSString *title = [alert buttonTitleAtIndex:buttonIndex];
     if([title isEqualToString:@"OK"])
     {
-        self.ledger = [FLESingletonModells getLedger];
+        FLELedger *ledger = [FLESingletonModells getLedger];
 		self.activePeriod = [FLESingletonModells getActivePeriod];
 		
 		self.activePeriod.starttimestamp = [NSDate date];
-		self.activePeriod.ledger = self.ledger;
-		
 		self.activePeriod.name = [alert textFieldAtIndex:0].text;
 		NSLog(@"Periodname = %@", self.activePeriod.name);
-		[self.ledger.periods addObject:self.activePeriod];
-		
-		[self.ledger saveAsyncWithBlock:^(NSError *errorL) {
-			if (errorL) {
-				NSLog(@"Error while saving Ledger");
-			} else{
-				[self.activePeriod saveAsyncWithBlock:^(NSError *error) {
-					if (errorL) {
-						NSLog(@"Error while saving Period");
-					} else{
-						NSLog(@"Period and Ledger Saved");
-						[[self tableView] reloadData];
-					}
-				}];
-				
-			}
+        
+		//[self.ledger.periods addObject:self.activePeriod];
+        
+        [self.activePeriod saveAsyncWithBlock:^(NSError *error) {
+            if (error) {
+                NSLog(@"Error while saving Period");
+            } else{               
+                [self.activePeriod postLedger:ledger];
+                [ledger postPeriods:self.activePeriod];
+                 NSLog(@"Period and Ledger Saved");
+                [[self tableView] reloadData];
+            }
+        }];
 			
-		}];
     }
 }
 

@@ -7,10 +7,10 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "FLEUser.h"
+#import "User.h"
 
 @interface FLEUserSession : NSMutableDictionary
-@property FLEUser *user;
+@property User *user;
 @property BOOL *isLoggedIn;
 
 @end

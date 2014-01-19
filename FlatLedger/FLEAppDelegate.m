@@ -11,7 +11,7 @@
 #import "FLELedgerNavigationController.h"
 
 @implementation FLEAppDelegate
-
+@synthesize user;
 @synthesize managedObjectContext = _managedObjectContext;
 @synthesize managedObjectModel = _managedObjectModel;
 @synthesize persistentStoreCoordinator = _persistentStoreCoordinator;
@@ -24,8 +24,33 @@
 	//controller.managedObjectContext = self.managedObjectContext;
     
     //TODO weiche ob eingelogt oder nicht, dementsprechend auf New Expense oder Login Screen
-    
-    
+//    user = [[User alloc] init];
+//    [user setUserName:@"rup"];
+//    [user setPassword:@"rup"];
+//    
+//    //Configure Datastore
+//    [DataStore configureWithUrl:baseUrl andApiKey:apiKey andUsername:[user userName] andPassword:[user password]];
+//    
+//    @try {
+//        [user loadMe];
+//    }
+//    @catch (NSException *exception) {
+//        //There is no User with this name on server so add one
+//        NSLog(@"catch, me does not work");
+//        [user save];
+//        [user loadMe];
+//    }
+//    
+//    NSMutableDictionary *dict = [user data];
+//    
+//    NSMutableDictionary *dynAtt = [dict objectForKey:@"dynamicAttributes"];
+//    
+//    
+//    [dynAtt setObject:@"ID blabla" forKey:@"ledger"];
+//    
+//    [user save];
+//    
+//    NSLog(@"bla");
     
     return YES;
 }

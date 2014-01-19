@@ -29,7 +29,7 @@
 #import "AOMModelStore.h"
 #import "AOMModelHelper.h"
 #import "NSString+Extensions.h"
-#import "FLEUser.h"
+#import "User.h"
 
 /*
 * Generated class for your FLEExpense data model 
@@ -70,9 +70,9 @@
 }
 
         
-        - (FLEUser*)loadUser{
+        - (AOMUser*)loadUser{
         NSString* refUrl = [[self data] objectForKey:@"userHref"];   
-            user = [[FLEUser alloc] init];
+            user = [[AOMUser alloc] init];
             [[AOMDatastore sharedInstance] loadFromServerWithHref:refUrl andStoreIn:user];
             //If there no href than return cause object isn't on server
             if([user getHref]==Nil) {
@@ -83,7 +83,7 @@
     
     - (void)loadUserAsync:(AOMEmptyBlock)_block {
         NSString* refUrl = [[self data] objectForKey:@"userHref"];
-        user = [[FLEUser alloc] init];
+        user = [[AOMUser alloc] init];
         [[AOMDatastore sharedInstance] loadFromServerAsyncWithHref:refUrl andStoreIn:user andFinishingBlock:^(AOMAbstractClientDataModel *model, NSError *error) {
         //If there no href than return error because object isn't on server
         if(error || [user getHref]==Nil) {
@@ -98,7 +98,7 @@
         }
     }];
     }
-    - (NSString*)postUser:(FLEUser*) _refData  {
+    - (NSString*)postUser:(AOMUser*) _refData  {
             NSString* href = [_refData getHref];
             if([NSString isEmptyString:href])
             {
@@ -115,7 +115,7 @@
             return href;
     }
     
-    - (void)postUserAsync:(FLEUser*) _refData andWithBlock:(AOMEmptyBlock) _block {
+    - (void)postUserAsync:(AOMUser*) _refData andWithBlock:(AOMEmptyBlock) _block {
         NSString* href = [_refData getHref];
         if([NSString isEmptyString:href])
         {
@@ -133,7 +133,7 @@
         }];
     }
     
-    - (void)removeUser:(FLEUser*) _refData  {
+    - (void)removeUser:(AOMUser*) _refData  {
         NSString* refUrl = [[self data] objectForKey:@"userHref"];
         NSString* refHref = [_refData getHref];
         NSRange range = [refHref rangeOfString:@"/" options:NSBackwardsSearch];
@@ -145,7 +145,7 @@
         }
     }
     
-    - (void)removeUserAsync:(FLEUser*) _refData andWithBlock:(AOMEmptyBlock) _block {
+    - (void)removeUserAsync:(AOMUser*) _refData andWithBlock:(AOMEmptyBlock) _block {
         NSString* refUrl = [[self data] objectForKey:@"userHref"];
         NSString* refHref = [_refData getHref];
         NSRange range = [refHref rangeOfString:@"/" options:NSBackwardsSearch];
@@ -161,25 +161,15 @@
             }
         }];
     }
-        - (FLEUser*)user{
+        - (AOMUser*)user{
         if(user==nil && [[AOMDatastore sharedInstance] modelStore]) {
             NSMutableArray* hrefsOfObj = [self getRefModelHrefsForName:@"user"];
             if([hrefsOfObj count] == 1) {
-                user = (FLEUser*) [[[AOMDatastore sharedInstance] modelStore] modelWithHref:[hrefsOfObj objectAtIndex:0] andClass:[FLEUser class]];
+                user = (AOMUser*) [[[AOMDatastore sharedInstance] modelStore] modelWithHref:[hrefsOfObj objectAtIndex:0] andClass:[AOMUser class]];
             }
         }
         return user;
     }
-        
-     - ( NSString* )item {
-
-
- return [[self data] objectForKey:@"item"];
-}
-
-            - (void)setItem:( NSString* )_item {
-                            [[self data] setObject:_item?:[NSNull null] forKey:@"item"];
-                        }
         
      - ( double )price {
 
@@ -190,6 +180,16 @@
 
             - (void)setPrice:( double )_price {
                             [[self data] setObject:[NSNumber  numberWithDouble :_price] forKey:@"price"];
+                        }
+        
+     - ( NSString* )item {
+
+
+ return [[self data] objectForKey:@"item"];
+}
+
+            - (void)setItem:( NSString* )_item {
+                            [[self data] setObject:_item?:[NSNull null] forKey:@"item"];
                         }
         
         - (NSDate*)timestamp {

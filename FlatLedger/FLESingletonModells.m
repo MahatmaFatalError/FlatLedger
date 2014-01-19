@@ -7,25 +7,22 @@
 //
 
 #import "FLESingletonModells.h"
-#import "FLEUser.h"
-#import "FLEUserSession.h"
-#import "FLELedger.h"
 
 
 @implementation FLESingletonModells
 
 
-static FLEUser *user;
+static User *user;
 static FLEUserSession *session;
 static FLELedger *ledger;
 static FLEPeriod *period;
 
-+ (FLEUser*)getUser
++ (User*)getUser
 {
     
     if(!user)
     {
-        user = [[FLEUser alloc] init];
+        user = [[User alloc] init];
 		
     }
 	
@@ -86,6 +83,52 @@ static FLEPeriod *period;
 
 + (void)releaseActivePeriod {
     period = nil;
+}
+
+
+
++ (void) setLedger:(FLELedger *)ledgerForUser{
+    ledger = ledgerForUser;
+    
+    if ([user getHref] == nil) {
+        [user loadMe];
+    }
+    NSString *href = [ledger getHref];
+    
+    NSArray *listItems = [href componentsSeparatedByString:@"/"];
+    NSString *ledgerId = [listItems lastObject];
+    
+    NSMutableDictionary *dict = [user data];
+    NSMutableDictionary *dynAtt = [dict objectForKey:@"dynamicAttributes"];
+    //[dynAtt setObject:ledger forKey:@"ledger"];
+    [dynAtt setObject:ledgerId forKey:@"ledger"];
+    [user save]; //hier knallts weil dynAttribut nur flache typen nimmt vermutlich
+}
+
+
++ (FLELedger*)getLedgerFromUser{
+    
+    if ([user getHref] == nil) {
+        [user loadMe];
+    }
+    NSMutableDictionary *dict = [user data];
+    NSMutableDictionary *dynAtt = [dict objectForKey:@"dynamicAttributes"];
+    
+    NSString *firstString = @"id == id(";
+    NSString *ledgerId = [dynAtt objectForKey:@"ledger"];
+    NSString *query = [firstString stringByAppendingString:ledgerId] ;
+    query = [query stringByAppendingString:@")"];
+    
+    
+    NSMutableArray *ledgers = [[DataStore sharedInstance] loadListFromServerWithClass:[ledger class] andQuery: query];
+    ledger = [ledgers objectAtIndex:0];
+    
+    
+    //NSString *href = @"https://apiomat.org/yambas/rest/apps/PayOff/models/PayOffMain/User/";
+    //[userAOM loadWithHref:href];
+    //[DataStore sharedInstance] loadFromServerWithHref:<#(NSString *)#> andClass:<#(__unsafe_unretained Class)#> andQuery:<#(NSString *)#>
+    //[user loadWithHref:href];
+    return ledger;
 }
 
 @end

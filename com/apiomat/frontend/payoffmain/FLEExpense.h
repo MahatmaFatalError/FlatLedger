@@ -26,34 +26,34 @@
  */
 
 #import "AOMAbstractClientDataModel.h"
-@class FLEUser;
+@class AOMUser;
 
 /*!
  Generated class for your FLEExpense data model 
 */
 @interface FLEExpense : AOMAbstractClientDataModel
 
-    @property (readonly, strong, nonatomic) FLEUser* user;
+    @property (readonly, strong, nonatomic) AOMUser* user;
 
 
 
 
 
-                    - (FLEUser*)loadUser;
+                        - (AOMUser*)loadUser;
         - (void)loadUserAsync:(AOMEmptyBlock)_block;
-        - (NSString*)postUser:(FLEUser*) _refData ;
-    - (void)postUserAsync:(FLEUser*) _refData andWithBlock:(AOMEmptyBlock) _block;
+        - (NSString*)postUser:(AOMUser*) _refData ;
+    - (void)postUserAsync:(AOMUser*) _refData andWithBlock:(AOMEmptyBlock) _block;
 
-    - (void)removeUser:(FLEUser*) _refData ;
-    - (void)removeUserAsync:(FLEUser*) _refData andWithBlock:(AOMEmptyBlock) _block;
+    - (void)removeUser:(AOMUser*) _refData ;
+    - (void)removeUserAsync:(AOMUser*) _refData andWithBlock:(AOMEmptyBlock) _block;
 
-                - ( NSString* )item;
-        
-                        - (void)setItem:( NSString* )_item;
-            
                 - ( double )price;
         
                         - (void)setPrice:( double )_price;
+            
+                - ( NSString* )item;
+        
+                        - (void)setItem:( NSString* )_item;
             
                 - ( NSDate* )timestamp;
         

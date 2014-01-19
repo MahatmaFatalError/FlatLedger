@@ -8,11 +8,12 @@
 
 #import "FLECreateLedgerViewController.h"
 #import "FLELedger.h"
-#import "FLEUser.h"
+#import "User.h"
 #import "AOMDatastore.h"
 #import "FLESingletonModells.h"
 #import "FLEUserSession.h"
-#import "FLEPeriod.h";
+#import "FLEPeriod.h"
+#import "Datastore.h"
 
 
 @interface FLECreateLedgerViewController ()
@@ -44,51 +45,33 @@
 
 - (IBAction)createLedgerPressed:(id)sender {
     /* Create a new user of your app */
-    FLEUser* user = [FLESingletonModells getUser];
+    User* user = [FLESingletonModells getUser];
+
     [user setUserName:self.email];
     [user setPassword:self.password];
-    
-    FLEUserSession* session = [FLESingletonModells getSession];
-    
-    /* configure AOMDatastore with user credentials */
-    [AOMDatastore configureWithUrl:baseUrl andApiKey:apiKey andUsername:[user userName] andPassword:[user password]];
-//    [user saveAsyncWithBlock:^(NSError *error) {
-//        if (error) {
-//			//TODO: Error handling
-//		} else{
-//			FLELedger* ledger = [FLESingletonModells getSeLedger];
-//			[ledger setName:ledgerField.text];
-//			[ledger.participants addObject:user];
-//			[ledger saveAsyncWithBlock:^(NSError *errorL) {
-//				if (errorL) {
-//					NSLog(@"Error while saving Ledger");
-//				} else{
-//					[[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"isLoggedin"];
-//                    session.user = user;
-//					//[self dismissViewControllerAnimated:YES completion:nil];
-//					[self performSegueWithIdentifier:@"ModalCreateLedgerToLedger" sender:self];
-//				}
-//
-//				
-//			}];
-//		}
-//		
-//    }];
+
+    [DataStore configureWithUser:user];
     
     
     @try {
-        [user save];
+        
+        //[userAOM save];
+        [user save]; //DIESES VERFICKTE USER SAVE MACHT MIR DAS LOGIN userAOM loadMe kaputt
+        // sobald eine normaler FLEUSer da ist, kann ich den normalen user nicht mehr laden
+        // negativtest umgekehrt steht noch aus
         
         FLELedger* ledger = [FLESingletonModells getLedger];
         [ledger setName:ledgerField.text];
-        [ledger.participants addObject:user];
 		ledger.starttimestamp = [NSDate date];
-		
-		
         
+		//[ledger.participants addObject:user];
+
         @try {
             [ledger save];
+            [FLESingletonModells setLedger:ledger];
+            [ledger postParticipants:user];
             [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"isLoggedin"];
+            FLEUserSession* session = [FLESingletonModells getSession];
             session.user = user;
             //[self dismissViewControllerAnimated:YES completion:nil];
 			[self performSegueWithIdentifier:@"ModalCreateLedgerToLedger" sender:self];

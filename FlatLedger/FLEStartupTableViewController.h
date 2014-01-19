@@ -7,11 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
+#include "User.h"
 
 @interface FLEStartupTableViewController : UITableViewController {
     IBOutlet UITextField* emailField;
     IBOutlet UITextField* passwordField;
 }
 
+@property (strong, nonatomic) User *userAOM;
 
 @end

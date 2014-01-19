@@ -35,11 +35,11 @@
 @interface FLEPeriod : AOMAbstractClientDataModel
 
 
-    @property FLELedger* ledger;
+    @property (readonly, strong, nonatomic) FLELedger* ledger;
 
 
 
-    @property NSMutableArray* expense;
+    @property (readonly, strong, nonatomic) NSMutableArray* expense;
 
 
                 - ( NSString* )name;
