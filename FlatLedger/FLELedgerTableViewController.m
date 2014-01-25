@@ -7,7 +7,7 @@
 //
 
 #import "FLELedgerTableViewController.h"
-#import "User.h"
+#import "FLEUser.h"
 #import "FLESingletonModells.h"
 #import "FLEUserSession.h"
 #import "FLEPeriod.h"
@@ -53,7 +53,7 @@
     
     session.user = nil;
     
-    User *user = [FLESingletonModells getUser];
+    FLEUser *user = [FLESingletonModells getUser];
     [FLESingletonModells releaseUser];
 	
 	

@@ -8,7 +8,7 @@
 
 #import "FLEStartupTableViewController.h"
 #import "FLECreateLedgerViewController.h"
-#import "User.h"
+#import "FLEUser.h"
 #import "Datastore.h"
 #import "FLEUserSession.h"
 #import "FLESingletonModells.h"
@@ -61,7 +61,7 @@
 	__block BOOL returnValue = YES;
 	
 	if ([identifier isEqualToString:@"ModalLoginToLedger"]) {
-        User* user = [FLESingletonModells getUser];
+        FLEUser* user = [FLESingletonModells getUser];
         
 		[user setUserName:emailField.text];
 		[user setPassword:passwordField.text];
@@ -105,7 +105,7 @@
 	if ([segue.identifier isEqualToString:@"ModalLoginToLedger"]) {
 		//TODO: nach login bevor ich auf neuen View wechsel perioden des Ledgers laden und in ViewDidLoad Methode vom LedgerTableViewController behandeln
         
-        User* user = [FLESingletonModells getUser];
+        FLEUser* user = [FLESingletonModells getUser];
         FLELedger* ledger = [FLESingletonModells getLedger];
         
         ledger = [FLESingletonModells getLedgerFromUser];

@@ -12,17 +12,17 @@
 @implementation FLESingletonModells
 
 
-static User *user;
+static FLEUser *user;
 static FLEUserSession *session;
 static FLELedger *ledger;
 static FLEPeriod *period;
 
-+ (User*)getUser
++ (FLEUser*)getUser
 {
     
     if(!user)
     {
-        user = [[User alloc] init];
+        user = [[FLEUser alloc] init];
 		
     }
 	

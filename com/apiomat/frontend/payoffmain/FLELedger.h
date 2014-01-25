@@ -26,7 +26,7 @@
  */
 
 #import "AOMAbstractClientDataModel.h"
-@class AOMUser;
+@class FLEUser;
 @class FLEPeriod;
 
 /*!
@@ -58,13 +58,13 @@
         
                         - (void)setStarttimestamp:( NSDate* )_starttimestamp;
             
-                        - (NSMutableArray*)loadParticipants:(NSString*) _query;
+                    - (NSMutableArray*)loadParticipants:(NSString*) _query;
         - (void)loadParticipantsAsync:(NSString*) _query andWithBlock:(AOMEmptyBlock) _block;
-        - (NSString*)postParticipants:(AOMUser*) _refData ;
-    - (void)postParticipantsAsync:(AOMUser*) _refData andWithBlock:(AOMEmptyBlock) _block;
+        - (NSString*)postParticipants:(FLEUser*) _refData ;
+    - (void)postParticipantsAsync:(FLEUser*) _refData andWithBlock:(AOMEmptyBlock) _block;
 
-    - (void)removeParticipants:(AOMUser*) _refData ;
-    - (void)removeParticipantsAsync:(AOMUser*) _refData andWithBlock:(AOMEmptyBlock) _block;
+    - (void)removeParticipants:(FLEUser*) _refData ;
+    - (void)removeParticipantsAsync:(FLEUser*) _refData andWithBlock:(AOMEmptyBlock) _block;
 
                     - (NSMutableArray*)loadPeriods:(NSString*) _query;
         - (void)loadPeriodsAsync:(NSString*) _query andWithBlock:(AOMEmptyBlock) _block;

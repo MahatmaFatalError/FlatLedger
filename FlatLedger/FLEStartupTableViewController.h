@@ -7,13 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
-#include "User.h"
+#include "FLEUser.h"
 
 @interface FLEStartupTableViewController : UITableViewController {
     IBOutlet UITextField* emailField;
     IBOutlet UITextField* passwordField;
 }
 
-@property (strong, nonatomic) User *userAOM;
+@property (strong, nonatomic) FLEUser *userAOM;
 
 @end

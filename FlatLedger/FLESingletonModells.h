@@ -7,7 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "User.h"
+#import "FLEUser.h"
 #import "FLEUserSession.h"
 #import "FLELedger.h"
 #import "FLEPeriod.h"
@@ -15,7 +15,7 @@
 
 @interface FLESingletonModells : NSObject
 
-+ (User*)getUser;
++ (FLEUser*)getUser;
 + (FLEUserSession*)getSession;
 + (FLELedger*)getLedger;
 + (void)releaseUser;

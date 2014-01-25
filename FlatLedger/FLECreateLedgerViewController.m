@@ -8,7 +8,7 @@
 
 #import "FLECreateLedgerViewController.h"
 #import "FLELedger.h"
-#import "User.h"
+#import "FLEUser.h"
 #import "AOMDatastore.h"
 #import "FLESingletonModells.h"
 #import "FLEUserSession.h"
@@ -45,7 +45,7 @@
 
 - (IBAction)createLedgerPressed:(id)sender {
     /* Create a new user of your app */
-    User* user = [FLESingletonModells getUser];
+    FLEUser* user = [FLESingletonModells getUser];
 
     [user setUserName:self.email];
     [user setPassword:self.password];

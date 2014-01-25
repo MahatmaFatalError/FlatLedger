@@ -29,7 +29,7 @@
 #import "AOMModelStore.h"
 #import "AOMModelHelper.h"
 #import "NSString+Extensions.h"
-#import "User.h"
+#import "FLEUser.h"
 #import "FLEPeriod.h"
 
 /*
@@ -128,7 +128,7 @@
             NSMutableArray* emptyList = [[NSMutableArray alloc] init];
             return emptyList;
         }
-        participants = [[AOMDatastore sharedInstance] loadFromServerWithHref:refUrl andClass:[AOMUser class] andQuery:_query];
+        participants = [[AOMDatastore sharedInstance] loadFromServerWithHref:refUrl andClass:[FLEUser class] andQuery:_query];
         return participants;
     }
     
@@ -149,9 +149,9 @@
                 _block(error);
             }
         };
-        [[AOMDatastore sharedInstance] loadFromServerAsyncWithHref:refUrl andClass:[AOMUser class] andQuery:_query andFinishingBlock:internBlock];
+        [[AOMDatastore sharedInstance] loadFromServerAsyncWithHref:refUrl andClass:[FLEUser class] andQuery:_query andFinishingBlock:internBlock];
     }
-    - (NSString*)postParticipants:(AOMUser*) _refData  {
+    - (NSString*)postParticipants:(FLEUser*) _refData  {
             NSString* href = [_refData getHref];
             if([NSString isEmptyString:href])
             {
@@ -168,7 +168,7 @@
             return href;
     }
     
-    - (void)postParticipantsAsync:(AOMUser*) _refData andWithBlock:(AOMEmptyBlock) _block {
+    - (void)postParticipantsAsync:(FLEUser*) _refData andWithBlock:(AOMEmptyBlock) _block {
         NSString* href = [_refData getHref];
         if([NSString isEmptyString:href])
         {
@@ -189,7 +189,7 @@
         }];
     }
     
-    - (void)removeParticipants:(AOMUser*) _refData  {
+    - (void)removeParticipants:(FLEUser*) _refData  {
         NSString* refUrl = [[self data] objectForKey:@"participantsHref"];
         NSString* refHref = [_refData getHref];
         NSRange range = [refHref rangeOfString:@"/" options:NSBackwardsSearch];
@@ -201,7 +201,7 @@
         }
     }
     
-    - (void)removeParticipantsAsync:(AOMUser*) _refData andWithBlock:(AOMEmptyBlock) _block {
+    - (void)removeParticipantsAsync:(FLEUser*) _refData andWithBlock:(AOMEmptyBlock) _block {
         NSString* refUrl = [[self data] objectForKey:@"participantsHref"];
         NSString* refHref = [_refData getHref];
         NSRange range = [refHref rangeOfString:@"/" options:NSBackwardsSearch];
@@ -221,7 +221,7 @@
         if([participants count]==0 && [[AOMDatastore sharedInstance] modelStore]) {
             NSMutableArray* hrefsOfObj = [self getRefModelHrefsForName:@"participants"];
             for (NSString* objHref in hrefsOfObj) {
-                id elem = [[[AOMDatastore sharedInstance] modelStore] modelWithHref:objHref andClass:[AOMUser class]];
+                id elem = [[[AOMDatastore sharedInstance] modelStore] modelWithHref:objHref andClass:[FLEUser class]];
                 if(elem) {
                     [participants addObject:elem];
                 } else if([[[AOMDatastore sharedInstance] modelStore] useIncompleteReferences]==false){
