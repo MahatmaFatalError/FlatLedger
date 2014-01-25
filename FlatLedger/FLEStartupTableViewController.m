@@ -108,7 +108,14 @@
         FLEUser* user = [FLESingletonModells getUser];
         FLELedger* ledger = [FLESingletonModells getLedger];
         
-        ledger = [FLESingletonModells getLedgerFromUser];
+        @try {
+            ledger = [user loadLedger];
+        }
+        @catch (NSException *exception) {
+            NSLog(@"Loading Ledger by User failed");
+        }
+        
+        
 		
 		//[segue.destinationViewController setDetailItem:period];
 	}

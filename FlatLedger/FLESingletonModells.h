@@ -26,7 +26,7 @@
 + (void)releaseActivePeriod;
 
 
-+ (void) setLedger:(FLELedger *)ledgerForUser;
-+ (FLELedger*)getLedgerFromUser;
+//+ (void) setLedger:(FLELedger *)ledgerForUser;
+//+ (FLELedger*)getLedgerFromUser;
 
 @end

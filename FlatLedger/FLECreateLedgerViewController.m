@@ -68,7 +68,7 @@
 
         @try {
             [ledger save];
-            [FLESingletonModells setLedger:ledger];
+            [user postLedger:ledger];
             [ledger postParticipants:user];
             [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"isLoggedin"];
             FLEUserSession* session = [FLESingletonModells getSession];
