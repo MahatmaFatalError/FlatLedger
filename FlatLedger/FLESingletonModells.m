@@ -55,8 +55,14 @@ static FLEPeriod *period;
     
     if(!ledger)
     {
-        ledger = [[FLELedger alloc] init];
-		
+        @try {
+            ledger = [user loadLedger];
+        }
+        @catch (NSException *exception) {
+            ledger = [[FLELedger alloc] init];
+            NSLog(@"Loading Ledger by User failed. A blank new Ledger is created");
+        }
+        
     }
 	
 	return ledger;

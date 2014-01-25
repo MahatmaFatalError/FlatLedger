@@ -53,8 +53,10 @@
     
     session.user = nil;
     
-    FLEUser *user = [FLESingletonModells getUser];
     [FLESingletonModells releaseUser];
+    [FLESingletonModells releaseLedger];
+    [FLESingletonModells releaseActivePeriod];
+    [FLESingletonModells releaseSession];
 	
 	
     //[self dismissViewControllerAnimated:YES completion:nil];

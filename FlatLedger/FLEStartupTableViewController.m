@@ -1,4 +1,4 @@
-//
+    //
 //  FLEStartupTableViewController.m
 //  FlatLedger
 //
@@ -108,14 +108,15 @@
         FLEUser* user = [FLESingletonModells getUser];
         FLELedger* ledger = [FLESingletonModells getLedger];
         
-        @try {
-            ledger = [user loadLedger];
-        }
-        @catch (NSException *exception) {
-            NSLog(@"Loading Ledger by User failed");
-        }
+//        @try {
+//            ledger = [user loadLedger];
+//        }
+//        @catch (NSException *exception) {
+//            NSLog(@"Loading Ledger by User failed");
+//        }
         
-        
+        NSLog(@"Try to login");
+
 		
 		//[segue.destinationViewController setDetailItem:period];
 	}
