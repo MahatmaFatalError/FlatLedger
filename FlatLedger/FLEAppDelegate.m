@@ -11,7 +11,6 @@
 #import "FLELedgerNavigationController.h"
 
 @implementation FLEAppDelegate
-@synthesize user;
 @synthesize managedObjectContext = _managedObjectContext;
 @synthesize managedObjectModel = _managedObjectModel;
 @synthesize persistentStoreCoordinator = _persistentStoreCoordinator;

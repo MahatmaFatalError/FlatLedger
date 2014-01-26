@@ -18,7 +18,7 @@
 @end
 
 @implementation FLEStartupTableViewController
-@synthesize userAOM;
+
 - (id)initWithStyle:(UITableViewStyle)style
 {
     self = [super initWithStyle:style];
@@ -61,14 +61,18 @@
 	__block BOOL returnValue = YES;
 	
 	if ([identifier isEqualToString:@"ModalLoginToLedger"]) {
-        FLEUser* user = [FLESingletonModells getUser];
         
+		FLEUser* user = [FLESingletonModells getUser];
+
 		[user setUserName:emailField.text];
 		[user setPassword:passwordField.text];
+		
 		
 		[UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
 		@try {
             [user loadMe];
+			//[user load];
+
 			[[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"isLoggedin"];
 			FLEUserSession *session = [FLESingletonModells getSession];
 			session.user = user;
@@ -105,8 +109,8 @@
 	if ([segue.identifier isEqualToString:@"ModalLoginToLedger"]) {
 		//TODO: nach login bevor ich auf neuen View wechsel perioden des Ledgers laden und in ViewDidLoad Methode vom LedgerTableViewController behandeln
         
-        FLEUser* user = [FLESingletonModells getUser];
-        FLELedger* ledger = [FLESingletonModells getLedger];
+//        FLEUser* user = [FLESingletonModells getUser];
+//        FLELedger* ledger = [FLESingletonModells getLedger];
         
 //        @try {
 //            ledger = [user loadLedger];

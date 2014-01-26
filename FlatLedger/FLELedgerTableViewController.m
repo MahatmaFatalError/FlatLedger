@@ -50,7 +50,6 @@
 - (IBAction)performLogout:(id)sender {
     [[NSUserDefaults standardUserDefaults] setBool:NO forKey:@"isLoggedin"];
     FLEUserSession *session = [FLESingletonModells getSession];
-    
     session.user = nil;
     
     [FLESingletonModells releaseUser];

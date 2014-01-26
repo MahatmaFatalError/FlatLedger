@@ -31,6 +31,10 @@ static FLEPeriod *period;
 
 + (void)releaseUser {
     user = nil;
+	[[AOMDatastore sharedInstance] setUserName:false];
+	[[AOMDatastore sharedInstance] setPassword:false];
+	//AOMDatastore *sharedInstance = [AOMDatastore sharedInstance];
+	//sharedInstance = nil;
 }
 
 

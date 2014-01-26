@@ -14,6 +14,4 @@
     IBOutlet UITextField* passwordField;
 }
 
-@property (strong, nonatomic) FLEUser *userAOM;
-
 @end
