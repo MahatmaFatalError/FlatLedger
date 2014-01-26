@@ -85,7 +85,9 @@
     // Return the number of rows in the section.
     FLELedger* ledger = [FLESingletonModells getLedger];
     //hier ggf ledger loadPeriods
-    return ledger.periods.count;
+    
+    NSMutableArray *periods = [ledger loadPeriods:@""];
+    return periods.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
