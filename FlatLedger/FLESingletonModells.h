@@ -25,6 +25,8 @@
 + (FLEPeriod*)getActivePeriod;
 + (void)releaseActivePeriod;
 
++ (FLEPeriod*)getSelectedPeriod;
++ (void)releaseSelectedPeriod;
 
 //+ (void) setLedger:(FLELedger *)ledgerForUser;
 //+ (FLELedger*)getLedgerFromUser;

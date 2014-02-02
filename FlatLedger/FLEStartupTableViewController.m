@@ -104,9 +104,7 @@
 	if ([segue.identifier isEqualToString:@"ModalSignupToCreateLedger"] ) {
         [((FLECreateLedgerViewController*)segue.destinationViewController) setEmail:emailField.text];
         [((FLECreateLedgerViewController*)segue.destinationViewController) setPassword:passwordField.text];
-    }
-    
-	if ([segue.identifier isEqualToString:@"ModalLoginToLedger"]) {
+    } else if ([segue.identifier isEqualToString:@"ModalLoginToLedger"]) {
 		//TODO: nach login bevor ich auf neuen View wechsel perioden des Ledgers laden und in ViewDidLoad Methode vom LedgerTableViewController behandeln
         
 //        FLEUser* user = [FLESingletonModells getUser];

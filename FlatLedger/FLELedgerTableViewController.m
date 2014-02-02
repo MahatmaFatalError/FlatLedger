@@ -205,7 +205,7 @@
 }
 */
 
-/*
+
 #pragma mark - Navigation
 
 // In a story board-based application, you will often want to do a little preparation before navigation
@@ -213,8 +213,19 @@
 {
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
+    UITableViewCell *cell = nil;
+    if ([segue.identifier isEqualToString:@"PushLedgerToPeriod"]) {
+        //cell = [self.tableView cellForRowAtIndexPath:[self.tableView indexPathForSelectedRow]];
+        NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
+        FLELedger* ledger = [FLESingletonModells getLedger];
+        NSMutableArray *periods = ledger.periods;
+        
+        FLEPeriod *period = [FLESingletonModells getSelectedPeriod];
+        period = periods[indexPath.row];
+        
+    }
 }
 
- */
+ 
 
 @end
