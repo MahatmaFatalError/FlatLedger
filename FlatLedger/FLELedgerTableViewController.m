@@ -44,7 +44,6 @@
     // initiale aktive periode anlegen mit jetzigem Timestamp als Startdatum und Enddatum ist offen
     //parallel zu ledger anlegen
     
-    
     [self.tableView reloadData];
 }
 - (IBAction)performLogout:(id)sender {
@@ -86,7 +85,18 @@
     //hier ggf ledger loadPeriods
     
     NSMutableArray *periods = [ledger loadPeriods:@""];
-    return periods.count;
+    
+    NSInteger count = periods.count;
+    
+    if (count == 0) {
+        //self.navigationItem.rightBarButtonItem
+        [self.navigationItem setRightBarButtonItem:self.addPeriodNavigationBarButton animated:YES];
+    } else{
+        [self.navigationItem setRightBarButtonItem:nil animated:YES];
+    }
+    
+    
+    return count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath

@@ -11,6 +11,7 @@
 #import "FLEPeriod.h"
 
 @interface FLELedgerTableViewController : UITableViewController
+@property IBOutlet UIBarButtonItem *addPeriodNavigationBarButton;
 
 
 
