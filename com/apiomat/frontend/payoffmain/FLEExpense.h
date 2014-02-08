@@ -27,6 +27,7 @@
 
 #import "AOMAbstractClientDataModel.h"
 @class FLEUser;
+@class FLEPeriod;
 
 /*!
  Generated class for your FLEExpense data model 
@@ -38,6 +39,8 @@
 
 
 
+
+    @property (readonly, strong, nonatomic) FLEPeriod* period;
 
                     - (FLEUser*)loadUser;
         - (void)loadUserAsync:(AOMEmptyBlock)_block;
@@ -63,6 +66,14 @@
         
                         - (void)setQuantity:( long )_quantity;
             
+                    - (FLEPeriod*)loadPeriod;
+        - (void)loadPeriodAsync:(AOMEmptyBlock)_block;
+        - (NSString*)postPeriod:(FLEPeriod*) _refData ;
+    - (void)postPeriodAsync:(FLEPeriod*) _refData andWithBlock:(AOMEmptyBlock) _block;
+
+    - (void)removePeriod:(FLEPeriod*) _refData ;
+    - (void)removePeriodAsync:(FLEPeriod*) _refData andWithBlock:(AOMEmptyBlock) _block;
+
 
 @end
 

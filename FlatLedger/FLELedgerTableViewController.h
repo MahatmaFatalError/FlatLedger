@@ -13,7 +13,7 @@
 
 @interface FLELedgerTableViewController : UITableViewController
 @property IBOutlet UIBarButtonItem *addPeriodNavigationBarButton;
-
+@property NSMutableArray *periods;
 
 
 @end

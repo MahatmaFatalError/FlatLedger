@@ -166,7 +166,7 @@
         <!--Create Expense Table View Controller - New Expense-->
         <scene sceneID="ga2-fa-cnW">
             <objects>
-                <tableViewController id="EjZ-Xx-v2q" customClass="DLECreateExpenseTableViewController" sceneMemberID="viewController">
+                <tableViewController id="EjZ-Xx-v2q" customClass="FLECreateExpenseTableViewController" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="a7d-jx-bvc">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -232,8 +232,17 @@
                     </tableView>
                     <navigationItem key="navigationItem" title="New Expense" id="gQd-yD-SoB">
                         <barButtonItem key="backBarButtonItem" title="Cancel" id="FVY-im-z9m"/>
-                        <barButtonItem key="rightBarButtonItem" style="plain" systemItem="save" id="tT5-8G-3Wh"/>
+                        <barButtonItem key="rightBarButtonItem" style="plain" systemItem="save" id="tT5-8G-3Wh">
+                            <connections>
+                                <action selector="saveExpense:" destination="EjZ-Xx-v2q" id="J7J-MQ-bsg"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="item" destination="IB0-Kf-KRN" id="reF-ga-5h8"/>
+                        <outlet property="price" destination="EwL-FD-zP5" id="psS-ty-HnO"/>
+                        <outlet property="quantity" destination="oJo-6n-kp8" id="5hK-IS-ciB"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iQW-Ok-JtA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -505,8 +514,8 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
+        <segue reference="5Z8-Pu-Paq"/>
         <segue reference="B5O-KW-EJC"/>
         <segue reference="zEe-ja-yI3"/>
-        <segue reference="5Z8-Pu-Paq"/>
     </inferredMetricsTieBreakers>
 </document>

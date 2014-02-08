@@ -22,11 +22,12 @@
 + (void)releaseSession;
 + (void)releaseLedger;
 
-+ (FLEPeriod*)getActivePeriod;
-+ (void)releaseActivePeriod;
+//+ (FLEPeriod*)getActivePeriod;
+//+ (void)releaseActivePeriod;
 
 + (FLEPeriod*)getSelectedPeriod;
 + (void)releaseSelectedPeriod;
++ (void)setSelectedPeriod:(FLEPeriod *)selectedPeriod;
 
 //+ (void) setLedger:(FLELedger *)ledgerForUser;
 //+ (FLELedger*)getLedgerFromUser;

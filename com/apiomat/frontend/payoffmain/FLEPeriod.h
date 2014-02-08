@@ -39,8 +39,8 @@
 
 
 
-    @property (readonly, strong, nonatomic) NSMutableArray* expense;
 
+    @property (readonly, strong, nonatomic) NSMutableArray* expenses;
 
                 - ( NSString* )name;
         
@@ -62,18 +62,18 @@
         
                         - (void)setEndtimestamp:( NSDate* )_endtimestamp;
             
-                    - (NSMutableArray*)loadExpense:(NSString*) _query;
-        - (void)loadExpenseAsync:(NSString*) _query andWithBlock:(AOMEmptyBlock) _block;
-        - (NSString*)postExpense:(FLEExpense*) _refData ;
-    - (void)postExpenseAsync:(FLEExpense*) _refData andWithBlock:(AOMEmptyBlock) _block;
-
-    - (void)removeExpense:(FLEExpense*) _refData ;
-    - (void)removeExpenseAsync:(FLEExpense*) _refData andWithBlock:(AOMEmptyBlock) _block;
-
                 - ( NSDate* )starttimestamp;
         
                         - (void)setStarttimestamp:( NSDate* )_starttimestamp;
             
+                    - (NSMutableArray*)loadExpenses:(NSString*) _query;
+        - (void)loadExpensesAsync:(NSString*) _query andWithBlock:(AOMEmptyBlock) _block;
+        - (NSString*)postExpenses:(FLEExpense*) _refData ;
+    - (void)postExpensesAsync:(FLEExpense*) _refData andWithBlock:(AOMEmptyBlock) _block;
+
+    - (void)removeExpenses:(FLEExpense*) _refData ;
+    - (void)removeExpensesAsync:(FLEExpense*) _refData andWithBlock:(AOMEmptyBlock) _block;
+
 
 @end
 

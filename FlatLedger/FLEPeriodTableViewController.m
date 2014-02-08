@@ -7,6 +7,7 @@
 //
 
 #import "FLEPeriodTableViewController.h"
+#import "FLEExpense.h"
 
 @interface FLEPeriodTableViewController ()
 
@@ -20,6 +21,7 @@
     if (self) {
         // Custom initialization
     }
+	
     return self;
 }
 
@@ -32,7 +34,30 @@
  
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+	self.period = [FLESingletonModells getSelectedPeriod];
+	@try {
+		[self.period load];
+		self.expenses = [self.period loadExpenses:@""];
+	}
+	@catch (NSException *exception) {
+		NSLog(@"Error while loading period connection");
+	}
+	
+	//async
+//	[self.period loadAsyncWithBlock:^(NSError *error) {
+//		if (error) {
+//			NSLog(@"Error while loading Period");
+//		} else{
+//			self.expenses = [[FLESingletonModells getSelectedPeriod] loadExpenses:@""];
+//			//TODO: Wenn die selectedPeriod.active = true den Plus button ein oder ausblenden
+//		}
+//		
+//	}];
     [self.tableView reloadData];
+}
+
+- (void)viewDidAppear:(BOOL)animated{
+	[self.tableView reloadData];
 }
 
 - (void)didReceiveMemoryWarning
@@ -53,18 +78,29 @@
 {
     // Return the number of rows in the section.
     FLEPeriod* period = [FLESingletonModells getSelectedPeriod];
-
-    NSInteger count = [[period expense] count];    
+	//[period loadExpenses:@""];
+	@try {
+		self.expenses = [period loadExpenses:@""];
+	}
+	@catch (NSException *exception) {
+		NSLog(@"Error while loading expenses");
+	}
+	
+    NSInteger count = [self.expenses count];
     
     return count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    static NSString *CellIdentifier = @"Cell";
+    static NSString *CellIdentifier = @"ExpenseCell";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
     
     // Configure the cell...
+    
+	FLEExpense *expense = self.expenses[indexPath.row];
+    cell.textLabel.text = [NSString stringWithFormat:@"%@ %1.2f",expense.item, expense.price];
+//TODO: price noch konkartenieren
     
     return cell;
 }

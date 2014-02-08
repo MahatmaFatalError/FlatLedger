@@ -15,7 +15,7 @@
 static FLEUser *user;
 static FLEUserSession *session;
 static FLELedger *ledger;
-static FLEPeriod *activePeriod;
+//static FLEPeriod *activePeriod;
 static FLEPeriod *period;
 
 + (FLEUser*)getUser
@@ -79,25 +79,25 @@ static FLEPeriod *period;
 
 
 
-+ (FLEPeriod*)getActivePeriod;
-{
-    
-    if(!activePeriod)
-    {
-        activePeriod= [[FLEPeriod alloc] init];
-		activePeriod.status = @"active";
-		
-    }
-	
-	return activePeriod;
-}
+//+ (FLEPeriod*)getActivePeriod;
+//{
+//    
+//    if(!activePeriod)
+//    {
+//        activePeriod= [[FLEPeriod alloc] init];
+//		activePeriod.status = @"active";
+//		
+//    }
+//	
+//	return activePeriod;
+//}
+//
+//+ (void)releaseActivePeriod {
+//    activePeriod = nil;
+//}
 
-+ (void)releaseActivePeriod {
-    activePeriod = nil;
-}
 
-
-+ (FLEPeriod*)getSelectedPeriod;
++ (FLEPeriod*)getSelectedPeriod
 {
     
     if(!period)
@@ -112,6 +112,10 @@ static FLEPeriod *period;
     period = nil;
 }
 
++ (void)setSelectedPeriod:(FLEPeriod *)selectedPeriod
+{
+    period = selectedPeriod;
+}
 
 
 //+ (void) setLedger:(FLELedger *)ledgerForUser{

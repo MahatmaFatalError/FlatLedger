@@ -53,7 +53,7 @@
     
     [FLESingletonModells releaseUser];
     [FLESingletonModells releaseLedger];
-    [FLESingletonModells releaseActivePeriod];
+    [FLESingletonModells releaseSelectedPeriod];
     [FLESingletonModells releaseSession];
 	
 	
@@ -84,10 +84,18 @@
     FLELedger* ledger = [FLESingletonModells getLedger];
     //hier ggf ledger loadPeriods
     
-    NSMutableArray *periods = [ledger loadPeriods:@""];
+	@try {
+		self.periods = [ledger loadPeriods:@""];
+	}
+	@catch (NSException *exception) {
+		NSLog(@"Error while loading periods");
+	}
+	
+
     
-    NSInteger count = periods.count;
+    NSInteger count = self.periods.count;
     
+	//Das wieder einkommenteiren, bpluss button ein udn ausblenden
     if (count == 0) {
         //self.navigationItem.rightBarButtonItem
         [self.navigationItem setRightBarButtonItem:self.addPeriodNavigationBarButton animated:YES];
@@ -111,8 +119,8 @@
 //        cell.textLabel.text = self.activePeriod.name;
 //    }];
     NSMutableArray *perdiods = [ledger loadPeriods:@""];
-	self.activePeriod = perdiods[indexPath.row];
-    cell.textLabel.text = self.activePeriod.name;
+	FLEPeriod *period = perdiods[indexPath.row];
+    cell.textLabel.text = period.name;
     return cell;
 }
 
@@ -143,7 +151,7 @@
     if([title isEqualToString:@"OK"])
     {
         FLELedger *ledger = [FLESingletonModells getLedger];
-		self.activePeriod = [FLESingletonModells getActivePeriod];
+		self.activePeriod = [FLESingletonModells getSelectedPeriod];
 		
 		self.activePeriod.starttimestamp = [NSDate date];
 		self.activePeriod.name = [alert textFieldAtIndex:0].text;
@@ -218,10 +226,11 @@
         //cell = [self.tableView cellForRowAtIndexPath:[self.tableView indexPathForSelectedRow]];
         NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
         FLELedger* ledger = [FLESingletonModells getLedger];
-        NSMutableArray *periods = ledger.periods;
+        //NSMutableArray *periods = ledger.periods;
         
         FLEPeriod *period = [FLESingletonModells getSelectedPeriod];
-        period = periods[indexPath.row];
+        period = self.periods[indexPath.row];
+		[FLESingletonModells setSelectedPeriod:period];
         
     }
 }
