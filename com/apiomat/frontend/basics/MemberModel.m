@@ -33,7 +33,7 @@
 NSString* const apiKey = @"7679362832156507627";
 NSString* const baseUrl = @"https://apiomat.org/yambas/rest/apps/PayOff";
 NSString* const AMSystem = @"LIVE";
-NSString* const sdkVersion = @"1.9-94";
+NSString* const sdkVersion = @"1.10-81";
 
 /*
 * Generated default class representing a user in your app 

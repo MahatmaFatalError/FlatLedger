@@ -224,6 +224,9 @@
         case AOMWRONG_APIKEY: 
             phrase = @"API Key was not correct!"; 
             break;
+        case AOMEVALANCHE_UNAUTH: 
+            phrase = @"Authorization failed! Maybe username/password was not set for evelanche configuration?"; 
+            break;
         case AOMCRUD_ERROR: 
             phrase = @"Internal error during CRUD operation"; 
             break;
