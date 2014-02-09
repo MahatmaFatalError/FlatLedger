@@ -92,10 +92,8 @@
 	}
 	
 
-    
+    //Plus button ein/ausblenden, da eine neues aktive periode automatisch erzeigt wernd sobald die erste abgeschlossen wurde
     NSInteger count = self.periods.count;
-    
-	//Das wieder einkommenteiren, bpluss button ein udn ausblenden
     if (count == 0) {
         //self.navigationItem.rightBarButtonItem
         [self.navigationItem setRightBarButtonItem:self.addPeriodNavigationBarButton animated:YES];
@@ -155,6 +153,7 @@
 		
 		self.activePeriod.starttimestamp = [NSDate date];
 		self.activePeriod.name = [alert textFieldAtIndex:0].text;
+		self.activePeriod.status = @"active";
 		NSLog(@"Periodname = %@", self.activePeriod.name);
         
 		//[self.ledger.periods addObject:self.activePeriod];

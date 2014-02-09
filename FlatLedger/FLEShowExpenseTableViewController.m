@@ -1,21 +1,20 @@
 //
-//  FLEPeriodTableViewController.m
+//  FLEShowExpenseTableViewController.m
 //  FlatLedger
 //
-//  Created by Julian Ruppel on 02.02.14.
+//  Created by Julian Ruppel on 09.02.14.
 //  Copyright (c) 2014 Julian Ruppel. All rights reserved.
 //
 
-#import "FLEPeriodTableViewController.h"
-#import "FLEExpense.h"
 #import "FLEShowExpenseTableViewController.h"
+#import "FLEExpense.h"
+#import "FLESingletonModells.h"
 
-
-@interface FLEPeriodTableViewController ()
+@interface FLEShowExpenseTableViewController ()
 
 @end
 
-@implementation FLEPeriodTableViewController
+@implementation FLEShowExpenseTableViewController
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
@@ -23,7 +22,6 @@
     if (self) {
         // Custom initialization
     }
-	
     return self;
 }
 
@@ -36,42 +34,50 @@
  
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
-	self.period = [FLESingletonModells getSelectedPeriod];
-	@try {
-		[self.period load];
-		self.expenses = [self.period loadExpenses:@""];
-	}
-	@catch (NSException *exception) {
-		NSLog(@"Error while loading period connection");
-	}
-	
-	//async
-//	[self.period loadAsyncWithBlock:^(NSError *error) {
-//		if (error) {
-//			NSLog(@"Error while loading Period");
-//		} else{
-//			self.expenses = [[FLESingletonModells getSelectedPeriod] loadExpenses:@""];
-//			//TODO: Wenn die selectedPeriod.active = true den Plus button ein oder ausblenden
-//		}
-//		
-//	}];
-	
-	
-	
-	
-	// non-active periods are read only
-    if ([self.period.status isEqualToString:@"active"]) {
-        //self.navigationItem.rightBarButtonItem
-        [self.navigationItem setRightBarButtonItem:self.addExpenceButton animated:YES];
-    } else{
-        [self.navigationItem setRightBarButtonItem:nil animated:YES];
-    }
-	
-    [self.tableView reloadData];
+	[self configureView];
 }
 
-- (void)viewDidAppear:(BOOL)animated{
-	[self.tableView reloadData];
+- (void)configureView
+{
+	self.showItemLabel.text = self.expense.item;
+	self.showPriceLabel.text = [NSString stringWithFormat:@"%1.2f", self.expense.price];
+	self.showQtyLabel.text = [NSString stringWithFormat:@"%ld", self.expense.quantity];
+	
+}
+
+
+
+- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section{
+	UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 280, 40)];
+    
+	NSDate *date = [self.expense timestamp];
+	
+	NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+	[dateFormatter setDateStyle:NSDateFormatterLongStyle];
+	[dateFormatter setTimeStyle:NSDateFormatterNoStyle];
+	NSString *dateString = [dateFormatter stringFromDate:date];
+	
+	
+	[dateFormatter setDateStyle:NSDateFormatterNoStyle];
+	[dateFormatter setTimeStyle:NSDateFormatterMediumStyle];
+	NSString *timeString = [dateFormatter stringFromDate:date];
+	
+    label.text = [NSString stringWithFormat:@"%@ | %@", dateString, timeString];
+    return label;
+}
+
+
+- (UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section{
+	UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 280, 40)];
+	@try {
+		FLEUser *user = [self.expense loadUser];
+		label.text = [NSString stringWithFormat:@"%@ %@", user.firstName , user.lastName];
+	}
+	@catch (NSException *exception) {
+		NSLog(@"Error while loading user data");		
+	}
+    
+    return label;
 }
 
 - (void)didReceiveMemoryWarning
@@ -84,40 +90,29 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
+#warning Potentially incomplete method implementation.
     // Return the number of sections.
     return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
+#warning Incomplete method implementation.
     // Return the number of rows in the section.
-    FLEPeriod* period = [FLESingletonModells getSelectedPeriod];
-	//[period loadExpenses:@""];
-	@try {
-		self.expenses = [period loadExpenses:@""];
-	}
-	@catch (NSException *exception) {
-		NSLog(@"Error while loading expenses");
-	}
-	
-    NSInteger count = [self.expenses count];
-    
-    return count;
+    return 3;
 }
 
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    static NSString *CellIdentifier = @"ExpenseCell";
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
-    
-    // Configure the cell...
-    
-	FLEExpense *expense = self.expenses[indexPath.row];
-    cell.textLabel.text = [NSString stringWithFormat:@"%@ %1.2f",expense.item, expense.price];
-//TODO: price noch konkartenieren
-    
-    return cell;
-}
+//- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+//{
+//    static NSString *CellIdentifier = @"Cell";
+//    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
+//    
+//    if (indexPath == 0) {
+//		cell. = self.showItemLabel;
+//	}
+//    
+//    return cell;
+//}
 
 /*
 // Override to support conditional editing of the table view.
@@ -158,7 +153,7 @@
 }
 */
 
-
+/*
 #pragma mark - Navigation
 
 // In a story board-based application, you will often want to do a little preparation before navigation
@@ -166,14 +161,8 @@
 {
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
-	if ([segue.identifier isEqualToString:@"PushPeriodToShowExpense"]) {
-        //cell = [self.tableView cellForRowAtIndexPath:[self.tableView indexPathForSelectedRow]];
-        NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
-        FLEExpense *expense = self.expenses[indexPath.row];
-		[segue.destinationViewController setExpense: expense];
-    }
 }
 
-
+ */
 
 @end

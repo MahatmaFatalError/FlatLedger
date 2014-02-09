@@ -21,6 +21,7 @@
 		expense.price		= [price.text doubleValue] ;
 		expense.quantity	= [quantity.text intValue];
 		expense.item		= item.text;
+		expense.timestamp	= [NSDate date];
 		FLEPeriod *period = [FLESingletonModells getSelectedPeriod];
 		
 		

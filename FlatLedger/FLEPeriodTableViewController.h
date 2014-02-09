@@ -10,6 +10,7 @@
 #import "FLESingletonModells.h"
 
 @interface FLEPeriodTableViewController : UITableViewController
+@property IBOutlet UIBarButtonItem *addExpenceButton;
 @property NSMutableArray *expenses;
 @property FLEPeriod *period;
 @end
