@@ -11,6 +11,7 @@
 #import "FLEShowExpenseTableViewController.h"
 
 
+
 @interface FLEPeriodTableViewController ()
 
 @end
@@ -79,6 +80,33 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
+
+- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section{
+	UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 280, 40)];
+    
+	double balance = 0;
+	
+	for (FLEExpense *expense in self.expenses) {
+		FLEUser *payingUser = [expense loadUser];
+		if ([payingUser.userName isEqualToString:[FLESingletonModells getUser].userName ]) { //payingUser.u isEqual:[FLESingletonModells getUser]
+			balance = balance + expense.price;
+		} else{
+			balance = balance - expense.price;
+		}		
+	}
+	
+	
+	if (balance < 0) {
+		label.text = [NSString stringWithFormat:@"Balance: -%.2lf €", balance];
+	} else{
+		label.text = [NSString stringWithFormat:@"Balance: %.2lf €", balance];
+	}
+	
+    
+    return label;
+}
+
 
 #pragma mark - Table view data source
 

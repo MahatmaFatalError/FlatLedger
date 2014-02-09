@@ -74,7 +74,7 @@
 		label.text = [NSString stringWithFormat:@"%@ %@", user.firstName , user.lastName];
 	}
 	@catch (NSException *exception) {
-		NSLog(@"Error while loading user data");		
+		NSLog(@"Error while loading user data");
 	}
     
     return label;

@@ -7,9 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		267AF002187B3F64009AC164 /* YAJLiOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 267AF001187B3F64009AC164 /* YAJLiOS.framework */; };
+		268C752C18A78F8900D8681F /* FLEShowExpenseTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 268C752B18A78F8900D8681F /* FLEShowExpenseTableViewController.m */; };
 		26A2CFCF187DCA1D0070FF69 /* FLESingletonModells.m in Sources */ = {isa = PBXBuildFile; fileRef = 26A2CFCE187DCA1D0070FF69 /* FLESingletonModells.m */; };
 		26A2CFD2187DD28E0070FF69 /* FLEUserSession.m in Sources */ = {isa = PBXBuildFile; fileRef = 26A2CFD1187DD28E0070FF69 /* FLEUserSession.m */; };
+		26D76CEB189EC8E9001C3C16 /* FLEPeriodTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 26D76CEA189EC8E9001C3C16 /* FLEPeriodTableViewController.m */; };
 		26F036001878544A00559DEB /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 26F035FF1878544A00559DEB /* Foundation.framework */; };
 		26F036021878544A00559DEB /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 26F036011878544A00559DEB /* CoreGraphics.framework */; };
 		26F036041878544A00559DEB /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 26F036031878544A00559DEB /* UIKit.framework */; };
@@ -27,39 +28,26 @@
 		26F0362A1878544A00559DEB /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 26F036051878544A00559DEB /* CoreData.framework */; };
 		26F036321878544A00559DEB /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 26F036301878544A00559DEB /* InfoPlist.strings */; };
 		26F036341878544A00559DEB /* FlatLedgerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 26F036331878544A00559DEB /* FlatLedgerTests.m */; };
-		26F03667187881A600559DEB /* AbstractClientDataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 26F03641187881A600559DEB /* AbstractClientDataModel.m */; };
-		26F03668187881A600559DEB /* AbstractClientDataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 26F03641187881A600559DEB /* AbstractClientDataModel.m */; };
-		26F03669187881A600559DEB /* AOMAbstractClientDataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 26F03643187881A600559DEB /* AOMAbstractClientDataModel.m */; };
-		26F0366A187881A600559DEB /* AOMAbstractClientDataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 26F03643187881A600559DEB /* AOMAbstractClientDataModel.m */; };
-		26F0366B187881A600559DEB /* AOMDatastore.m in Sources */ = {isa = PBXBuildFile; fileRef = 26F03646187881A600559DEB /* AOMDatastore.m */; };
-		26F0366C187881A600559DEB /* AOMDatastore.m in Sources */ = {isa = PBXBuildFile; fileRef = 26F03646187881A600559DEB /* AOMDatastore.m */; };
-		26F0366D187881A600559DEB /* MemberModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 26F03649187881A600559DEB /* MemberModel.m */; };
-		26F0366E187881A600559DEB /* MemberModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 26F03649187881A600559DEB /* MemberModel.m */; };
-		26F0366F187881A600559DEB /* ModelStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 26F0364B187881A600559DEB /* ModelStore.m */; };
-		26F03670187881A600559DEB /* ModelStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 26F0364B187881A600559DEB /* ModelStore.m */; };
-		26F03671187881A600559DEB /* Role.m in Sources */ = {isa = PBXBuildFile; fileRef = 26F0364E187881A600559DEB /* Role.m */; };
-		26F03672187881A600559DEB /* Role.m in Sources */ = {isa = PBXBuildFile; fileRef = 26F0364E187881A600559DEB /* Role.m */; };
-		26F03673187881A600559DEB /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 26F03650187881A600559DEB /* User.m */; };
-		26F03674187881A600559DEB /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 26F03650187881A600559DEB /* User.m */; };
-		26F03677187881A700559DEB /* DataStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 26F03653187881A600559DEB /* DataStore.m */; };
-		26F03678187881A700559DEB /* DataStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 26F03653187881A600559DEB /* DataStore.m */; };
-		26F03679187881A700559DEB /* AOMModelHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 26F03656187881A600559DEB /* AOMModelHelper.m */; };
-		26F0367A187881A700559DEB /* AOMModelHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 26F03656187881A600559DEB /* AOMModelHelper.m */; };
-		26F0367B187881A700559DEB /* AOMModelStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 26F03658187881A600559DEB /* AOMModelStore.m */; };
-		26F0367C187881A700559DEB /* AOMModelStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 26F03658187881A600559DEB /* AOMModelStore.m */; };
-		26F0367D187881A700559DEB /* NSString+Base64.m in Sources */ = {isa = PBXBuildFile; fileRef = 26F0365B187881A600559DEB /* NSString+Base64.m */; };
-		26F0367E187881A700559DEB /* NSString+Base64.m in Sources */ = {isa = PBXBuildFile; fileRef = 26F0365B187881A600559DEB /* NSString+Base64.m */; };
-		26F0367F187881A700559DEB /* NSString+Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 26F0365D187881A600559DEB /* NSString+Extensions.m */; };
-		26F03680187881A700559DEB /* NSString+Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 26F0365D187881A600559DEB /* NSString+Extensions.m */; };
-		26F03681187881A700559DEB /* Expenses.m in Sources */ = {isa = PBXBuildFile; fileRef = 26F03660187881A600559DEB /* Expenses.m */; };
-		26F03682187881A700559DEB /* Expenses.m in Sources */ = {isa = PBXBuildFile; fileRef = 26F03660187881A600559DEB /* Expenses.m */; };
-		26F03683187881A700559DEB /* FLELedger.m in Sources */ = {isa = PBXBuildFile; fileRef = 26F03662187881A600559DEB /* FLELedger.m */; };
-		26F03684187881A700559DEB /* FLELedger.m in Sources */ = {isa = PBXBuildFile; fileRef = 26F03662187881A600559DEB /* FLELedger.m */; };
-		26F03685187881A700559DEB /* Periods.m in Sources */ = {isa = PBXBuildFile; fileRef = 26F03664187881A600559DEB /* Periods.m */; };
-		26F03686187881A700559DEB /* Periods.m in Sources */ = {isa = PBXBuildFile; fileRef = 26F03664187881A600559DEB /* Periods.m */; };
-		26F03687187881A700559DEB /* Status.m in Sources */ = {isa = PBXBuildFile; fileRef = 26F03666187881A600559DEB /* Status.m */; };
-		26F03688187881A700559DEB /* Status.m in Sources */ = {isa = PBXBuildFile; fileRef = 26F03666187881A600559DEB /* Status.m */; };
 		26F0368B187AD1D300559DEB /* FLEStartupTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 26F0368A187AD1D300559DEB /* FLEStartupTableViewController.m */; };
+		26FD34F118A6950B000E18BB /* FLECreateExpenseTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 26FD34F018A6950B000E18BB /* FLECreateExpenseTableViewController.m */; };
+		26FD351E18A69FE0000E18BB /* AbstractClientDataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 26FD34F618A69FE0000E18BB /* AbstractClientDataModel.m */; };
+		26FD351F18A69FE0000E18BB /* AOMAbstractClientDataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 26FD34F818A69FE0000E18BB /* AOMAbstractClientDataModel.m */; };
+		26FD352018A69FE0000E18BB /* AOMDatastore.m in Sources */ = {isa = PBXBuildFile; fileRef = 26FD34FB18A69FE0000E18BB /* AOMDatastore.m */; };
+		26FD352118A69FE0000E18BB /* MemberModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 26FD34FE18A69FE0000E18BB /* MemberModel.m */; };
+		26FD352218A69FE0000E18BB /* ModelStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 26FD350018A69FE0000E18BB /* ModelStore.m */; };
+		26FD352318A69FE0000E18BB /* Role.m in Sources */ = {isa = PBXBuildFile; fileRef = 26FD350318A69FE0000E18BB /* Role.m */; };
+		26FD352418A69FE0000E18BB /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 26FD350518A69FE0000E18BB /* User.m */; };
+		26FD352518A69FE0000E18BB /* YAJLiOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 26FD350618A69FE0000E18BB /* YAJLiOS.framework */; };
+		26FD352618A69FE0000E18BB /* DataStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 26FD350818A69FE0000E18BB /* DataStore.m */; };
+		26FD352718A69FE0000E18BB /* AOMModelHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 26FD350B18A69FE0000E18BB /* AOMModelHelper.m */; };
+		26FD352818A69FE0000E18BB /* AOMModelStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 26FD350D18A69FE0000E18BB /* AOMModelStore.m */; };
+		26FD352918A69FE0000E18BB /* NSString+Base64.m in Sources */ = {isa = PBXBuildFile; fileRef = 26FD351018A69FE0000E18BB /* NSString+Base64.m */; };
+		26FD352A18A69FE0000E18BB /* NSString+Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 26FD351218A69FE0000E18BB /* NSString+Extensions.m */; };
+		26FD352B18A69FE0000E18BB /* FLEExpense.m in Sources */ = {isa = PBXBuildFile; fileRef = 26FD351518A69FE0000E18BB /* FLEExpense.m */; };
+		26FD352C18A69FE0000E18BB /* FLELedger.m in Sources */ = {isa = PBXBuildFile; fileRef = 26FD351718A69FE0000E18BB /* FLELedger.m */; };
+		26FD352D18A69FE0000E18BB /* FLEPeriod.m in Sources */ = {isa = PBXBuildFile; fileRef = 26FD351918A69FE0000E18BB /* FLEPeriod.m */; };
+		26FD352E18A69FE0000E18BB /* FLEUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 26FD351B18A69FE0000E18BB /* FLEUser.m */; };
+		26FD352F18A69FE0000E18BB /* Status.m in Sources */ = {isa = PBXBuildFile; fileRef = 26FD351D18A69FE0000E18BB /* Status.m */; };
 		B9919ECB187AE92B00AAE37E /* FLEStartupNavigiationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B9919ECA187AE92B00AAE37E /* FLEStartupNavigiationViewController.m */; };
 		B9919ECE187AF22E00AAE37E /* FLELedgerTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B9919ECD187AF22E00AAE37E /* FLELedgerTableViewController.m */; };
 		B9919ED1187AF47200AAE37E /* FLELedgerNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = B9919ED0187AF47200AAE37E /* FLELedgerNavigationController.m */; };
@@ -77,11 +65,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		267AF001187B3F64009AC164 /* YAJLiOS.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = YAJLiOS.framework; sourceTree = "<group>"; };
+		268C752A18A78F8900D8681F /* FLEShowExpenseTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FLEShowExpenseTableViewController.h; sourceTree = "<group>"; };
+		268C752B18A78F8900D8681F /* FLEShowExpenseTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FLEShowExpenseTableViewController.m; sourceTree = "<group>"; };
 		26A2CFCD187DCA1D0070FF69 /* FLESingletonModells.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FLESingletonModells.h; sourceTree = "<group>"; };
 		26A2CFCE187DCA1D0070FF69 /* FLESingletonModells.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FLESingletonModells.m; sourceTree = "<group>"; };
 		26A2CFD0187DD28E0070FF69 /* FLEUserSession.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FLEUserSession.h; sourceTree = "<group>"; };
 		26A2CFD1187DD28E0070FF69 /* FLEUserSession.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FLEUserSession.m; sourceTree = "<group>"; };
+		26D76CE9189EC8E9001C3C16 /* FLEPeriodTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FLEPeriodTableViewController.h; sourceTree = "<group>"; };
+		26D76CEA189EC8E9001C3C16 /* FLEPeriodTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FLEPeriodTableViewController.m; sourceTree = "<group>"; };
 		26F035FC1878544A00559DEB /* FlatLedger.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FlatLedger.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		26F035FF1878544A00559DEB /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		26F036011878544A00559DEB /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -103,43 +94,48 @@
 		26F0362F1878544A00559DEB /* FlatLedgerTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "FlatLedgerTests-Info.plist"; sourceTree = "<group>"; };
 		26F036311878544A00559DEB /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		26F036331878544A00559DEB /* FlatLedgerTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FlatLedgerTests.m; sourceTree = "<group>"; };
-		26F03640187881A600559DEB /* AbstractClientDataModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AbstractClientDataModel.h; sourceTree = "<group>"; };
-		26F03641187881A600559DEB /* AbstractClientDataModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AbstractClientDataModel.m; sourceTree = "<group>"; };
-		26F03642187881A600559DEB /* AOMAbstractClientDataModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AOMAbstractClientDataModel.h; sourceTree = "<group>"; };
-		26F03643187881A600559DEB /* AOMAbstractClientDataModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AOMAbstractClientDataModel.m; sourceTree = "<group>"; };
-		26F03644187881A600559DEB /* AOMConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AOMConstants.h; sourceTree = "<group>"; };
-		26F03645187881A600559DEB /* AOMDatastore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AOMDatastore.h; sourceTree = "<group>"; };
-		26F03646187881A600559DEB /* AOMDatastore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AOMDatastore.m; sourceTree = "<group>"; };
-		26F03648187881A600559DEB /* MemberModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MemberModel.h; sourceTree = "<group>"; };
-		26F03649187881A600559DEB /* MemberModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MemberModel.m; sourceTree = "<group>"; };
-		26F0364A187881A600559DEB /* ModelStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ModelStore.h; sourceTree = "<group>"; };
-		26F0364B187881A600559DEB /* ModelStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ModelStore.m; sourceTree = "<group>"; };
-		26F0364C187881A600559DEB /* ModelStoreProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ModelStoreProtocol.h; sourceTree = "<group>"; };
-		26F0364D187881A600559DEB /* Role.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Role.h; sourceTree = "<group>"; };
-		26F0364E187881A600559DEB /* Role.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Role.m; sourceTree = "<group>"; };
-		26F0364F187881A600559DEB /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
-		26F03650187881A600559DEB /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
-		26F03652187881A600559DEB /* Datastore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Datastore.h; sourceTree = "<group>"; };
-		26F03653187881A600559DEB /* DataStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataStore.m; sourceTree = "<group>"; };
-		26F03655187881A600559DEB /* AOMModelHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AOMModelHelper.h; sourceTree = "<group>"; };
-		26F03656187881A600559DEB /* AOMModelHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AOMModelHelper.m; sourceTree = "<group>"; };
-		26F03657187881A600559DEB /* AOMModelStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AOMModelStore.h; sourceTree = "<group>"; };
-		26F03658187881A600559DEB /* AOMModelStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AOMModelStore.m; sourceTree = "<group>"; };
-		26F03659187881A600559DEB /* AOMModelStoreProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AOMModelStoreProtocol.h; sourceTree = "<group>"; };
-		26F0365A187881A600559DEB /* NSString+Base64.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Base64.h"; sourceTree = "<group>"; };
-		26F0365B187881A600559DEB /* NSString+Base64.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Base64.m"; sourceTree = "<group>"; };
-		26F0365C187881A600559DEB /* NSString+Extensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Extensions.h"; sourceTree = "<group>"; };
-		26F0365D187881A600559DEB /* NSString+Extensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Extensions.m"; sourceTree = "<group>"; };
-		26F0365F187881A600559DEB /* Expenses.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Expenses.h; sourceTree = "<group>"; };
-		26F03660187881A600559DEB /* Expenses.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Expenses.m; sourceTree = "<group>"; };
-		26F03661187881A600559DEB /* FLELedger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FLELedger.h; sourceTree = "<group>"; };
-		26F03662187881A600559DEB /* FLELedger.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FLELedger.m; sourceTree = "<group>"; };
-		26F03663187881A600559DEB /* Periods.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Periods.h; sourceTree = "<group>"; };
-		26F03664187881A600559DEB /* Periods.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Periods.m; sourceTree = "<group>"; };
-		26F03665187881A600559DEB /* Status.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Status.h; sourceTree = "<group>"; };
-		26F03666187881A600559DEB /* Status.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Status.m; sourceTree = "<group>"; };
 		26F03689187AD1D300559DEB /* FLEStartupTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FLEStartupTableViewController.h; sourceTree = "<group>"; };
 		26F0368A187AD1D300559DEB /* FLEStartupTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FLEStartupTableViewController.m; sourceTree = "<group>"; };
+		26FD34EF18A6950B000E18BB /* FLECreateExpenseTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FLECreateExpenseTableViewController.h; sourceTree = "<group>"; };
+		26FD34F018A6950B000E18BB /* FLECreateExpenseTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FLECreateExpenseTableViewController.m; sourceTree = "<group>"; };
+		26FD34F518A69FE0000E18BB /* AbstractClientDataModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AbstractClientDataModel.h; sourceTree = "<group>"; };
+		26FD34F618A69FE0000E18BB /* AbstractClientDataModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AbstractClientDataModel.m; sourceTree = "<group>"; };
+		26FD34F718A69FE0000E18BB /* AOMAbstractClientDataModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AOMAbstractClientDataModel.h; sourceTree = "<group>"; };
+		26FD34F818A69FE0000E18BB /* AOMAbstractClientDataModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AOMAbstractClientDataModel.m; sourceTree = "<group>"; };
+		26FD34F918A69FE0000E18BB /* AOMConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AOMConstants.h; sourceTree = "<group>"; };
+		26FD34FA18A69FE0000E18BB /* AOMDatastore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AOMDatastore.h; sourceTree = "<group>"; };
+		26FD34FB18A69FE0000E18BB /* AOMDatastore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AOMDatastore.m; sourceTree = "<group>"; };
+		26FD34FD18A69FE0000E18BB /* MemberModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MemberModel.h; sourceTree = "<group>"; };
+		26FD34FE18A69FE0000E18BB /* MemberModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MemberModel.m; sourceTree = "<group>"; };
+		26FD34FF18A69FE0000E18BB /* ModelStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ModelStore.h; sourceTree = "<group>"; };
+		26FD350018A69FE0000E18BB /* ModelStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ModelStore.m; sourceTree = "<group>"; };
+		26FD350118A69FE0000E18BB /* ModelStoreProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ModelStoreProtocol.h; sourceTree = "<group>"; };
+		26FD350218A69FE0000E18BB /* Role.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Role.h; sourceTree = "<group>"; };
+		26FD350318A69FE0000E18BB /* Role.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Role.m; sourceTree = "<group>"; };
+		26FD350418A69FE0000E18BB /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
+		26FD350518A69FE0000E18BB /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
+		26FD350618A69FE0000E18BB /* YAJLiOS.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = YAJLiOS.framework; sourceTree = "<group>"; };
+		26FD350718A69FE0000E18BB /* Datastore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Datastore.h; sourceTree = "<group>"; };
+		26FD350818A69FE0000E18BB /* DataStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataStore.m; sourceTree = "<group>"; };
+		26FD350A18A69FE0000E18BB /* AOMModelHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AOMModelHelper.h; sourceTree = "<group>"; };
+		26FD350B18A69FE0000E18BB /* AOMModelHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AOMModelHelper.m; sourceTree = "<group>"; };
+		26FD350C18A69FE0000E18BB /* AOMModelStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AOMModelStore.h; sourceTree = "<group>"; };
+		26FD350D18A69FE0000E18BB /* AOMModelStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AOMModelStore.m; sourceTree = "<group>"; };
+		26FD350E18A69FE0000E18BB /* AOMModelStoreProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AOMModelStoreProtocol.h; sourceTree = "<group>"; };
+		26FD350F18A69FE0000E18BB /* NSString+Base64.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Base64.h"; sourceTree = "<group>"; };
+		26FD351018A69FE0000E18BB /* NSString+Base64.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Base64.m"; sourceTree = "<group>"; };
+		26FD351118A69FE0000E18BB /* NSString+Extensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Extensions.h"; sourceTree = "<group>"; };
+		26FD351218A69FE0000E18BB /* NSString+Extensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Extensions.m"; sourceTree = "<group>"; };
+		26FD351418A69FE0000E18BB /* FLEExpense.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FLEExpense.h; sourceTree = "<group>"; };
+		26FD351518A69FE0000E18BB /* FLEExpense.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FLEExpense.m; sourceTree = "<group>"; };
+		26FD351618A69FE0000E18BB /* FLELedger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FLELedger.h; sourceTree = "<group>"; };
+		26FD351718A69FE0000E18BB /* FLELedger.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FLELedger.m; sourceTree = "<group>"; };
+		26FD351818A69FE0000E18BB /* FLEPeriod.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FLEPeriod.h; sourceTree = "<group>"; };
+		26FD351918A69FE0000E18BB /* FLEPeriod.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FLEPeriod.m; sourceTree = "<group>"; };
+		26FD351A18A69FE0000E18BB /* FLEUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FLEUser.h; sourceTree = "<group>"; };
+		26FD351B18A69FE0000E18BB /* FLEUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FLEUser.m; sourceTree = "<group>"; };
+		26FD351C18A69FE0000E18BB /* Status.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Status.h; sourceTree = "<group>"; };
+		26FD351D18A69FE0000E18BB /* Status.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Status.m; sourceTree = "<group>"; };
 		B9919EC9187AE92B00AAE37E /* FLEStartupNavigiationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FLEStartupNavigiationViewController.h; sourceTree = "<group>"; };
 		B9919ECA187AE92B00AAE37E /* FLEStartupNavigiationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FLEStartupNavigiationViewController.m; sourceTree = "<group>"; };
 		B9919ECC187AF22E00AAE37E /* FLELedgerTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FLELedgerTableViewController.h; sourceTree = "<group>"; };
@@ -158,7 +154,7 @@
 				26F036021878544A00559DEB /* CoreGraphics.framework in Frameworks */,
 				26F036061878544A00559DEB /* CoreData.framework in Frameworks */,
 				26F036041878544A00559DEB /* UIKit.framework in Frameworks */,
-				267AF002187B3F64009AC164 /* YAJLiOS.framework in Frameworks */,
+				26FD352518A69FE0000E18BB /* YAJLiOS.framework in Frameworks */,
 				26F036001878544A00559DEB /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -180,7 +176,7 @@
 		26F035F31878544A00559DEB = {
 			isa = PBXGroup;
 			children = (
-				26F0363D187881A600559DEB /* com */,
+				26FD34F218A69FE0000E18BB /* com */,
 				26F036071878544A00559DEB /* FlatLedger */,
 				26F0362D1878544A00559DEB /* FlatLedgerTests */,
 				26F035FE1878544A00559DEB /* Frameworks */,
@@ -212,28 +208,34 @@
 		26F036071878544A00559DEB /* FlatLedger */ = {
 			isa = PBXGroup;
 			children = (
+				26F036161878544A00559DEB /* FlatLedger.xcdatamodeld */,
 				26F036101878544A00559DEB /* FLEAppDelegate.h */,
 				26F036111878544A00559DEB /* FLEAppDelegate.m */,
-				26F036131878544A00559DEB /* Main.storyboard */,
-				26F0361C1878544A00559DEB /* FLEDetailViewController.h */,
-				26F0361D1878544A00559DEB /* FLEDetailViewController.m */,
-				26F0361F1878544A00559DEB /* Images.xcassets */,
-				26F036161878544A00559DEB /* FlatLedger.xcdatamodeld */,
-				26F036081878544A00559DEB /* Supporting Files */,
-				26F03689187AD1D300559DEB /* FLEStartupTableViewController.h */,
-				26F0368A187AD1D300559DEB /* FLEStartupTableViewController.m */,
-				B9919EC9187AE92B00AAE37E /* FLEStartupNavigiationViewController.h */,
-				B9919ECA187AE92B00AAE37E /* FLEStartupNavigiationViewController.m */,
-				B9919ECC187AF22E00AAE37E /* FLELedgerTableViewController.h */,
-				B9919ECD187AF22E00AAE37E /* FLELedgerTableViewController.m */,
-				B9919ECF187AF47200AAE37E /* FLELedgerNavigationController.h */,
-				B9919ED0187AF47200AAE37E /* FLELedgerNavigationController.m */,
 				B9D40630187B007D00A93E51 /* FLECreateLedgerViewController.h */,
 				B9D40631187B007D00A93E51 /* FLECreateLedgerViewController.m */,
+				26F0361C1878544A00559DEB /* FLEDetailViewController.h */,
+				26F0361D1878544A00559DEB /* FLEDetailViewController.m */,
+				B9919ECF187AF47200AAE37E /* FLELedgerNavigationController.h */,
+				B9919ED0187AF47200AAE37E /* FLELedgerNavigationController.m */,
+				B9919ECC187AF22E00AAE37E /* FLELedgerTableViewController.h */,
+				B9919ECD187AF22E00AAE37E /* FLELedgerTableViewController.m */,
+				26D76CE9189EC8E9001C3C16 /* FLEPeriodTableViewController.h */,
+				26D76CEA189EC8E9001C3C16 /* FLEPeriodTableViewController.m */,
 				26A2CFCD187DCA1D0070FF69 /* FLESingletonModells.h */,
 				26A2CFCE187DCA1D0070FF69 /* FLESingletonModells.m */,
+				B9919EC9187AE92B00AAE37E /* FLEStartupNavigiationViewController.h */,
+				B9919ECA187AE92B00AAE37E /* FLEStartupNavigiationViewController.m */,
+				26F03689187AD1D300559DEB /* FLEStartupTableViewController.h */,
+				26F0368A187AD1D300559DEB /* FLEStartupTableViewController.m */,
 				26A2CFD0187DD28E0070FF69 /* FLEUserSession.h */,
 				26A2CFD1187DD28E0070FF69 /* FLEUserSession.m */,
+				26F0361F1878544A00559DEB /* Images.xcassets */,
+				26F036131878544A00559DEB /* Main.storyboard */,
+				26F036081878544A00559DEB /* Supporting Files */,
+				26FD34EF18A6950B000E18BB /* FLECreateExpenseTableViewController.h */,
+				26FD34F018A6950B000E18BB /* FLECreateExpenseTableViewController.m */,
+				268C752A18A78F8900D8681F /* FLEShowExpenseTableViewController.h */,
+				268C752B18A78F8900D8681F /* FLEShowExpenseTableViewController.m */,
 			);
 			path = FlatLedger;
 			sourceTree = "<group>";
@@ -267,85 +269,87 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		26F0363D187881A600559DEB /* com */ = {
+		26FD34F218A69FE0000E18BB /* com */ = {
 			isa = PBXGroup;
 			children = (
-				26F0363E187881A600559DEB /* apiomat */,
+				26FD34F318A69FE0000E18BB /* apiomat */,
 			);
 			path = com;
 			sourceTree = "<group>";
 		};
-		26F0363E187881A600559DEB /* apiomat */ = {
+		26FD34F318A69FE0000E18BB /* apiomat */ = {
 			isa = PBXGroup;
 			children = (
-				26F0363F187881A600559DEB /* frontend */,
+				26FD34F418A69FE0000E18BB /* frontend */,
 			);
 			path = apiomat;
 			sourceTree = "<group>";
 		};
-		26F0363F187881A600559DEB /* frontend */ = {
+		26FD34F418A69FE0000E18BB /* frontend */ = {
 			isa = PBXGroup;
 			children = (
-				26F03640187881A600559DEB /* AbstractClientDataModel.h */,
-				26F03641187881A600559DEB /* AbstractClientDataModel.m */,
-				26F03642187881A600559DEB /* AOMAbstractClientDataModel.h */,
-				26F03643187881A600559DEB /* AOMAbstractClientDataModel.m */,
-				26F03644187881A600559DEB /* AOMConstants.h */,
-				26F03645187881A600559DEB /* AOMDatastore.h */,
-				26F03646187881A600559DEB /* AOMDatastore.m */,
-				26F03647187881A600559DEB /* basics */,
-				26F03652187881A600559DEB /* Datastore.h */,
-				26F03653187881A600559DEB /* DataStore.m */,
-				26F03654187881A600559DEB /* helper */,
-				26F0365E187881A600559DEB /* payoffmain */,
-				26F03665187881A600559DEB /* Status.h */,
-				26F03666187881A600559DEB /* Status.m */,
+				26FD34F518A69FE0000E18BB /* AbstractClientDataModel.h */,
+				26FD34F618A69FE0000E18BB /* AbstractClientDataModel.m */,
+				26FD34F718A69FE0000E18BB /* AOMAbstractClientDataModel.h */,
+				26FD34F818A69FE0000E18BB /* AOMAbstractClientDataModel.m */,
+				26FD34F918A69FE0000E18BB /* AOMConstants.h */,
+				26FD34FA18A69FE0000E18BB /* AOMDatastore.h */,
+				26FD34FB18A69FE0000E18BB /* AOMDatastore.m */,
+				26FD34FC18A69FE0000E18BB /* basics */,
+				26FD350718A69FE0000E18BB /* Datastore.h */,
+				26FD350818A69FE0000E18BB /* DataStore.m */,
+				26FD350918A69FE0000E18BB /* helper */,
+				26FD351318A69FE0000E18BB /* payoffmain */,
+				26FD351C18A69FE0000E18BB /* Status.h */,
+				26FD351D18A69FE0000E18BB /* Status.m */,
 			);
 			path = frontend;
 			sourceTree = "<group>";
 		};
-		26F03647187881A600559DEB /* basics */ = {
+		26FD34FC18A69FE0000E18BB /* basics */ = {
 			isa = PBXGroup;
 			children = (
-				267AF001187B3F64009AC164 /* YAJLiOS.framework */,
-				26F03648187881A600559DEB /* MemberModel.h */,
-				26F03649187881A600559DEB /* MemberModel.m */,
-				26F0364A187881A600559DEB /* ModelStore.h */,
-				26F0364B187881A600559DEB /* ModelStore.m */,
-				26F0364C187881A600559DEB /* ModelStoreProtocol.h */,
-				26F0364D187881A600559DEB /* Role.h */,
-				26F0364E187881A600559DEB /* Role.m */,
-				26F0364F187881A600559DEB /* User.h */,
-				26F03650187881A600559DEB /* User.m */,
+				26FD34FD18A69FE0000E18BB /* MemberModel.h */,
+				26FD34FE18A69FE0000E18BB /* MemberModel.m */,
+				26FD34FF18A69FE0000E18BB /* ModelStore.h */,
+				26FD350018A69FE0000E18BB /* ModelStore.m */,
+				26FD350118A69FE0000E18BB /* ModelStoreProtocol.h */,
+				26FD350218A69FE0000E18BB /* Role.h */,
+				26FD350318A69FE0000E18BB /* Role.m */,
+				26FD350418A69FE0000E18BB /* User.h */,
+				26FD350518A69FE0000E18BB /* User.m */,
+				26FD350618A69FE0000E18BB /* YAJLiOS.framework */,
 			);
 			path = basics;
 			sourceTree = "<group>";
 		};
-		26F03654187881A600559DEB /* helper */ = {
+		26FD350918A69FE0000E18BB /* helper */ = {
 			isa = PBXGroup;
 			children = (
-				26F03655187881A600559DEB /* AOMModelHelper.h */,
-				26F03656187881A600559DEB /* AOMModelHelper.m */,
-				26F03657187881A600559DEB /* AOMModelStore.h */,
-				26F03658187881A600559DEB /* AOMModelStore.m */,
-				26F03659187881A600559DEB /* AOMModelStoreProtocol.h */,
-				26F0365A187881A600559DEB /* NSString+Base64.h */,
-				26F0365B187881A600559DEB /* NSString+Base64.m */,
-				26F0365C187881A600559DEB /* NSString+Extensions.h */,
-				26F0365D187881A600559DEB /* NSString+Extensions.m */,
+				26FD350A18A69FE0000E18BB /* AOMModelHelper.h */,
+				26FD350B18A69FE0000E18BB /* AOMModelHelper.m */,
+				26FD350C18A69FE0000E18BB /* AOMModelStore.h */,
+				26FD350D18A69FE0000E18BB /* AOMModelStore.m */,
+				26FD350E18A69FE0000E18BB /* AOMModelStoreProtocol.h */,
+				26FD350F18A69FE0000E18BB /* NSString+Base64.h */,
+				26FD351018A69FE0000E18BB /* NSString+Base64.m */,
+				26FD351118A69FE0000E18BB /* NSString+Extensions.h */,
+				26FD351218A69FE0000E18BB /* NSString+Extensions.m */,
 			);
 			path = helper;
 			sourceTree = "<group>";
 		};
-		26F0365E187881A600559DEB /* payoffmain */ = {
+		26FD351318A69FE0000E18BB /* payoffmain */ = {
 			isa = PBXGroup;
 			children = (
-				26F0365F187881A600559DEB /* Expenses.h */,
-				26F03660187881A600559DEB /* Expenses.m */,
-				26F03661187881A600559DEB /* FLELedger.h */,
-				26F03662187881A600559DEB /* FLELedger.m */,
-				26F03663187881A600559DEB /* Periods.h */,
-				26F03664187881A600559DEB /* Periods.m */,
+				26FD351418A69FE0000E18BB /* FLEExpense.h */,
+				26FD351518A69FE0000E18BB /* FLEExpense.m */,
+				26FD351618A69FE0000E18BB /* FLELedger.h */,
+				26FD351718A69FE0000E18BB /* FLELedger.m */,
+				26FD351818A69FE0000E18BB /* FLEPeriod.h */,
+				26FD351918A69FE0000E18BB /* FLEPeriod.m */,
+				26FD351A18A69FE0000E18BB /* FLEUser.h */,
+				26FD351B18A69FE0000E18BB /* FLEUser.m */,
 			);
 			path = payoffmain;
 			sourceTree = "<group>";
@@ -448,33 +452,37 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				26FD352418A69FE0000E18BB /* User.m in Sources */,
 				26A2CFCF187DCA1D0070FF69 /* FLESingletonModells.m in Sources */,
-				26F03667187881A600559DEB /* AbstractClientDataModel.m in Sources */,
 				26F0368B187AD1D300559DEB /* FLEStartupTableViewController.m in Sources */,
 				B9919ECE187AF22E00AAE37E /* FLELedgerTableViewController.m in Sources */,
-				26F03671187881A600559DEB /* Role.m in Sources */,
 				26F036121878544A00559DEB /* FLEAppDelegate.m in Sources */,
+				26D76CEB189EC8E9001C3C16 /* FLEPeriodTableViewController.m in Sources */,
 				26F0360E1878544A00559DEB /* main.m in Sources */,
-				26F0367D187881A700559DEB /* NSString+Base64.m in Sources */,
-				26F0366D187881A600559DEB /* MemberModel.m in Sources */,
 				B9919ED1187AF47200AAE37E /* FLELedgerNavigationController.m in Sources */,
+				26FD352218A69FE0000E18BB /* ModelStore.m in Sources */,
+				26FD34F118A6950B000E18BB /* FLECreateExpenseTableViewController.m in Sources */,
+				26FD352B18A69FE0000E18BB /* FLEExpense.m in Sources */,
+				268C752C18A78F8900D8681F /* FLEShowExpenseTableViewController.m in Sources */,
+				26FD351F18A69FE0000E18BB /* AOMAbstractClientDataModel.m in Sources */,
+				26FD352818A69FE0000E18BB /* AOMModelStore.m in Sources */,
+				26FD352F18A69FE0000E18BB /* Status.m in Sources */,
+				26FD352918A69FE0000E18BB /* NSString+Base64.m in Sources */,
 				B9919ECB187AE92B00AAE37E /* FLEStartupNavigiationViewController.m in Sources */,
-				26F03681187881A700559DEB /* Expenses.m in Sources */,
+				26FD352C18A69FE0000E18BB /* FLELedger.m in Sources */,
+				26FD352118A69FE0000E18BB /* MemberModel.m in Sources */,
+				26FD352A18A69FE0000E18BB /* NSString+Extensions.m in Sources */,
 				26F0361E1878544A00559DEB /* FLEDetailViewController.m in Sources */,
-				26F03677187881A700559DEB /* DataStore.m in Sources */,
+				26FD352618A69FE0000E18BB /* DataStore.m in Sources */,
+				26FD352E18A69FE0000E18BB /* FLEUser.m in Sources */,
+				26FD352718A69FE0000E18BB /* AOMModelHelper.m in Sources */,
+				26FD351E18A69FE0000E18BB /* AbstractClientDataModel.m in Sources */,
 				B9D40632187B007D00A93E51 /* FLECreateLedgerViewController.m in Sources */,
-				26F03685187881A700559DEB /* Periods.m in Sources */,
-				26F0366B187881A600559DEB /* AOMDatastore.m in Sources */,
-				26F03673187881A600559DEB /* User.m in Sources */,
-				26F03687187881A700559DEB /* Status.m in Sources */,
+				26FD352018A69FE0000E18BB /* AOMDatastore.m in Sources */,
+				26FD352D18A69FE0000E18BB /* FLEPeriod.m in Sources */,
 				26A2CFD2187DD28E0070FF69 /* FLEUserSession.m in Sources */,
+				26FD352318A69FE0000E18BB /* Role.m in Sources */,
 				26F036181878544A00559DEB /* FlatLedger.xcdatamodeld in Sources */,
-				26F03679187881A700559DEB /* AOMModelHelper.m in Sources */,
-				26F0367F187881A700559DEB /* NSString+Extensions.m in Sources */,
-				26F03683187881A700559DEB /* FLELedger.m in Sources */,
-				26F03669187881A600559DEB /* AOMAbstractClientDataModel.m in Sources */,
-				26F0366F187881A600559DEB /* ModelStore.m in Sources */,
-				26F0367B187881A700559DEB /* AOMModelStore.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -482,23 +490,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				26F0367E187881A700559DEB /* NSString+Base64.m in Sources */,
-				26F03674187881A600559DEB /* User.m in Sources */,
-				26F03680187881A700559DEB /* NSString+Extensions.m in Sources */,
-				26F0367A187881A700559DEB /* AOMModelHelper.m in Sources */,
-				26F03688187881A700559DEB /* Status.m in Sources */,
-				26F03668187881A600559DEB /* AbstractClientDataModel.m in Sources */,
-				26F03670187881A600559DEB /* ModelStore.m in Sources */,
-				26F0366C187881A600559DEB /* AOMDatastore.m in Sources */,
-				26F0367C187881A700559DEB /* AOMModelStore.m in Sources */,
-				26F03682187881A700559DEB /* Expenses.m in Sources */,
-				26F03684187881A700559DEB /* FLELedger.m in Sources */,
-				26F03686187881A700559DEB /* Periods.m in Sources */,
-				26F03672187881A600559DEB /* Role.m in Sources */,
 				26F036341878544A00559DEB /* FlatLedgerTests.m in Sources */,
-				26F0366E187881A600559DEB /* MemberModel.m in Sources */,
-				26F0366A187881A600559DEB /* AOMAbstractClientDataModel.m in Sources */,
-				26F03678187881A700559DEB /* DataStore.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
