@@ -44,6 +44,7 @@
     // initiale aktive periode anlegen mit jetzigem Timestamp als Startdatum und Enddatum ist offen
     //parallel zu ledger anlegen
     
+    [self.navigationController setToolbarHidden:YES animated:YES];
     [self.tableView reloadData];
 }
 - (IBAction)performLogout:(id)sender {

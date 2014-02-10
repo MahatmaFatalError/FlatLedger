@@ -13,4 +13,5 @@
 @property IBOutlet UIBarButtonItem *addExpenceButton;
 @property NSMutableArray *expenses;
 @property FLEPeriod *period;
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *payOffButton;
 @end

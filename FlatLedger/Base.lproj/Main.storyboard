@@ -136,13 +136,7 @@
                             <outlet property="delegate" destination="pGg-6v-bdr" id="Y6K-Cp-Qkv"/>
                         </connections>
                     </tableView>
-                    <toolbarItems>
-                        <barButtonItem title="PayOff" id="xD3-MG-Ao7">
-                            <connections>
-                                <segue destination="nWf-8J-3CA" kind="modal" identifier="ModalPeriodToPayoff" id="kxT-aE-PYO"/>
-                            </connections>
-                        </barButtonItem>
-                    </toolbarItems>
+                    <toolbarItems/>
                     <navigationItem key="navigationItem" title="Active Period" id="tQt-TN-PWz">
                         <barButtonItem key="backBarButtonItem" title="Periods" id="Td2-Iv-Lrt"/>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="egH-xz-IRy">
@@ -154,9 +148,21 @@
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="addExpenceButton" destination="egH-xz-IRy" id="uGo-c0-LCT"/>
+                        <outlet property="payOffButton" destination="xD3-MG-Ao7" id="jsN-fp-1Fm"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6Cn-md-YlS" sceneMemberID="firstResponder"/>
+                <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="O6Q-Yl-0Cm">
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                    <items>
+                        <barButtonItem title="PayOff" id="xD3-MG-Ao7">
+                            <connections>
+                                <segue destination="nWf-8J-3CA" kind="modal" identifier="ModalPeriodToPayoff" id="kxT-aE-PYO"/>
+                            </connections>
+                        </barButtonItem>
+                    </items>
+                </toolbar>
             </objects>
             <point key="canvasLocation" x="459" y="64"/>
         </scene>
@@ -332,7 +338,7 @@
                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <label key="tableFooterView" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your mates will be informed of your payof via push notification. A new period will be creaded automatically" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="320" id="85l-ir-PYc">
+                        <label key="tableFooterView" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your mates will be informed of your payof via push notification. A new period will be creaded automatically" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="320" id="85l-ir-PYc">
                             <rect key="frame" x="0.0" y="110" width="320" height="76"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -542,7 +548,7 @@
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
         <segue reference="5Z8-Pu-Paq"/>
-        <segue reference="B5O-KW-EJC"/>
+        <segue reference="93P-LI-Aj7"/>
         <segue reference="zEe-ja-yI3"/>
     </inferredMetricsTieBreakers>
 </document>

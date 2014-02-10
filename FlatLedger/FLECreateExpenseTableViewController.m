@@ -12,6 +12,24 @@
 #import "FLESingletonModells.h"
 
 @implementation FLECreateExpenseTableViewController
+
+- (id)initWithStyle:(UITableViewStyle)style
+{
+    self = [super initWithStyle:style];
+    if (self) {
+        // Custom initialization
+    }
+    return self;
+}
+
+- (void)viewDidLoad
+{
+    [super viewDidLoad];
+    
+    [self.navigationController setToolbarHidden:YES animated:YES];
+}
+
+
 - (IBAction)saveExpense:(id)sender {
 	
 	

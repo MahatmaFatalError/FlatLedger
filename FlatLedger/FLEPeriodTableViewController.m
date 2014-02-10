@@ -67,7 +67,11 @@
     } else{
         [self.navigationItem setRightBarButtonItem:nil animated:YES];
     }
-	
+    
+    //UIBarButtonItem *payOffButton = [[UIBarButtonItem alloc] initWithTitle:@"PayOff" style:UIBarButtonItemStyleBordered target:nil action:nil];
+    
+    [self setToolbarItems:@[self.payOffButton] animated:YES];
+	[self.navigationController setToolbarHidden:NO animated:YES];
     [self.tableView reloadData];
 }
 
